@@ -1,0 +1,3 @@
+repository "Eclipsed Ember - Ashes of the Forgotten/Eclipsed Ember - Ashes of the Forgotten@18968218323886@cloud"
+  path "/"
+    smartbranch "/main"
