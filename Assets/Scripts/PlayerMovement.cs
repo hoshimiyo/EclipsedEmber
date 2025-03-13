@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool canDoubleJump;
     [SerializeField] private float _jumpSpeed = 15f;
     [SerializeField] private float _coyoteTime = 0.1f;
-    [SerializeField] private float _jumpBufferTime = 0.2f;
+    [SerializeField] private float _jumpBufferTime = 0.05f;
     private float _jumpBufferTimeCounter;
     private float _coyoteTimeCounter;
     private float _fallMultiplier = 7f;
