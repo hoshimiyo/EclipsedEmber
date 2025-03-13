@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 15f;
     [SerializeField] private float _maxFallSpeed = -20f;
     [SerializeField] private float _maxFallSpeedMultiflier = 1.5f;
-    
+
     [SerializeField, Range(0.5f, 2f)] private float _accelerationValue = 1.2f;
     [SerializeField, Range(0.5f, 2f)] private float _decelerationValue = 1.2f;
     [SerializeField, Range(0f, 1f)] private float _frictionAmountValue = 0.5f;
@@ -30,7 +30,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0f, 2f)] private float _iceDeceleration = 0.4f;
     [SerializeField, Range(0f, 1f)] private float _iceFriction = 0.4f;
 
+
     #endregion
+
+    #region Attack
+    [Space]
+    [Header("Attack")]
+    [SerializeField] private bool isAttacking = false;
+    [SerializeField] private float timeBetweenAttack, timeSinceAttack;
+    [SerializeField] Transform sideAttackTransform, upAttackTransform, downAttackTransform;
+    [SerializeField] Vector2 sideAttackSize, upAttackSize, downAttackSize;
+    [SerializeField] LayerMask attackLayer;
+
+    #endregion
+
     #region Dash
     [Space]
     [Header("Dash")]
@@ -63,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     #region Wall Tech
     [Space]
     [Header("Wall Tech")]
-
     [SerializeField] private float _wallSlidingSpeedMultiplier;
     [SerializeField] private float _wallJumpingCoyoteTime = 0.05f;
     private bool _isWallSliding;
@@ -127,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip[] runSoundClips;
     [SerializeField] private AudioClip[] wallJumpSoundClips;
     [SerializeField] private AudioClip dashSoundClip;
+    [SerializeField] private AudioClip attackSoundClip;
     #endregion
     #region Amimator
     [Space]
@@ -164,11 +177,12 @@ public class PlayerMovement : MonoBehaviour
         if (_playerAnim != null)
         {
             bool isJumping = !IsGrounded() && _rb.linearVelocityY > 0;
-            _playerAnim.UpdateAnimation(_rb.linearVelocityX, _rb.linearVelocityY, IsGrounded(), _isWallSliding, isJumping);
+            _playerAnim.UpdateAnimation(_rb.linearVelocityX, _rb.linearVelocityY, IsGrounded(), _isWallSliding, isJumping, isAttacking);
         }
 
         JumpInput();
         DashInput();
+        AttackInput();
 
     }
     private void FixedUpdate() //update mỗi số frame (2-3-4 frame) ít độc lập frame hơn => ít responsive hơn
@@ -182,6 +196,8 @@ public class PlayerMovement : MonoBehaviour
         Jump();
 
         Dash();
+
+        Attack();
 
         if (!_isWallJumping)
             Flip();
@@ -197,6 +213,14 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(sideAttackTransform.position, sideAttackSize);
+        Gizmos.DrawWireCube(upAttackTransform.position, upAttackSize);
+        Gizmos.DrawWireCube(downAttackTransform.position, downAttackSize);
+    }
+
     #region Collision Check
     private bool IsGrounded() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _groundLayer);
     private bool IsOnIce() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _iceLayer);
@@ -255,8 +279,8 @@ public class PlayerMovement : MonoBehaviour
             GroundDust();
             // if (_landDeformation != null) _landDeformation.PlayDeformation();
             // if (!_canDash || _availableJump <= 0)
-                // if (flashEffect != null)
-                //     flashEffect.CallFlash(0.5f, 0.1f, _refillColor);
+            // if (flashEffect != null)
+            //     flashEffect.CallFlash(0.5f, 0.1f, _refillColor);
 
 
         }
@@ -352,7 +376,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private float FallSpeed() => Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) ? _maxFallSpeed * _maxFallSpeedMultiflier : _maxFallSpeed;
     //flip player's entire model horizontally when moving opposite direction
-    
+
     private void Flip()
     {
         if (_isFacingRight && xRaw < 0f || !_isFacingRight && xRaw > 0f)
@@ -364,6 +388,43 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
+    #region Attack
+
+    void Hit(Transform _attackTransform, Vector2 _attackArea)
+    {
+        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
+        if(objectsToHit.Length > 0)
+            Debug.Log("Hit " + objectsToHit[0].name);
+    }
+    private void Attack()
+    {
+        timeSinceAttack += Time.deltaTime;
+        if (isAttacking && timeSinceAttack >= timeBetweenAttack)
+        {
+            // Attack logic
+            timeSinceAttack = 0;
+
+            if (yRaw == 0 || yRaw < 0 && IsGrounded())
+            {
+                Hit(sideAttackTransform, sideAttackSize);
+            }
+            else if (yRaw > 0)
+            {
+                Hit(upAttackTransform, upAttackSize);
+            }
+            else if (yRaw < 0 && !IsGrounded())
+            {
+                Hit(downAttackTransform, downAttackSize);
+            }
+        }
+    }
+    private void AttackInput()
+    {
+        isAttacking = Input.GetMouseButtonDown(0);
+    }
+    #endregion
+
     #region Dash
     private void DashInput()
     {
