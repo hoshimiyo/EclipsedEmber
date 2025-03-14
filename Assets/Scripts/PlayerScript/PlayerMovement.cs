@@ -38,9 +38,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Attack")]
     [SerializeField] private bool isAttacking = false;
     [SerializeField] private float timeBetweenAttack, timeSinceAttack;
-    [SerializeField] Transform sideAttackTransform, upAttackTransform, downAttackTransform;
-    [SerializeField] Vector2 sideAttackSize, upAttackSize, downAttackSize;
-    [SerializeField] LayerMask attackLayer;
+    [SerializeField] private Transform sideAttackTransform, upAttackTransform, downAttackTransform;
+    [SerializeField] private Vector2 sideAttackSize, upAttackSize, downAttackSize;
+    [SerializeField] private LayerMask attackLayer;
+    [SerializeField] private GameObject slashEffect;
+    private GameObject _slashEffectInstance;
+
 
     #endregion
 
@@ -170,6 +173,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+
         xRaw = Input.GetAxisRaw("Horizontal"); // -1 0 1
         yRaw = Input.GetAxisRaw("Vertical");   // -1 0 1
         x = Input.GetAxis("Horizontal");       //controller, joystick, analog control => slide từ -1 => 1 e.g: -0.323
@@ -177,13 +181,12 @@ public class PlayerMovement : MonoBehaviour
         if (_playerAnim != null)
         {
             bool isJumping = !IsGrounded() && _rb.linearVelocityY > 0;
-            _playerAnim.UpdateAnimation(_rb.linearVelocityX, _rb.linearVelocityY, IsGrounded(), _isWallSliding, isJumping, isAttacking);
+            _playerAnim.UpdateAnimation(_rb.linearVelocityX, _rb.linearVelocityY, IsGrounded(), _isWallSliding, isJumping);
         }
 
         JumpInput();
         DashInput();
         AttackInput();
-
     }
     private void FixedUpdate() //update mỗi số frame (2-3-4 frame) ít độc lập frame hơn => ít responsive hơn
     {
@@ -394,7 +397,7 @@ public class PlayerMovement : MonoBehaviour
     void Hit(Transform _attackTransform, Vector2 _attackArea)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
-        if(objectsToHit.Length > 0)
+        if (objectsToHit.Length > 0)
             Debug.Log("Hit " + objectsToHit[0].name);
     }
     private void Attack()
@@ -408,17 +411,40 @@ public class PlayerMovement : MonoBehaviour
             if (yRaw == 0 || yRaw < 0 && IsGrounded())
             {
                 Hit(sideAttackTransform, sideAttackSize);
+                if(!_isFacingRight)
+                {
+                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.Euler(0, 0, 180));
+                    _playerAnim.TriggerAttack();
+                }
+                else
+                {
+                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.identity);
+                    _playerAnim.TriggerAttack();
+                }
             }
             else if (yRaw > 0)
             {
                 Hit(upAttackTransform, upAttackSize);
+                CreateSlashEffect(slashEffect, 80, upAttackTransform);
+                _playerAnim.TriggerAttack();
             }
             else if (yRaw < 0 && !IsGrounded())
             {
                 Hit(downAttackTransform, downAttackSize);
+                CreateSlashEffect(slashEffect, -90, downAttackTransform);
+                _playerAnim.TriggerAttack();
             }
         }
     }
+
+    private GameObject CreateSlashEffect(GameObject slashEffectPrefab, int effectAngle, Transform attackTransform)
+    {
+        _slashEffectInstance = Instantiate(slashEffectPrefab, attackTransform.position, Quaternion.identity);
+        _slashEffectInstance.transform.rotation = Quaternion.Euler(0, 0, effectAngle);
+        _slashEffectInstance.transform.localScale = attackTransform.localScale;
+        return _slashEffectInstance;
+    }
+
     private void AttackInput()
     {
         isAttacking = Input.GetMouseButtonDown(0);

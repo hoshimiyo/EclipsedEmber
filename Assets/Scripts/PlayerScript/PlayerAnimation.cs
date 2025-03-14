@@ -9,13 +9,18 @@ public class PlayerAnimation : MonoBehaviour
         _anim = GetComponent<Animator>();
     } 
 
-    public void UpdateAnimation(float velocityX, float velocityY, bool isGrounded, bool isWallSliding, bool isJumping, bool isAttacking)
+    public void UpdateAnimation(float velocityX, float velocityY, bool isGrounded, bool isWallSliding, bool isJumping)
     {
         _anim.SetFloat("VelX", Mathf.Abs(velocityX));
         _anim.SetFloat("VelY", velocityY);
         _anim.SetBool("IsGrounded", isGrounded);
         _anim.SetBool("IsWallSliding", isWallSliding);
         _anim.SetBool("IsJumping", isJumping);
-        _anim.SetBool("IsAttacking", isAttacking);
+    }
+
+    public void TriggerAttack()
+    {
+        _anim.SetTrigger("IsAttack");
+        _anim.SetLayerWeight(1, 1);
     }
 }
