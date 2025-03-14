@@ -413,26 +413,24 @@ public class PlayerMovement : MonoBehaviour
                 Hit(sideAttackTransform, sideAttackSize);
                 if(!_isFacingRight)
                 {
-                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.Euler(0, 0, 180));
                     _playerAnim.TriggerAttack();
+                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.Euler(0, 0, 180));
                 }
                 else
                 {
-                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.identity);
                     _playerAnim.TriggerAttack();
+                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.identity);
                 }
             }
             else if (yRaw > 0)
             {
                 Hit(upAttackTransform, upAttackSize);
                 CreateSlashEffect(slashEffect, 80, upAttackTransform);
-                _playerAnim.TriggerAttack();
             }
             else if (yRaw < 0 && !IsGrounded())
             {
                 Hit(downAttackTransform, downAttackSize);
                 CreateSlashEffect(slashEffect, -90, downAttackTransform);
-                _playerAnim.TriggerAttack();
             }
         }
     }
@@ -442,6 +440,7 @@ public class PlayerMovement : MonoBehaviour
         _slashEffectInstance = Instantiate(slashEffectPrefab, attackTransform.position, Quaternion.identity);
         _slashEffectInstance.transform.rotation = Quaternion.Euler(0, 0, effectAngle);
         _slashEffectInstance.transform.localScale = attackTransform.localScale;
+        _playerAnim.TriggerAttack();
         return _slashEffectInstance;
     }
 
@@ -667,7 +666,7 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(0.5f);
-        transform.position = _respawnPoint;
+        transform.position = GameManager.instance.respawnPoint;
         active = true;
         _collider.enabled = true;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = true;

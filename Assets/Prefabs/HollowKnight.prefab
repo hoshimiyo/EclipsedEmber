@@ -467,6 +467,7 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 256
+  slashEffect: {fileID: 3183993007291020588, guid: 65eee736c675a954bb35401e7cc92c39, type: 3}
   _dashingPower: 24
   _dashingTime: 0.3
   _freezeFrame: 1
