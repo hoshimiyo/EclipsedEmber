@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 207930254201717756}
   - component: {fileID: 6765006226916803937}
   - component: {fileID: 3846319570802767350}
+  - component: {fileID: 1524776904926363063}
   m_Layer: 7
   m_Name: HollowKnight
   m_TagString: Player
@@ -416,9 +417,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -220815605
+  m_SortingLayer: 2
+  m_SortingOrder: 100
   m_Sprite: {fileID: -5201736690615008242, guid: 94ef4dd14157fdd48a179aa737a534a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -455,19 +456,6 @@ MonoBehaviour:
   isWalled: 0
   _iceDeceleration: 0.4
   _iceFriction: 0.4
-  isAttacking: 1
-  timeBetweenAttack: 0
-  timeSinceAttack: 0
-  sideAttackTransform: {fileID: 2372056922170514941}
-  upAttackTransform: {fileID: 7266654887441514437}
-  downAttackTransform: {fileID: 7749609485886686843}
-  sideAttackSize: {x: 4.5, y: 3.5}
-  upAttackSize: {x: 3.5, y: 4.5}
-  downAttackSize: {x: 3.5, y: 4.5}
-  attackLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  slashEffect: {fileID: 3183993007291020588, guid: 65eee736c675a954bb35401e7cc92c39, type: 3}
   _dashingPower: 24
   _dashingTime: 0.3
   _freezeFrame: 1
@@ -495,19 +483,26 @@ MonoBehaviour:
     m_Bits: 0
   _killable:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  _damagable:
+    serializedVersion: 2
+    m_Bits: 1024
   _cornerCheckLeft: {fileID: 0}
   _cornerCheckRight: {fileID: 0}
   tr: {fileID: 3119265821599344441}
   slideParticle: {fileID: 0}
   groundParticle: {fileID: 0}
   dashParticle: {fileID: 0}
+  xRaw: 0
+  yRaw: 0
+  x: 0
   _hasDoubleJumped: 0
   _refillColor: {r: 0, g: 0, b: 0, a: 0}
   _dashColor: {r: 0, g: 0, b: 0, a: 0}
   _doubleJumpColor: {r: 0, g: 0, b: 0, a: 0}
   _deathColor: {r: 0, g: 0, b: 0, a: 0}
   deathSoundClip: {fileID: 8300000, guid: 52dfa9b197def7143a68211af9d6564b, type: 3}
+  damageSoundClip: {fileID: 0}
   jumpSoundClip: {fileID: 8300000, guid: 3e414ef33bab1464c9ef7172a4b5e054, type: 3}
   landSoundClips:
   - {fileID: 8300000, guid: b00d916912e6aff42b4d7158ebe89dd4, type: 3}
@@ -526,6 +521,7 @@ MonoBehaviour:
   wallJumpSoundClips: []
   dashSoundClip: {fileID: 8300000, guid: 26d87d84adba3dc49a3a9cf8ab5227b7, type: 3}
   attackSoundClip: {fileID: 0}
+  _playerAnim: {fileID: 0}
 --- !u!96 &3119265821599344441
 TrailRenderer:
   serializedVersion: 3
@@ -740,6 +736,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378a9e77ea2d7de4fadc9d343d3ffc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1524776904926363063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6317066625285873108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b278cb1811805244da1dc9fcc75bfe68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  timeBetweenAttack: 0.3
+  timeSinceAttack: 0
+  sideAttackTransform: {fileID: 2372056922170514941}
+  upAttackTransform: {fileID: 7266654887441514437}
+  downAttackTransform: {fileID: 7749609485886686843}
+  sideAttackSize: {x: 4.5, y: 3.5}
+  upAttackSize: {x: 3.5, y: 4.5}
+  downAttackSize: {x: 3.5, y: 4.5}
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  slashEffect: {fileID: 3183993007291020588, guid: 65eee736c675a954bb35401e7cc92c39, type: 3}
+  timeToHeal: 0.5
+  mana: 0.5
+  manaDrainSpeed: 0.3
+  manaGain: 0.3
 --- !u!1 &7316264402192348644
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using NUnit;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Fundementals")]
     public static PlayerMovement instance;
     [SerializeField] private Collider2D _groundCollider;
-    [SerializeField] private bool _isFacingRight = true;
+    [SerializeField] public bool _isFacingRight = true;
     [SerializeField] private float _speed = 15f;
     [SerializeField] private float _maxFallSpeed = -20f;
     [SerializeField] private float _maxFallSpeedMultiflier = 1.5f;
@@ -33,19 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-    #region Attack
-    [Space]
-    [Header("Attack")]
-    [SerializeField] private bool isAttacking = false;
-    [SerializeField] private float timeBetweenAttack, timeSinceAttack;
-    [SerializeField] private Transform sideAttackTransform, upAttackTransform, downAttackTransform;
-    [SerializeField] private Vector2 sideAttackSize, upAttackSize, downAttackSize;
-    [SerializeField] private LayerMask attackLayer;
-    [SerializeField] private GameObject slashEffect;
-    private GameObject _slashEffectInstance;
 
-
-    #endregion
 
     #region Dash
     [Space]
@@ -97,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform _wallCheckLeft;
     [SerializeField] private LayerMask _wallLayer;
     [SerializeField] private LayerMask _killable;
+    [SerializeField] private LayerMask _damagable;
     [SerializeField] private Transform _cornerCheckLeft;
     [SerializeField] private Transform _cornerCheckRight;
     #endregion
@@ -111,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private ParticleSystem dashParticle;
     // public FlashEffect flashEffect;
     private float _dashDustSpeed = 5f;
-    private float xRaw, yRaw, x;
+    public float xRaw, yRaw, x; 
     public bool _hasDoubleJumped;
     #endregion
     #region Camera
@@ -137,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Audio")]
     [SerializeField] private AudioClip deathSoundClip;
+    [SerializeField] private AudioClip damageSoundClip;
     [SerializeField] private AudioClip jumpSoundClip;
     [SerializeField] private AudioClip[] landSoundClips;
     [SerializeField] private AudioClip[] runSoundClips;
@@ -147,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
     #region Amimator
     [Space]
     [Header("Animator")]
-    private PlayerAnimation _playerAnim;
+    public PlayerAnimation _playerAnim;
     // [SerializeField] private Deformation _jumpDeformation;
     // [SerializeField] private Deformation _landDeformation;
     private bool isSoundCoroutineRunning = false;
@@ -166,6 +157,14 @@ public class PlayerMovement : MonoBehaviour
         SetRespawnPoint(transform.position);
         Time.timeScale = timeScale;
         //_healthManager.OnPlayerDie += Die;
+        if (instance == null)
+        {
+            instance = this; // Assign the singleton instance
+        }
+        else
+        {
+            Destroy(gameObject); // Ensure only one instance exists
+        }
     }
     private void Update() //update sẽ chạy mỗi frame
     {
@@ -186,7 +185,7 @@ public class PlayerMovement : MonoBehaviour
 
         JumpInput();
         DashInput();
-        AttackInput();
+        
     }
     private void FixedUpdate() //update mỗi số frame (2-3-4 frame) ít độc lập frame hơn => ít responsive hơn
     {
@@ -199,8 +198,6 @@ public class PlayerMovement : MonoBehaviour
         Jump();
 
         Dash();
-
-        Attack();
 
         if (!_isWallJumping)
             Flip();
@@ -216,16 +213,10 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(sideAttackTransform.position, sideAttackSize);
-        Gizmos.DrawWireCube(upAttackTransform.position, upAttackSize);
-        Gizmos.DrawWireCube(downAttackTransform.position, downAttackSize);
-    }
+
 
     #region Collision Check
-    private bool IsGrounded() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _groundLayer);
+    public bool IsGrounded() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _groundLayer);
     private bool IsOnIce() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _iceLayer);
     private bool IsWalled() => Physics2D.OverlapCircle(_wallCheckRight.position, 0.1f, _wallLayer);
     private bool IsWalledLeft() => Physics2D.OverlapCircle(_wallCheckLeft.position, 0.1f, _wallLayer);
@@ -234,8 +225,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Killable"))
         {
-            // flashEffect.CallFlash(1f, 0.2f, _deathColor);
             Die();
+        }
+        else if (other.gameObject.CompareTag("Damagable"))
+        {
+            TakingDamage();
         }
     }
 
@@ -251,6 +245,9 @@ public class PlayerMovement : MonoBehaviour
 
         bool isWallJumpingAndAirborne = _isWallJumping && !IsGrounded();
 
+        if(PlayerStat.healing)
+            _rb.linearVelocity = new Vector2(0, 0);
+            
         if (!_isWallJumping && !IsGrounded())
         {
             frictionAmount = _frictionAmount * 0.1f;
@@ -392,63 +389,7 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
-    #region Attack
-
-    void Hit(Transform _attackTransform, Vector2 _attackArea)
-    {
-        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
-        if (objectsToHit.Length > 0)
-            Debug.Log("Hit " + objectsToHit[0].name);
-    }
-    private void Attack()
-    {
-        timeSinceAttack += Time.deltaTime;
-        if (isAttacking && timeSinceAttack >= timeBetweenAttack)
-        {
-            // Attack logic
-            timeSinceAttack = 0;
-
-            if (yRaw == 0 || yRaw < 0 && IsGrounded())
-            {
-                Hit(sideAttackTransform, sideAttackSize);
-                if(!_isFacingRight)
-                {
-                    _playerAnim.TriggerAttack();
-                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.Euler(0, 0, 180));
-                }
-                else
-                {
-                    _playerAnim.TriggerAttack();
-                    Instantiate(slashEffect, sideAttackTransform.position, Quaternion.identity);
-                }
-            }
-            else if (yRaw > 0)
-            {
-                Hit(upAttackTransform, upAttackSize);
-                CreateSlashEffect(slashEffect, 80, upAttackTransform);
-            }
-            else if (yRaw < 0 && !IsGrounded())
-            {
-                Hit(downAttackTransform, downAttackSize);
-                CreateSlashEffect(slashEffect, -90, downAttackTransform);
-            }
-        }
-    }
-
-    private GameObject CreateSlashEffect(GameObject slashEffectPrefab, int effectAngle, Transform attackTransform)
-    {
-        _slashEffectInstance = Instantiate(slashEffectPrefab, attackTransform.position, Quaternion.identity);
-        _slashEffectInstance.transform.rotation = Quaternion.Euler(0, 0, effectAngle);
-        _slashEffectInstance.transform.localScale = attackTransform.localScale;
-        _playerAnim.TriggerAttack();
-        return _slashEffectInstance;
-    }
-
-    private void AttackInput()
-    {
-        isAttacking = Input.GetMouseButtonDown(0);
-    }
-    #endregion
+    
 
     #region Dash
     private void DashInput()
@@ -649,6 +590,31 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = original;
         _isFrozen = false;
     }
+
+    #region Damage
+    public void Damage()
+    {
+        PlaySFXClip(damageSoundClip);
+        active = false;
+        _collider.enabled = false;
+        if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
+        MiniJump();
+        StartCoroutine(Disable(0.5f));
+    }
+    #endregion
+
+    #region takingDamage
+    public void TakingDamage()
+    {
+        PlayerStat.instance.TakeDamage(1);
+        PlaySFXClip(damageSoundClip);
+        active = false;
+        _collider.enabled = false;
+        if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
+        MiniJump();
+        StartCoroutine(Respawn());
+    }
+    #endregion
     #region Death
     private void MiniJump()
     {

@@ -5113,7 +5113,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3875
         y: 3611
-        width: 202
+        width: 120
         height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -5878,13 +5878,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Knight main sprites - atlas0 #00000357_128
+      name: Heal1
       rect:
         serializedVersion: 2
-        x: 3935
+        x: 3974
         y: 3405
-        width: 120
-        height: 205
+        width: 81
+        height: 127
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6917,7 +6917,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3149
         y: 3318
-        width: 158
+        width: 90
         height: 119
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -25070,7 +25070,7 @@ TextureImporter:
         width: 65
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -25092,7 +25092,7 @@ TextureImporter:
         width: 160
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -25114,7 +25114,7 @@ TextureImporter:
         width: 177
         height: 119
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -25136,7 +25136,7 @@ TextureImporter:
         width: 133
         height: 166
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -25145,6 +25145,72 @@ TextureImporter:
       bones: []
       spriteID: ba3b45cc5f7963b42bd6865bc3e9ffd5
       internalID: 2048439836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight main sprites - atlas0 #00000357_626
+      rect:
+        serializedVersion: 2
+        x: 3936
+        y: 3536
+        width: 124
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45309974173a724478b58213c9f79c4e
+      internalID: 1206526626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Knight main sprites - atlas0 #00000357_628
+      rect:
+        serializedVersion: 2
+        x: 3995
+        y: 3608
+        width: 84
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00119a7806eea1f478b514d4cb636d77
+      internalID: -366315257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heal2
+      rect:
+        serializedVersion: 2
+        x: 3237
+        y: 3315
+        width: 76
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9a6adb63b642547848cc59636ec229
+      internalID: 492814264
       vertices: []
       indices: 
       edges: []
@@ -25169,6 +25235,8 @@ TextureImporter:
       Dash4: 7886612056707575449
       DownSlash: 2561924944529268076
       DownSlash2: -8534245432435583924
+      Heal1: -3238752931142335042
+      Heal2: 492814264
       SideSlash1: 8430839583926249778
       SideSlash2: -6372124581757219431
       SideSlash3: 6590375842410174169
@@ -25207,7 +25275,6 @@ TextureImporter:
       The Knight main sprites - atlas0 #00000357_125: 5831323548945007958
       The Knight main sprites - atlas0 #00000357_126: 4338032999699798897
       The Knight main sprites - atlas0 #00000357_127: 1790004274581617283
-      The Knight main sprites - atlas0 #00000357_128: -3238752931142335042
       The Knight main sprites - atlas0 #00000357_129: -5056374406961219552
       The Knight main sprites - atlas0 #00000357_13: 2443874347493037141
       The Knight main sprites - atlas0 #00000357_130: -2947106911122561248
@@ -25760,7 +25827,9 @@ TextureImporter:
       The Knight main sprites - atlas0 #00000357_623: -5604583387448625661
       The Knight main sprites - atlas0 #00000357_624: -6392884053939017300
       The Knight main sprites - atlas0 #00000357_625: -1054204559869497580
+      The Knight main sprites - atlas0 #00000357_626: 1206526626
       The Knight main sprites - atlas0 #00000357_627: 656402497436179863
+      The Knight main sprites - atlas0 #00000357_628: -366315257
       The Knight main sprites - atlas0 #00000357_63: -1721312531639844326
       The Knight main sprites - atlas0 #00000357_630: 6491425093250586521
       The Knight main sprites - atlas0 #00000357_631: -1979944210276178479

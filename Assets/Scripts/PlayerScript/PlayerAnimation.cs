@@ -23,4 +23,9 @@ public class PlayerAnimation : MonoBehaviour
         _anim.SetTrigger("IsAttack");
         _anim.SetLayerWeight(1, 1);
     }
+
+    public void Healing(bool isHealing)
+    {
+        _anim.SetBool("IsHealing", isHealing);
+    }
 }
