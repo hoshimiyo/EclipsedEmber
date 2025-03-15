@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameUI : MonoBehaviour
+public class GameUI2 : MonoBehaviour
 {
     PlayerStat player;
     private GameObject[] heartContainers;

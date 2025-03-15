@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 6765006226916803937}
   - component: {fileID: 3846319570802767350}
   - component: {fileID: 1524776904926363063}
+  - component: {fileID: 467639657020397527}
   m_Layer: 7
   m_Name: HollowKnight
   m_TagString: Player
@@ -765,6 +766,26 @@ MonoBehaviour:
   mana: 0.5
   manaDrainSpeed: 0.3
   manaGain: 0.3
+--- !u!114 &467639657020397527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6317066625285873108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8e41e701cc90e43934f3562d8cc43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCasting: 0
+  manaSpellCost: 0.3
+  timeBetweenCast: 0.5
+  spellDamage: 0
+  downSpellForce: 0
+  sideSpellFireball: {fileID: 5715211057097174937, guid: e09cb9a6730b6fa4eb9f4332b723638b, type: 3}
+  upSpellExplosion: {fileID: 0}
+  downSpellFireball: {fileID: 0}
 --- !u!1 &7316264402192348644
 GameObject:
   m_ObjectHideFlags: 0

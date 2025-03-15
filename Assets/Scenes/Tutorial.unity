@@ -1682,7 +1682,7 @@ GameObject:
   - component: {fileID: 617707699}
   m_Layer: 8
   m_Name: Square
-  m_TagString: Damagable
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4636,6 +4636,6 @@ SceneRoots:
   - {fileID: 1226375356}
   - {fileID: 2068891064}
   - {fileID: 4555860644379164754}
+  - {fileID: 617707702}
   - {fileID: 1904718945}
   - {fileID: 217272153}
-  - {fileID: 617707702}

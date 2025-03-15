@@ -46,7 +46,7 @@ public class PlayerStat : MonoBehaviour
     public static int damage = 1;
     [SerializeField] private bool isAttacking = false;
     [SerializeField] private float timeBetweenAttack, timeSinceAttack;
-    [SerializeField] private Transform sideAttackTransform, upAttackTransform, downAttackTransform;
+    [SerializeField] public Transform sideAttackTransform, upAttackTransform, downAttackTransform;
     [SerializeField] private Vector2 sideAttackSize, upAttackSize, downAttackSize;
     [SerializeField] private LayerMask attackLayer;
     [SerializeField] private GameObject slashEffect;
