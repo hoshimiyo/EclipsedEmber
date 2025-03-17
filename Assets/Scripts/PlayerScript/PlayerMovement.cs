@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform sideAttackTransform, upAttackTransform, downAttackTransform;
     [SerializeField] Vector2 sideAttackSize, upAttackSize, downAttackSize;
     [SerializeField] LayerMask attackLayer;
+    [SerializeField] float damage = 1;
 
     #endregion
 
@@ -110,6 +111,8 @@ public class PlayerMovement : MonoBehaviour
     private float _dashDustSpeed = 5f;
     private float xRaw, yRaw, x;
     public bool _hasDoubleJumped;
+    private Renderer playerRenderer;  // To store the renderer component
+    private Color originalColor;  // To store the original color of the mob
     #endregion
     #region Camera
     [Space]
@@ -150,11 +153,29 @@ public class PlayerMovement : MonoBehaviour
     private bool isSoundCoroutineRunning = false;
     #endregion
 
+    #region
+    [Space]
+    [Header("Health")]
+    public int health;
+    public int maxHealth;
+    #endregion
+
     // public HealthManager _healthManager;
 
     #endregion
     private void Awake()
     {
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Ensures there's only one instance
+            return;
+        }
+
         _rb = GetComponent<Rigidbody2D>();
         _impulseSource = GetComponent<CinemachineImpulseSource>();
         _collider = GetComponent<Collider2D>();
@@ -162,6 +183,9 @@ public class PlayerMovement : MonoBehaviour
         active = true;
         SetRespawnPoint(transform.position);
         Time.timeScale = timeScale;
+        health = maxHealth;
+        playerRenderer = GetComponent<Renderer>();
+        originalColor = playerRenderer.material.color;
         //_healthManager.OnPlayerDie += Die;
     }
     private void Update() //update sẽ chạy mỗi frame
@@ -222,7 +246,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #region Collision Check
-    private bool IsGrounded() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _groundLayer);
+    public bool IsGrounded() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _groundLayer);
     private bool IsOnIce() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _iceLayer);
     private bool IsWalled() => Physics2D.OverlapCircle(_wallCheckRight.position, 0.1f, _wallLayer);
     private bool IsWalledLeft() => Physics2D.OverlapCircle(_wallCheckLeft.position, 0.1f, _wallLayer);
@@ -395,7 +419,17 @@ public class PlayerMovement : MonoBehaviour
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
         if(objectsToHit.Length > 0)
+        {
             Debug.Log("Hit " + objectsToHit[0].name);
+        }
+        for(int i = 0; i < objectsToHit.Length; i++)
+        {
+            BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
     }
     private void Attack()
     {
@@ -685,4 +719,28 @@ public class PlayerMovement : MonoBehaviour
         _deceleration = IsOnIce() ? _iceDeceleration : _decelerationValue;
         _frictionAmount = IsOnIce() ? _iceFriction : _frictionAmountValue;
     }
+
+    void ClampHealth()
+    {
+        health = Mathf.Clamp(health, 0, maxHealth);
+    }
+
+    public void TakeDamage(float damageTaken)
+    {
+        health -= Mathf.RoundToInt(damageTaken);
+        StartCoroutine(BlinkRedEffect());
+    }
+
+    private IEnumerator BlinkRedEffect()
+    {
+        // Change color to red
+        playerRenderer.material.color = Color.red;
+
+        // Wait for a short time (for example, 0.1 seconds)
+        yield return new WaitForSeconds(0.1f);
+
+        // Revert to the original color
+        playerRenderer.material.color = originalColor;
+    }
+
 }
