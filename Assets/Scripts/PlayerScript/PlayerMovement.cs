@@ -34,7 +34,17 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
+    #region Attack
+    [Space]
+    [Header("Attack")]
+    [SerializeField] private bool isAttacking = false;
+    [SerializeField] private float timeBetweenAttack, timeSinceAttack;
+    [SerializeField] Transform sideAttackTransform, upAttackTransform, downAttackTransform;
+    [SerializeField] Vector2 sideAttackSize, upAttackSize, downAttackSize;
+    [SerializeField] LayerMask attackLayer;
+    [SerializeField] float damage = 1;
 
+    #endregion
 
     #region Dash
     [Space]
@@ -103,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
     private float _dashDustSpeed = 5f;
     public float xRaw, yRaw, x; 
     public bool _hasDoubleJumped;
+    private Renderer playerRenderer;  // To store the renderer component
+    private Color originalColor;  // To store the original color of the mob
     #endregion
     #region Camera
     [Space]
@@ -144,11 +156,29 @@ public class PlayerMovement : MonoBehaviour
     private bool isSoundCoroutineRunning = false;
     #endregion
 
+    #region
+    [Space]
+    [Header("Health")]
+    public int health;
+    public int maxHealth;
+    #endregion
+
     // public HealthManager _healthManager;
 
     #endregion
     private void Awake()
     {
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // Ensures there's only one instance
+            return;
+        }
+
         _rb = GetComponent<Rigidbody2D>();
         _impulseSource = GetComponent<CinemachineImpulseSource>();
         _collider = GetComponent<Collider2D>();
@@ -156,6 +186,9 @@ public class PlayerMovement : MonoBehaviour
         active = true;
         SetRespawnPoint(transform.position);
         Time.timeScale = timeScale;
+        health = maxHealth;
+        playerRenderer = GetComponent<Renderer>();
+        originalColor = playerRenderer.material.color;
         //_healthManager.OnPlayerDie += Die;
         if (instance == null)
         {
@@ -389,7 +422,51 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
-    
+    #region Attack
+
+    void Hit(Transform _attackTransform, Vector2 _attackArea)
+    {
+        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
+        if(objectsToHit.Length > 0)
+        {
+            Debug.Log("Hit " + objectsToHit[0].name);
+        }
+        for(int i = 0; i < objectsToHit.Length; i++)
+        {
+            BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
+    }
+    private void Attack()
+    {
+        timeSinceAttack += Time.deltaTime;
+        if (isAttacking && timeSinceAttack >= timeBetweenAttack)
+        {
+            // Attack logic
+            timeSinceAttack = 0;
+
+            if (yRaw == 0 || yRaw < 0 && IsGrounded())
+            {
+                Hit(sideAttackTransform, sideAttackSize);
+            }
+            else if (yRaw > 0)
+            {
+                Hit(upAttackTransform, upAttackSize);
+            }
+            else if (yRaw < 0 && !IsGrounded())
+            {
+                Hit(downAttackTransform, downAttackSize);
+            }
+        }
+    }
+    private void AttackInput()
+    {
+        isAttacking = Input.GetMouseButtonDown(0);
+    }
+    #endregion
 
     #region Dash
     private void DashInput()
@@ -676,4 +753,28 @@ public class PlayerMovement : MonoBehaviour
         _deceleration = IsOnIce() ? _iceDeceleration : _decelerationValue;
         _frictionAmount = IsOnIce() ? _iceFriction : _frictionAmountValue;
     }
+
+    void ClampHealth()
+    {
+        health = Mathf.Clamp(health, 0, maxHealth);
+    }
+
+    public void TakeDamage(float damageTaken)
+    {
+        health -= Mathf.RoundToInt(damageTaken);
+        StartCoroutine(BlinkRedEffect());
+    }
+
+    private IEnumerator BlinkRedEffect()
+    {
+        // Change color to red
+        playerRenderer.material.color = Color.red;
+
+        // Wait for a short time (for example, 0.1 seconds)
+        yield return new WaitForSeconds(0.1f);
+
+        // Revert to the original color
+        playerRenderer.material.color = originalColor;
+    }
+
 }
