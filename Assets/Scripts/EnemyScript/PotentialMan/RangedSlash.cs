@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RangedSlash : MonoBehaviour
 {
-    [SerializeField] private float damage = 1; // Damage dealt by the slash
+    [SerializeField] private int damage = 1; // Damage dealt by the slash
     [SerializeField] private float lifetime = 3f; // Time before the slash is destroyed
     [SerializeField] private float timer = 0f; // Timer to track how long the slash has been in the air
     [SerializeField] private float initialSpeed = 6f; // Initial speed of the slash
@@ -57,7 +57,7 @@ public class RangedSlash : MonoBehaviour
         if (other.CompareTag("Player") && !hasDamaged)
         {
             Debug.Log("Player got hit for " + damage);
-            PlayerMovement.instance.TakeDamage(damage);
+            PlayerStat.instance.TakeDamage(damage);
             hasDamaged = true;
 
             // Optionally, disable the hitbox collider or destroy it after dealing damage

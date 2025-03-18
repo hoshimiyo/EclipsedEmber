@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AttackHitbox : MonoBehaviour
 {
-    [SerializeField] private float damage = 1f; // Adjust based on enemy settings
+    [SerializeField] private int damage = 1; // Adjust based on enemy settings
     [SerializeField] private float damageDuration = 0.5f; // Time window to apply damage
     private bool hasDamaged = false;
 
@@ -11,7 +11,7 @@ public class AttackHitbox : MonoBehaviour
         if (other.CompareTag("Player") && !hasDamaged)
         {
             Debug.Log("Player got hit for " + damage);
-            PlayerMovement.instance.TakeDamage(damage);
+            PlayerStat.instance.TakeDamage(damage);
             hasDamaged = true;
 
             // Optionally, disable the hitbox collider or destroy it after dealing damage

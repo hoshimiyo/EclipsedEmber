@@ -20,12 +20,13 @@ public class PlayerStat : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Health = healthCap;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
         Mana = mana;
+        Health = healthCap;
     }
     private void Update()
     {
@@ -176,8 +177,8 @@ public class PlayerStat : MonoBehaviour
         {
             PlayerMovement.instance.Die();
         }
-        StartCoroutine(FlashSprite()); // Flash sprite on damage
-        StartCoroutine(InvincibilityFrame());
+        StartCoroutine(BlinkRedEffect()); // Flash sprite on damage
+        StartCoroutine(InvincibilityFrame(iFrameDuration));
     }
 
     void Heal()
@@ -228,10 +229,10 @@ public class PlayerStat : MonoBehaviour
     #region IFrame
     // Invincibility frames (iFrame)
     public static bool iFrame = false;
-    public static float iFrameDuration = 2f;
+    public static float iFrameDuration = 0.3f;
     #endregion
 
-    private IEnumerator FlashSprite()
+    private IEnumerator BlinkRedEffect()
     {
         for (int i = 0; i < 3; i++) // Flash 3 times
         {
@@ -242,7 +243,7 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    private IEnumerator InvincibilityFrame()
+    public static IEnumerator InvincibilityFrame(float iFrameDuration)
     {
         iFrame = true;
         yield return new WaitForSeconds(iFrameDuration);

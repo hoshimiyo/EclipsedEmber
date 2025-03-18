@@ -5,7 +5,7 @@ public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] protected float health = 1;
     [SerializeField] protected float speed = 1;
-    [SerializeField] protected float damage = 1;
+    [SerializeField] protected int damage = 1;
     [SerializeField] protected float meleeAttackRange = 1;
     [SerializeField] protected float meleeAttackHeightRange = 1;
     [SerializeField] protected float rangedAttackRange = 1;
@@ -123,8 +123,7 @@ public class BaseEnemy : MonoBehaviour
 
     protected virtual void Attack()
     {
-        player.TakeDamage(damage);
-
+        PlayerStat.instance.TakeDamage(damage);
     }
 
     // This method will draw the attack range and aggro range in the editor

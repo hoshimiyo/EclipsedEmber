@@ -2,9 +2,23 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    public static PlayerCamera instance;
     [SerializeField] private float followSpeed = 0.1f;
     [SerializeField] private Vector3 offset;
     [SerializeField] private Transform player;
+
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

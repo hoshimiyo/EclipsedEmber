@@ -3,13 +3,26 @@ using UnityEngine.UI;
 
 public class GameUI2 : MonoBehaviour
 {
+    public static GameUI2 instance;
+    public ScreenFader sceneFader;
     PlayerStat player;
     private GameObject[] heartContainers;
     private Image[] heartFills;
     public Transform heartsParent;
     public GameObject heartContainerPrefab;
     [SerializeField] Image manaStorage;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         heartContainers = new GameObject[PlayerStat.healthCap];
@@ -21,7 +34,6 @@ public class GameUI2 : MonoBehaviour
         UpdateHeartsHUD();
     }
 
-    // Update is called once per frame
     void Update()
     {
         manaStorage.fillAmount = PlayerStat.instance.mana;

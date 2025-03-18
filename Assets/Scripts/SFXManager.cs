@@ -12,6 +12,10 @@ public class SFXManager : MonoBehaviour
         {
             instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     public void PlaySFXClip(AudioClip audioClip, Transform spawnTransform, float volume)
     {
