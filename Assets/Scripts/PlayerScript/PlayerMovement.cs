@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private Collider2D _collider;
     public float timeScale = .9f;
     public bool active;
-    private Vector2 _respawnPoint;
+    public Vector2 _respawnPoint;
     public bool isWalled; //consider removing
     [SerializeField, Range(0f, 2f)] private float _iceDeceleration = 0.4f;
     [SerializeField, Range(0f, 1f)] private float _iceFriction = 0.4f;
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Dash")]
     [SerializeField] private float _dashingPower = 24f;
-    private bool _canDash;
+    public bool _canDash;
     [SerializeField] private float _dashingTime = 0.2f;
     private const float _dashNormalizer = 0.707f;
     [SerializeField] private bool _freezeFrame = true;
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     private float _fallMultiplier = 7f;
     [SerializeField] private float _jumpVelocityFallOff = 8f;
     [SerializeField] private int _extraJump = 1;
-    private int _availableJump;
+    public int _availableJump;
     private bool _jumpButtonPressed;
     #endregion
     #region Misc

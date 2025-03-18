@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void FindPlayer()
     {
-        player = FindObjectOfType<PlayerController>()?.gameObject;
+        player = FindFirstObjectByType<PlayerController>()?.gameObject;
     }
 
     private void InitializeSaveData()
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
             if (playerStat != null)
             {
                 gameData.playerHealth = playerStat.Health;
-                gameData.playerMana = (float)playerStat.Mana;
+                gameData.playerMana = playerStat.Mana;
                 gameData.healthCap = PlayerStat.healthCap;
             }
 
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             if (playerMovement != null)
             {
                 gameData.isFacingRight = playerMovement._isFacingRight;
-                gameData.respawnPoint = new Vector3Data(playerMovement.respawnPoint);
+                gameData.respawnPoint = new Vector3Data(playerMovement._respawnPoint);
                 gameData.availableJumps = playerMovement._availableJump;
                 gameData.canDash = playerMovement._canDash;
             }
