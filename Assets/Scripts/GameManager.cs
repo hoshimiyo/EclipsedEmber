@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public string transitionFromScene;    
+    public string transitionFromScene;
     public static GameManager instance { get; set; }
     public Vector2 respawnPoint;
     [SerializeField] private FirePitManager _firePitManager;
