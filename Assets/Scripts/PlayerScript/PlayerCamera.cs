@@ -12,6 +12,7 @@ public class PlayerCamera : MonoBehaviour
         if(instance == null)
         {
             instance = this;
+            player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         else
         {
@@ -28,6 +29,8 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, followSpeed);
     }
 }

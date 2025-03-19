@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             InitializeSaveData();
+            // Register for scene loading events
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -35,8 +36,7 @@ public class GameManager : MonoBehaviour
         // Find player at start
         FindPlayer();
 
-        // Register for scene loading events
-        SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
     private void OnDestroy()
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("OnScreenLoadedTriggered");
         // Find player reference after scene loads
         FindPlayer();
 
@@ -54,12 +55,17 @@ public class GameManager : MonoBehaviour
         if (gameData != null && gameData.currentSceneBuildIndex == scene.buildIndex)
         {
             StartCoroutine(PositionPlayerAfterSceneLoad());
+            Debug.Log("OnSceneLoadedWhatIsGoingOn");
+        }
+        else
+        {
+            Debug.Log("OnSceneLoadedFix");
         }
     }
 
     private void FindPlayer()
     {
-        player = FindFirstObjectByType<PlayerController>()?.gameObject;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void InitializeSaveData()
@@ -96,7 +102,11 @@ public class GameManager : MonoBehaviour
     {
         // Make sure gameData is initialized
         if (gameData == null)
+        {
             gameData = new SaveData();
+            Debug.Log("Null GameData");
+        }
+
 
         // Update scene data
         SaveCurrentScene();
@@ -113,6 +123,7 @@ public class GameManager : MonoBehaviour
     // Save current scene information
     private void SaveCurrentScene()
     {
+        Debug.Log("SaveCurrentScene triggered");
         Scene currentScene = SceneManager.GetActiveScene();
         gameData.currentSceneName = currentScene.name;
         gameData.currentSceneBuildIndex = currentScene.buildIndex;
@@ -170,6 +181,7 @@ public class GameManager : MonoBehaviour
             !string.IsNullOrEmpty(gameData.currentSceneName))
         {
             LoadSavedScene();
+            LoadPlayerData();
         }
         else
         {
@@ -233,6 +245,7 @@ public class GameManager : MonoBehaviour
                 playerMovement._canDash = gameData.canDash;
             }
         }
+        else Debug.Log("ApllyStatFix");
     }
     // Apply saved player position after scene loads
     private IEnumerator PositionPlayerAfterSceneLoad()
