@@ -5,18 +5,24 @@ using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] private ConfirmPanelScript confirmPanel;
+    [SerializeField] private GameObject optionPanel;
     [SerializeField] private Button continueButton;
-    public void ShowPanel(GameObject panel)
+
+    private void Start()
     {
-        if (panel = null)
-            return;
-        panel.SetActive(true);
+        optionPanel.SetActive(false);
     }
-    public void HidePanel(GameObject panel)
+    public void ShowOptionPanel()
     {
-        if (panel = null)
+        if (optionPanel == null)
             return;
-        panel.SetActive(false);
+        optionPanel.SetActive(true);
+    }
+    public void HideOptionPanel()
+    {
+        if (optionPanel == null)
+            return;
+        optionPanel.SetActive(false);
     }
 
     

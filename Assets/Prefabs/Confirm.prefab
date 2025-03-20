@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 1400869067463171567}
   - component: {fileID: 6988884938023869669}
   - component: {fileID: 2165941521016293533}
+  - component: {fileID: 7957033449591755845}
   m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
@@ -393,6 +394,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7957033449591755845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119806594369564990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2b1a38dfa252442be940f846185bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSFX: {fileID: 8300000, guid: b9273093e5206404ea73fe48e0c9fc34, type: 3}
 --- !u!1 &4337549300697548382
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +514,7 @@ GameObject:
   - component: {fileID: 1853141791553230015}
   - component: {fileID: 4699379730340805660}
   - component: {fileID: 5171324528109591529}
+  - component: {fileID: 135353671815588512}
   m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
@@ -609,6 +624,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &135353671815588512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774216690549474007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2b1a38dfa252442be940f846185bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSFX: {fileID: 8300000, guid: b9273093e5206404ea73fe48e0c9fc34, type: 3}
 --- !u!1 &8650822043911148928
 GameObject:
   m_ObjectHideFlags: 0

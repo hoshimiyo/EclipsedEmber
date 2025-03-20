@@ -275,7 +275,8 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         // Save before quitting
-        SaveGame();
+        if(SceneManager.GetActiveScene().name != "MainMenuScene")
+            SaveGame();
     }
 
     public void ChangeScene(string sceneName)
