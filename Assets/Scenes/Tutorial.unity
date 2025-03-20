@@ -182,6 +182,8 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/GameManager.prefab
   - _gameObject: {fileID: 1073960162}
     _prefab: Assets/Prefabs/HollowKnight.prefab
+  - _gameObject: {fileID: 7646378677301255903}
+    _prefab: Assets/Prefabs/Confirm.prefab
   - _gameObject: {fileID: 2056417277}
     _prefab: Assets/Prefabs/SFX Manager.prefab
   - _gameObject: {fileID: 1775520322}
@@ -2283,7 +2285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2106039485653119695, guid: fec6fab3f73fca04b812c06629edfa08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.66
+      value: -19.45
       objectReference: {fileID: 0}
     - target: {fileID: 2106039485653119695, guid: fec6fab3f73fca04b812c06629edfa08, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2452,6 +2454,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+--- !u!1 &7646378677301255903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1552974230597285303, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+  m_PrefabInstance: {fileID: 7646378677301255902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

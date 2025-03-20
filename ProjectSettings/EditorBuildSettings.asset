@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 0
+    path: Assets/Scenes/SwarmpMap.unity
+    guid: d50b3464d0ea011469184bd6c03ec692
   - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: f516816745ad3c347a29742a0c1e9d93
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 2d6304a301d08de4b8b4b0f48f0d62e3
+  - enabled: 1
+    path: Assets/Scenes/StartingScene (Swamp).unity
+    guid: c45e82871f6b8a44e90350435e3fdf48
   - enabled: 1
     path: Assets/Scenes/MidGameScene (Church).unity
     guid: 76401a499f8e9e44fb2f663edb2144e4

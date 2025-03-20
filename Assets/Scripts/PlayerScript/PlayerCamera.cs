@@ -13,12 +13,12 @@ public class PlayerCamera : MonoBehaviour
         {
             instance = this;
             player = GameObject.FindGameObjectWithTag("Player").transform;
+            transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, followSpeed);
         }
         else
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
