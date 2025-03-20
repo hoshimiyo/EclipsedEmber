@@ -77,8 +77,8 @@ public class PauseMenu : MonoBehaviour
         exitConfirm.SetActive(false);
         optionsMenu.SetActive(false);
         pauseMenu.SetActive(true);
-
     }
+    
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenuScene");

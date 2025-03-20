@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 public class PausePanelScript : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel; // Reference to the PausePanel GameObject
+    [SerializeField] private GameObject optionPanel;
+    [SerializeField] private GameObject _backgroundMusic;
     [SerializeField] private Button resumeButton; // Reference to the Resume button
     [SerializeField] private Button optionButton; // Reference to the Restart button
     [SerializeField] private Button quitButton; // Reference to the Quit button
-
+    private AudioLowPassFilter _lowPass;
     private bool isPaused = false; // Track whether the game is paused
 
     private void Start()
     {
         // Hide the pause panel initially
         pausePanel.SetActive(false);
-
+        optionPanel.SetActive(false);
+        if (_backgroundMusic != null) _lowPass = _backgroundMusic.GetComponent<AudioLowPassFilter>();
         // Add listeners to the buttons
         resumeButton.onClick.AddListener(ResumeGame);
         optionButton.onClick.AddListener(OptionPanel);
@@ -40,7 +43,11 @@ public class PausePanelScript : MonoBehaviour
 
         // Show/hide the pause panel
         pausePanel.SetActive(isPaused);
-
+        if(isPaused == true)
+        {
+            if (_backgroundMusic != null) _lowPass.cutoffFrequency = 300f;
+        }else   
+            _lowPass.cutoffFrequency = 22000f;
         // Pause/unpause the game
         Time.timeScale = isPaused ? 0 : 1;
     }
@@ -53,14 +60,17 @@ public class PausePanelScript : MonoBehaviour
         TogglePause();
     }
 
-    /// <summary>
-    /// Restart the current scene.
-    /// </summary>
+    
     private void OptionPanel()
     {
-        Debug.Log("OptionTriggered");
+        optionPanel.SetActive(true);
+        pausePanel.SetActive(false);
     }
-
+    public void CloseOption()
+    {
+        optionPanel.SetActive(false);
+        pausePanel.SetActive(true);
+    }
     #region Quit
     [SerializeField] private ConfirmPanelScript confirmPanel;
     public void QuitGame()
