@@ -304,7 +304,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpInput()
     {
-        if (Input.GetButtonDown("Jump")) _jumpButtonPressed = true;
+        _jumpButtonPressed = Input.GetButton("Jump");
+        
     }
     private void Jump()
     {
@@ -407,7 +408,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Attack logic
             timeSinceAttack = 0;
-
+            PlaySFXClip(attackSoundClip);
             if (yRaw == 0 || yRaw < 0 && IsGrounded())
             {
                 Hit(sideAttackTransform, sideAttackSize);

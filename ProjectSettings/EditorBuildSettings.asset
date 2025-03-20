@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenuScene.unity
     guid: f516816745ad3c347a29742a0c1e9d93
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 2d6304a301d08de4b8b4b0f48f0d62e3
   - enabled: 1
     path: Assets/Scenes/MidGameScene (Church).unity
     guid: 76401a499f8e9e44fb2f663edb2144e4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LateGameScene (Cemetery).unity
     guid: 9d167415321ce63478968a4edf0f72b7
   m_configObjects:

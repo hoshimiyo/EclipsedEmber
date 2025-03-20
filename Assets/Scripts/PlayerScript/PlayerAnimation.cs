@@ -14,7 +14,6 @@ public class PlayerAnimation : MonoBehaviour
         _anim.SetFloat("VelX", Mathf.Abs(velocityX));
         _anim.SetFloat("VelY", velocityY);
         _anim.SetBool("IsGrounded", isGrounded);
-        _anim.SetBool("IsWallSliding", isWallSliding);
         _anim.SetBool("IsJumping", isJumping);
     }
 
