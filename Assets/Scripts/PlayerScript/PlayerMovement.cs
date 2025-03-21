@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using NUnit;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Fundementals")]
     public static PlayerMovement instance;
     [SerializeField] private Collider2D _groundCollider;
-    [SerializeField] private bool _isFacingRight = true;
+    [SerializeField] public bool _isFacingRight = true;
     [SerializeField] private float _speed = 15f;
     [SerializeField] private float _maxFallSpeed = -20f;
     [SerializeField] private float _maxFallSpeedMultiflier = 1.5f;
@@ -25,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private Collider2D _collider;
     public float timeScale = .9f;
     public bool active;
-    private Vector2 _respawnPoint;
+    public Vector2 _respawnPoint;
     public bool isWalled; //consider removing
     [SerializeField, Range(0f, 2f)] private float _iceDeceleration = 0.4f;
     [SerializeField, Range(0f, 1f)] private float _iceFriction = 0.4f;
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Dash")]
     [SerializeField] private float _dashingPower = 24f;
-    private bool _canDash;
+    public bool _canDash;
     [SerializeField] private float _dashingTime = 0.2f;
     private const float _dashNormalizer = 0.707f;
     [SerializeField] private bool _freezeFrame = true;
@@ -69,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     private float _fallMultiplier = 7f;
     [SerializeField] private float _jumpVelocityFallOff = 8f;
     [SerializeField] private int _extraJump = 1;
-    private int _availableJump;
+    public int _availableJump;
     private bool _jumpButtonPressed;
     #endregion
     #region Misc
@@ -95,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform _wallCheckLeft;
     [SerializeField] private LayerMask _wallLayer;
     [SerializeField] private LayerMask _killable;
+    [SerializeField] private LayerMask _damagable;
     [SerializeField] private Transform _cornerCheckLeft;
     [SerializeField] private Transform _cornerCheckRight;
     #endregion
@@ -109,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private ParticleSystem dashParticle;
     // public FlashEffect flashEffect;
     private float _dashDustSpeed = 5f;
-    private float xRaw, yRaw, x;
+    public float xRaw, yRaw, x;
     public bool _hasDoubleJumped;
     private Renderer playerRenderer;  // To store the renderer component
     private Color originalColor;  // To store the original color of the mob
@@ -137,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Audio")]
     [SerializeField] private AudioClip deathSoundClip;
+    [SerializeField] private AudioClip damageSoundClip;
     [SerializeField] private AudioClip jumpSoundClip;
     [SerializeField] private AudioClip[] landSoundClips;
     [SerializeField] private AudioClip[] runSoundClips;
@@ -147,35 +150,15 @@ public class PlayerMovement : MonoBehaviour
     #region Amimator
     [Space]
     [Header("Animator")]
-    private PlayerAnimation _playerAnim;
+    public PlayerAnimation _playerAnim;
     // [SerializeField] private Deformation _jumpDeformation;
     // [SerializeField] private Deformation _landDeformation;
     private bool isSoundCoroutineRunning = false;
     #endregion
 
-    #region
-    [Space]
-    [Header("Health")]
-    public int health;
-    public int maxHealth;
-    #endregion
-
-    // public HealthManager _healthManager;
-
     #endregion
     private void Awake()
     {
-
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject); // Ensures there's only one instance
-            return;
-        }
-
         _rb = GetComponent<Rigidbody2D>();
         _impulseSource = GetComponent<CinemachineImpulseSource>();
         _collider = GetComponent<Collider2D>();
@@ -183,10 +166,17 @@ public class PlayerMovement : MonoBehaviour
         active = true;
         SetRespawnPoint(transform.position);
         Time.timeScale = timeScale;
-        health = maxHealth;
         playerRenderer = GetComponent<Renderer>();
         originalColor = playerRenderer.material.color;
-        //_healthManager.OnPlayerDie += Die;
+        if (instance == null)
+        {
+            instance = this; // Assign the singleton instance
+        }
+        else
+        {
+            Destroy(gameObject); // Ensure only one instance exists
+            return;
+        }
     }
     private void Update() //update sẽ chạy mỗi frame
     {
@@ -194,6 +184,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+
         xRaw = Input.GetAxisRaw("Horizontal"); // -1 0 1
         yRaw = Input.GetAxisRaw("Vertical");   // -1 0 1
         x = Input.GetAxis("Horizontal");       //controller, joystick, analog control => slide từ -1 => 1 e.g: -0.323
@@ -201,13 +192,12 @@ public class PlayerMovement : MonoBehaviour
         if (_playerAnim != null)
         {
             bool isJumping = !IsGrounded() && _rb.linearVelocityY > 0;
-            _playerAnim.UpdateAnimation(_rb.linearVelocityX, _rb.linearVelocityY, IsGrounded(), _isWallSliding, isJumping, isAttacking);
+            _playerAnim.UpdateAnimation(_rb.linearVelocityX, _rb.linearVelocityY, IsGrounded(), _isWallSliding, isJumping);
         }
 
         JumpInput();
         DashInput();
         AttackInput();
-
     }
     private void FixedUpdate() //update mỗi số frame (2-3-4 frame) ít độc lập frame hơn => ít responsive hơn
     {
@@ -220,8 +210,6 @@ public class PlayerMovement : MonoBehaviour
         Jump();
 
         Dash();
-
-        Attack();
 
         if (!_isWallJumping)
             Flip();
@@ -237,13 +225,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(sideAttackTransform.position, sideAttackSize);
-        Gizmos.DrawWireCube(upAttackTransform.position, upAttackSize);
-        Gizmos.DrawWireCube(downAttackTransform.position, downAttackSize);
-    }
+
 
     #region Collision Check
     public bool IsGrounded() => Physics2D.OverlapCircle(_groundCheck.position, 0.15f, _groundLayer);
@@ -255,8 +237,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Killable"))
         {
-            // flashEffect.CallFlash(1f, 0.2f, _deathColor);
             Die();
+        }
+        else if (other.gameObject.CompareTag("Damagable"))
+        {
+            TakingDamage();
+        }
+        else if (other.gameObject.CompareTag("EnvironmentDamage"))
+        {
+            TakingEnvironmentalDamage(other.gameObject);
         }
     }
 
@@ -271,6 +260,9 @@ public class PlayerMovement : MonoBehaviour
         float frictionAmount = _frictionAmount;
 
         bool isWallJumpingAndAirborne = _isWallJumping && !IsGrounded();
+
+        if (PlayerStat.healing)
+            _rb.linearVelocity = new Vector2(0, 0);
 
         if (!_isWallJumping && !IsGrounded())
         {
@@ -325,7 +317,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpInput()
     {
-        if (Input.GetButtonDown("Jump")) _jumpButtonPressed = true;
+        if(Input.GetButtonDown("Jump")) _jumpButtonPressed = true;
+        
     }
     private void Jump()
     {
@@ -418,11 +411,11 @@ public class PlayerMovement : MonoBehaviour
     void Hit(Transform _attackTransform, Vector2 _attackArea)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
-        if(objectsToHit.Length > 0)
+        if (objectsToHit.Length > 0)
         {
             Debug.Log("Hit " + objectsToHit[0].name);
         }
-        for(int i = 0; i < objectsToHit.Length; i++)
+        for (int i = 0; i < objectsToHit.Length; i++)
         {
             BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
             if (enemy != null)
@@ -438,7 +431,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Attack logic
             timeSinceAttack = 0;
-
+            PlaySFXClip(attackSoundClip);
             if (yRaw == 0 || yRaw < 0 && IsGrounded())
             {
                 Hit(sideAttackTransform, sideAttackSize);
@@ -455,7 +448,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void AttackInput()
     {
-        isAttacking = Input.GetMouseButtonDown(0);
+        if(Input.GetMouseButtonDown(0)) isAttacking = true;
     }
     #endregion
 
@@ -658,6 +651,52 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = original;
         _isFrozen = false;
     }
+
+    #region Damage
+    public void Damage()
+    {
+        PlaySFXClip(damageSoundClip);
+        active = false;
+        _collider.enabled = false;
+        if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
+        MiniJump();
+        StartCoroutine(Disable(0.5f));
+    }
+    #endregion
+
+    #region TakingDamage
+    public void TakingDamage()
+    {
+        PlayerStat.instance.TakeDamage(1);
+        PlaySFXClip(damageSoundClip);
+        active = false;
+        _collider.enabled = false;
+        if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
+        MiniJump();
+    }
+
+    public void TakingEnvironmentalDamage(GameObject other)
+    {
+        TakingDamage();
+        if (PlayerStat.instance.Health > 0)
+        {
+            StartCoroutine(DisablePhysics(0.5f));
+            Transform child = other.transform.Find("RespawnPlatform");
+
+            if (child != null)
+            {
+                // Get the position of the child
+                Vector3 childPosition = child.position;
+                StartCoroutine(EnvironmentalRespawn(childPosition));
+            }
+            else
+            {
+                Debug.LogError("Child not found!");
+            }
+        }
+    }
+
+    #endregion
     #region Death
     private void MiniJump()
     {
@@ -670,12 +709,23 @@ public class PlayerMovement : MonoBehaviour
         _collider.enabled = false;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
         MiniJump();
+        StartCoroutine(DisablePhysics(3f));
         StartCoroutine(Respawn());
     }
     private IEnumerator Respawn()
     {
+        yield return new WaitForSeconds(3f);
+        PlayerStat.instance.Health = PlayerStat.healthCap;
+        transform.position = GameManager.instance.respawnPoint;
+        active = true;
+        _collider.enabled = true;
+        if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = true;
+    }
+    private IEnumerator EnvironmentalRespawn(Vector3 childPosition)
+    {
+        Debug.Log("pos");
         yield return new WaitForSeconds(0.5f);
-        transform.position = _respawnPoint;
+        transform.position = childPosition;
         active = true;
         _collider.enabled = true;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = true;
@@ -685,6 +735,29 @@ public class PlayerMovement : MonoBehaviour
         _respawnPoint = position;
     }
     #endregion
+
+    #region Transition
+    public IEnumerator WalkIntoNewScene(Vector2 _exitDir, float _delay)
+    {
+        //If exit direction is upwards
+        if(_exitDir.y > 0)
+        {
+            _rb.linearVelocity = _jumpSpeed * _exitDir;
+        }
+
+        //If exit direction requires horizontal movement
+        if(_exitDir.x != 0)
+        {
+            xRaw = _exitDir.x > 0 ? 1 : -1;
+            HorizontalMovement();
+        }
+
+        Flip();
+        yield return new WaitForSeconds(_delay);
+    }
+    #endregion
+
+    #region Misc
     public void CornerCorrection(Collider2D other)
     {
         // Bounds bounds = other.bounds;
@@ -700,6 +773,12 @@ public class PlayerMovement : MonoBehaviour
         active = false;
         yield return new WaitForSeconds(seconds);
         active = true;
+    }
+    private IEnumerator DisablePhysics(float seconds)
+    {
+        _rb.simulated = false;
+        yield return new WaitForSeconds(seconds);
+        _rb.simulated = true;
     }
     private void PlayRandomSFXClip(AudioClip[] soundClips)
     {
@@ -720,17 +799,6 @@ public class PlayerMovement : MonoBehaviour
         _frictionAmount = IsOnIce() ? _iceFriction : _frictionAmountValue;
     }
 
-    void ClampHealth()
-    {
-        health = Mathf.Clamp(health, 0, maxHealth);
-    }
-
-    public void TakeDamage(float damageTaken)
-    {
-        health -= Mathf.RoundToInt(damageTaken);
-        StartCoroutine(BlinkRedEffect());
-    }
-
     private IEnumerator BlinkRedEffect()
     {
         // Change color to red
@@ -742,5 +810,5 @@ public class PlayerMovement : MonoBehaviour
         // Revert to the original color
         playerRenderer.material.color = originalColor;
     }
-
+    #endregion
 }
