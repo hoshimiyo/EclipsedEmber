@@ -365,11 +365,11 @@ public class PlayerMovement : MonoBehaviour
         {
             PlaySFXClip(jumpSoundClip);
             GroundDust();
-            _hasDoubleJumped = true;
             // if (_jumpDeformation != null) _jumpDeformation.PlayDeformation();
             // if (flashEffect != null) flashEffect.CallFlash(1f, 0.1f, _doubleJumpColor);
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, _jumpSpeed);
             _jumpBufferTimeCounter = 0f;
+            _hasDoubleJumped = true;
             if (!IsWalled())
             {
                 _availableJump--;
