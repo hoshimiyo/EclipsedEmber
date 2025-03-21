@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9054356174524732653}
   - component: {fileID: 4423319428224800870}
   - component: {fileID: 5678363258905784900}
-  - component: {fileID: 7993687498553823688}
+  - component: {fileID: 2055211807449975398}
   m_Layer: 0
   m_Name: RangedSlash
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.82, y: 8.76, z: -0.13813737}
-  m_LocalScale: {x: 0.694, y: 1.0053, z: 1}
+  m_LocalScale: {x: 0.5799077, y: 0.7342033, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7993687498553823688
+--- !u!114 &2055211807449975398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,13 +172,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6384257985181256754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0d2f7612c0c63a4bb1b86326888c021, type: 3}
+  m_Script: {fileID: 11500000, guid: afb0999e6cb823848a73daf0e986fdfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  lifetime: 10
-  timer: 0
-  initialSpeed: 5
-  maxSpeed: 10
+  maxLifetime: 3
+  lifeTime: 0
   speedIncreaseDuration: 0.2
-  damageDelayWindow: 2
+  damageDelayWindow: 20
+  speed: 15

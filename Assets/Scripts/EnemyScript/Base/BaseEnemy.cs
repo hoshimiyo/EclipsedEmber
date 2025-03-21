@@ -5,7 +5,7 @@ public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] protected float health = 1;
     [SerializeField] protected float speed = 1;
-    [SerializeField] protected float damage = 1;
+    [SerializeField] protected float meleeDamage = 1;
     [SerializeField] protected float meleeAttackRange = 1;
     [SerializeField] protected float meleeAttackHeightRange = 1;
     [SerializeField] protected float rangedAttackRange = 1;
@@ -30,6 +30,10 @@ public class BaseEnemy : MonoBehaviour
     {
         mobRenderer = GetComponent<Renderer>();  // Assumes the object has a Renderer component
         originalColor = mobRenderer.material.color;  // Store the original color
+        rb.gravityScale = 12f;
+        rb.mass = 20f;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        anim = GetComponent<Animator>(); // Get Animator component
     }
     protected virtual void Awake()
     {
@@ -60,8 +64,13 @@ public class BaseEnemy : MonoBehaviour
         StartCoroutine(BlinkRedEffect());
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
     }
 
     protected virtual IEnumerator BlinkRedEffect()
@@ -120,10 +129,9 @@ public class BaseEnemy : MonoBehaviour
     }
 
 
-
     protected virtual void Attack()
     {
-        player.TakeDamage(damage);
+        player.TakeDamage(meleeDamage);
 
     }
 
