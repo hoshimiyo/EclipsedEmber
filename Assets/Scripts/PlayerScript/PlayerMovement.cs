@@ -197,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
 
         JumpInput();
         DashInput();
-
+        AttackInput();
     }
     private void FixedUpdate() //update mỗi số frame (2-3-4 frame) ít độc lập frame hơn => ít responsive hơn
     {
@@ -317,7 +317,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpInput()
     {
-        _jumpButtonPressed = Input.GetButton("Jump");
+        if(Input.GetButtonDown("Jump")) _jumpButtonPressed = true;
         
     }
     private void Jump()
@@ -365,11 +365,11 @@ public class PlayerMovement : MonoBehaviour
         {
             PlaySFXClip(jumpSoundClip);
             GroundDust();
+            _hasDoubleJumped = true;
             // if (_jumpDeformation != null) _jumpDeformation.PlayDeformation();
             // if (flashEffect != null) flashEffect.CallFlash(1f, 0.1f, _doubleJumpColor);
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, _jumpSpeed);
             _jumpBufferTimeCounter = 0f;
-            _hasDoubleJumped = true;
             if (!IsWalled())
             {
                 _availableJump--;
@@ -448,7 +448,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void AttackInput()
     {
-        isAttacking = Input.GetMouseButtonDown(0);
+        if(Input.GetMouseButtonDown(0)) isAttacking = true;
     }
     #endregion
 

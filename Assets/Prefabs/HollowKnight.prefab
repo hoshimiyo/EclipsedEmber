@@ -459,14 +459,14 @@ MonoBehaviour:
   _iceDeceleration: 0.4
   _iceFriction: 0.4
   isAttacking: 0
-  timeBetweenAttack: 0
+  timeBetweenAttack: 0.3
   timeSinceAttack: 0
-  sideAttackTransform: {fileID: 0}
-  upAttackTransform: {fileID: 0}
-  downAttackTransform: {fileID: 0}
-  sideAttackSize: {x: 0, y: 0}
-  upAttackSize: {x: 0, y: 0}
-  downAttackSize: {x: 0, y: 0}
+  sideAttackTransform: {fileID: 2372056922170514941}
+  upAttackTransform: {fileID: 7266654887441514437}
+  downAttackTransform: {fileID: 7749609485886686843}
+  sideAttackSize: {x: 4.5, y: 3.5}
+  upAttackSize: {x: 3.5, y: 4.5}
+  downAttackSize: {x: 3.5, y: 4.5}
   attackLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -482,7 +482,7 @@ MonoBehaviour:
   _jumpBufferTime: 0.2
   _jumpVelocityFallOff: 8
   _extraJump: 1
-  _availableJump: 0
+  _availableJump: 1
   _wallSlidingSpeedMultiplier: 0
   _wallJumpingCoyoteTime: 0.05
   _wallJumpingLerp: 10

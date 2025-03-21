@@ -43,11 +43,6 @@ public class PausePanelScript : MonoBehaviour
 
         // Show/hide the pause panel
         pausePanel.SetActive(isPaused);
-        if(isPaused == true)
-        {
-            if (_backgroundMusic != null) _lowPass.cutoffFrequency = 300f;
-        }else   
-            _lowPass.cutoffFrequency = 22000f;
         // Pause/unpause the game
         Time.timeScale = isPaused ? 0 : 1;
     }
