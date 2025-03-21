@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7617235715575470249}
   - component: {fileID: 7093054790303135486}
   m_Layer: 0
-  m_Name: SFXObject
+  m_Name: BGMObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4601003746366986297, guid: 2733b9bc4e8c03448bfa7d23a0149d8e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 940f59b08b9db5a469c732acaf22ff55, type: 3}
   m_Resource: {fileID: 8300000, guid: 940f59b08b9db5a469c732acaf22ff55, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
