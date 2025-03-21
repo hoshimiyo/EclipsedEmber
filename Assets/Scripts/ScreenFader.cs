@@ -73,4 +73,11 @@ public class ScreenFader : MonoBehaviour
         // Calculate the new alpha value
         _alpha += Time.deltaTime * (1 / fadeTime) * (_fadeDirection == FadeDirection.Out ? -1 : 1);
     }
+
+    public IEnumerator FadeSeconds(float seconds)
+    {
+        StartCoroutine(GameUI2.instance.sceneFader.Fade(FadeDirection.In));
+        yield return new WaitForSeconds(seconds);
+        StartCoroutine(GameUI2.instance.sceneFader.Fade(FadeDirection.Out));
+    }
 }

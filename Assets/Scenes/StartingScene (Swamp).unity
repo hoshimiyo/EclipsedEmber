@@ -27356,6 +27356,10 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/Confirm.prefab
   - _gameObject: {fileID: 1721629370}
     _prefab: Assets/Prefabs/Options Menu.prefab
+  - _gameObject: {fileID: 1722798796}
+    _prefab: Assets/Prefabs/AudioManager.prefab
+  - _gameObject: {fileID: 528321265}
+    _prefab: Assets/Prefabs/SFX Manager.prefab
   - _gameObject: {fileID: 686194650}
     _prefab: Assets/Prefabs/SceneTransition.prefab
 --- !u!1 &506997870
@@ -28832,6 +28836,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &528321265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5857199989042975815, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+  m_PrefabInstance: {fileID: 1780002532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &532667005
 GameObject:
   m_ObjectHideFlags: 0
@@ -90590,6 +90599,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2843541086965884490, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
   m_PrefabInstance: {fileID: 1780002532}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1722798796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 921068178119039440, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+  m_PrefabInstance: {fileID: 1780002532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724248246
 GameObject:
   m_ObjectHideFlags: 0
@@ -92586,6 +92600,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -10.25
       objectReference: {fileID: 0}
+    - target: {fileID: 2879519709371650539, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+      propertyPath: timeBetweenAttack
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3893508458777984059, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -92620,6 +92638,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5002339052778862081, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467173670915208522, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+      propertyPath: _extraJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467173670915208522, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+      propertyPath: canDoubleJump
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

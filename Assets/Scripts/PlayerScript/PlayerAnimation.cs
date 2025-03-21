@@ -6,8 +6,8 @@ public class PlayerAnimation : MonoBehaviour
     private void Awake()
     {
         if (_anim == null)
-        _anim = GetComponent<Animator>();
-    } 
+            _anim = GetComponent<Animator>();
+    }
 
     public void UpdateAnimation(float velocityX, float velocityY, bool isGrounded, bool isWallSliding, bool isJumping)
     {
@@ -23,8 +23,20 @@ public class PlayerAnimation : MonoBehaviour
         _anim.SetLayerWeight(1, 1);
     }
 
+    public void TriggerDeathAnim(bool isDead)
+    {
+        _anim.SetBool("IsDead", isDead);
+        _anim.SetLayerWeight(1, 1);
+    }
+
     public void Healing(bool isHealing)
     {
         _anim.SetBool("IsHealing", isHealing);
+    }
+
+    public void Dashing()
+    {
+        _anim.SetTrigger("IsDashing");
+        _anim.SetLayerWeight(1, 1);
     }
 }

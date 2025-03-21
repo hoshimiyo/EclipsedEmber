@@ -458,19 +458,6 @@ MonoBehaviour:
   isWalled: 0
   _iceDeceleration: 0.4
   _iceFriction: 0.4
-  isAttacking: 0
-  timeBetweenAttack: 0.3
-  timeSinceAttack: 0
-  sideAttackTransform: {fileID: 2372056922170514941}
-  upAttackTransform: {fileID: 7266654887441514437}
-  downAttackTransform: {fileID: 7749609485886686843}
-  sideAttackSize: {x: 4.5, y: 3.5}
-  upAttackSize: {x: 3.5, y: 4.5}
-  downAttackSize: {x: 3.5, y: 4.5}
-  attackLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  damage: 1
   _dashingPower: 24
   _canDash: 0
   _dashingTime: 0.3
@@ -519,7 +506,7 @@ MonoBehaviour:
   _doubleJumpColor: {r: 0, g: 0, b: 0, a: 0}
   _deathColor: {r: 0, g: 0, b: 0, a: 0}
   deathSoundClip: {fileID: 8300000, guid: 52dfa9b197def7143a68211af9d6564b, type: 3}
-  damageSoundClip: {fileID: 0}
+  damageSoundClip: {fileID: 8300000, guid: 3b5b275e0c6801246909e3bd33dda130, type: 3}
   jumpSoundClip: {fileID: 8300000, guid: 3e414ef33bab1464c9ef7172a4b5e054, type: 3}
   landSoundClips:
   - {fileID: 8300000, guid: b00d916912e6aff42b4d7158ebe89dd4, type: 3}
@@ -537,7 +524,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 705b9cc9c057e7f468236f47c97e107b, type: 3}
   wallJumpSoundClips: []
   dashSoundClip: {fileID: 8300000, guid: 26d87d84adba3dc49a3a9cf8ab5227b7, type: 3}
-  attackSoundClip: {fileID: 0}
   _playerAnim: {fileID: 0}
 --- !u!96 &3119265821599344441
 TrailRenderer:
@@ -778,6 +764,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   slashEffect: {fileID: 3183993007291020588, guid: 65eee736c675a954bb35401e7cc92c39, type: 3}
+  hitSFX: {fileID: 8300000, guid: b8ec2b9c2147e314884fc93d7b86f7c3, type: 3}
+  attackSoundClip: {fileID: 8300000, guid: c3d71b13fd871d4458239d74c76bdf80, type: 3}
+  healSFX: {fileID: 8300000, guid: c64200874f37ccb4ebc6b85cd6021062, type: 3}
   timeToHeal: 0.5
   mana: 0.5
   manaDrainSpeed: 0.3
@@ -802,6 +791,7 @@ MonoBehaviour:
   sideSpellFireball: {fileID: 5715211057097174937, guid: e09cb9a6730b6fa4eb9f4332b723638b, type: 3}
   upSpellExplosion: {fileID: 0}
   downSpellFireball: {fileID: 0}
+  spellSFX: {fileID: 8300000, guid: e3982e1b2e264d448b6e9536cb646c2e, type: 3}
 --- !u!1 &7316264402192348644
 GameObject:
   m_ObjectHideFlags: 0

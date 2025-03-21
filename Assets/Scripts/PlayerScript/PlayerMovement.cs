@@ -34,18 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-    #region Attack
-    [Space]
-    [Header("Attack")]
-    [SerializeField] private bool isAttacking = false;
-    [SerializeField] private float timeBetweenAttack, timeSinceAttack;
-    [SerializeField] Transform sideAttackTransform, upAttackTransform, downAttackTransform;
-    [SerializeField] Vector2 sideAttackSize, upAttackSize, downAttackSize;
-    [SerializeField] LayerMask attackLayer;
-    [SerializeField] float damage = 1;
-
-    #endregion
-
     #region Dash
     [Space]
     [Header("Dash")]
@@ -58,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _dashDirection;
     private bool _dashButtonPressed;
     #endregion
+
     #region Jump
     [Space]
     [Header("Jump")]
@@ -145,7 +134,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip[] runSoundClips;
     [SerializeField] private AudioClip[] wallJumpSoundClips;
     [SerializeField] private AudioClip dashSoundClip;
-    [SerializeField] private AudioClip attackSoundClip;
     #endregion
     #region Amimator
     [Space]
@@ -193,11 +181,11 @@ public class PlayerMovement : MonoBehaviour
         {
             bool isJumping = !IsGrounded() && _rb.linearVelocityY > 0;
             _playerAnim.UpdateAnimation(_rb.linearVelocityX, _rb.linearVelocityY, IsGrounded(), _isWallSliding, isJumping);
+
         }
 
         JumpInput();
         DashInput();
-        AttackInput();
     }
     private void FixedUpdate() //update mỗi số frame (2-3-4 frame) ít độc lập frame hơn => ít responsive hơn
     {
@@ -406,52 +394,6 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
-    #region Attack
-
-    void Hit(Transform _attackTransform, Vector2 _attackArea)
-    {
-        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
-        if (objectsToHit.Length > 0)
-        {
-            Debug.Log("Hit " + objectsToHit[0].name);
-        }
-        for (int i = 0; i < objectsToHit.Length; i++)
-        {
-            BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-        }
-    }
-    private void Attack()
-    {
-        timeSinceAttack += Time.deltaTime;
-        if (isAttacking && timeSinceAttack >= timeBetweenAttack)
-        {
-            // Attack logic
-            timeSinceAttack = 0;
-            PlaySFXClip(attackSoundClip);
-            if (yRaw == 0 || yRaw < 0 && IsGrounded())
-            {
-                Hit(sideAttackTransform, sideAttackSize);
-            }
-            else if (yRaw > 0)
-            {
-                Hit(upAttackTransform, upAttackSize);
-            }
-            else if (yRaw < 0 && !IsGrounded())
-            {
-                Hit(downAttackTransform, downAttackSize);
-            }
-        }
-    }
-    private void AttackInput()
-    {
-        if(Input.GetMouseButtonDown(0)) isAttacking = true;
-    }
-    #endregion
-
     #region Dash
     private void DashInput()
     {
@@ -478,6 +420,7 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator ExecuteDash()
     {
         PlaySFXClip(dashSoundClip);
+        _playerAnim.Dashing();
         if (_freezeFrame)
         {
             _isFrozen = true;
@@ -495,7 +438,6 @@ public class PlayerMovement : MonoBehaviour
         float originalGravity = _rb.gravityScale;
         //disable gravity for total straight dash movement
         _rb.gravityScale = 0f;
-
         _dashDirection = new Vector2(xRaw, yRaw).normalized * _dashingPower;
         if (_dashDirection == Vector2.zero)
         {
@@ -704,17 +646,20 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Die()
     {
+        _playerAnim.TriggerDeathAnim(true);
         PlaySFXClip(deathSoundClip);
         active = false;
         _collider.enabled = false;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
         MiniJump();
         StartCoroutine(DisablePhysics(3f));
+        StartCoroutine(GameUI2.instance.sceneFader.FadeSeconds(3f));
         StartCoroutine(Respawn());
     }
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(3f);
+        _playerAnim.TriggerDeathAnim(false);
         PlayerStat.instance.Health = PlayerStat.healthCap;
         transform.position = GameManager.instance.respawnPoint;
         active = true;

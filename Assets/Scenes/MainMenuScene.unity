@@ -172,9 +172,13 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 8952802441448550662, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952802441448550662, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1696737773}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2093,6 +2097,8 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/SFX Manager.prefab
   - _gameObject: {fileID: 343682642}
     _prefab: Assets/Prefabs/AudioManager.prefab
+  - _gameObject: {fileID: 1696737771}
+    _prefab: Assets/Prefabs/BGMObject.prefab
   - _gameObject: {fileID: 343682643}
     _prefab: Assets/Prefabs/SFX Manager.prefab
 --- !u!4 &1604536843
@@ -2110,6 +2116,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1696737771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5159290451280114965, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
+  m_PrefabInstance: {fileID: 343682641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1696737773 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7913686873083462034, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
+  m_PrefabInstance: {fileID: 343682641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1710865817
 GameObject:
   m_ObjectHideFlags: 0

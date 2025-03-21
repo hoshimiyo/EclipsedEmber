@@ -30,6 +30,7 @@ public class PlayerStat : MonoBehaviour
     }
     private void Update()
     {
+        if (!PlayerMovement.instance.active) return;
         AttackInput();
         Heal();
         if (healing) return;
@@ -51,6 +52,10 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private Vector2 sideAttackSize, upAttackSize, downAttackSize;
     [SerializeField] private LayerMask attackLayer;
     [SerializeField] private GameObject slashEffect;
+    [SerializeField] private AudioClip hitSFX;
+    
+    [SerializeField] private AudioClip attackSoundClip;
+    [SerializeField] private AudioClip healSFX;
     private PlayerAnimation _playerAnim;
     private GameObject _slashEffectInstance;
 
@@ -70,8 +75,8 @@ public class PlayerStat : MonoBehaviour
         {
             // _recoilDir = true;
             Mana += manaGain;
-            Debug.Log("Hit");
-        }
+            PlaySFXClip(hitSFX);
+        } else PlaySFXClip(attackSoundClip);
         // for (int i = 0; i < objectsToHit.Length; i++)
         // {
         //     Enemy e = objectsToHit[i].GetComponent<Enemy>();
@@ -192,6 +197,7 @@ public class PlayerStat : MonoBehaviour
             if (healTimer >= timeToHeal)
             {
                 Health++;
+                PlaySFXClip(healSFX);
                 healTimer = 0;
             }
             //drain mana
@@ -250,4 +256,9 @@ public class PlayerStat : MonoBehaviour
         iFrame = false;
     }
 
+    private void PlaySFXClip(AudioClip soundClip)
+    {
+        if (soundClip == null || SFXManager.instance == null) return;
+        SFXManager.instance.PlaySFXClip(soundClip, transform, 1f);
+    }
 }

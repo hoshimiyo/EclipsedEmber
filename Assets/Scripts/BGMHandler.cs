@@ -5,10 +5,11 @@ using System.Collections;
 
 public class BGMHandler : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
     public static BGMHandler Instance { get; private set; } // Singleton instance
+
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private float fadeDuration = 1f; // Duration of the fade effect
-    public float BGMvolume = 1f;
+    public float BGMVolume = 1f;
 
     // Scene-to-track mapping
     [System.Serializable]
@@ -33,7 +34,6 @@ public class BGMHandler : MonoBehaviour
         else
         {
             Destroy(gameObject); // Ensure only one instance exists
-            return;
         }
     }
 
@@ -41,6 +41,7 @@ public class BGMHandler : MonoBehaviour
     {
         // Play music for the initial scene
         currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("Audio :" + currentSceneName);
         PlayTrackForScene(currentSceneName);
 
         // Subscribe to scene load events
@@ -83,11 +84,11 @@ public class BGMHandler : MonoBehaviour
             FadeOut(() =>
             {
                 // Switch to the new track
-                audioSource.clip = track;
-                audioSource.loop = true;
-                audioSource.volume = BGMvolume;
-                audioSource.Play();
-
+                // audioSource.clip = track;
+                // audioSource.loop = true;
+                // audioSource.volume = BGMVolume;
+                // audioSource.Play();
+                PlayMusicClip(track, transform, BGMVolume);
                 // Fade in the new track
                 FadeIn();
             });
@@ -148,6 +149,17 @@ public class BGMHandler : MonoBehaviour
         onFadeComplete?.Invoke();
     }
 
+    public void PlayMusicClip(AudioClip audioClip, Transform spawnTransform, float volume)
+    {
+        AudioSource audioSource = Instantiate(this.audioSource, spawnTransform.position, Quaternion.identity);
+        audioSource.clip = audioClip;
+        audioSource.loop = true;
+        audioSource.volume = volume;
+        audioSource.Play();
+
+        float length = audioSource.clip.length;
+        Destroy(audioSource.gameObject, length);
+    }
 
     /// <summary>
     /// Stop the music.

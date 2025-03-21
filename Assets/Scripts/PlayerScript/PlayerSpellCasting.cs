@@ -15,6 +15,7 @@ public class PlayerSpellCasting : MonoBehaviour
     [SerializeField] GameObject sideSpellFireball;
     [SerializeField] GameObject upSpellExplosion;
     [SerializeField] GameObject downSpellFireball;
+    [SerializeField] public AudioClip spellSFX;
 
     void CastSpell()
     {
@@ -23,6 +24,7 @@ public class PlayerSpellCasting : MonoBehaviour
             isCasting = true;
             timeSinceCast = 0;
             StartCoroutine(CastCoroutine());
+            PlaySFXClip(spellSFX);
         }
         else
         {
@@ -75,5 +77,11 @@ public class PlayerSpellCasting : MonoBehaviour
     private void Update()
     {
         CastSpell();
+    }
+
+    private void PlaySFXClip(AudioClip soundClip)
+    {
+        if (soundClip == null || SFXManager.instance == null) return;
+        SFXManager.instance.PlaySFXClip(soundClip, transform, 1f);
     }
 }
