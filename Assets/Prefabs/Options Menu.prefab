@@ -1380,10 +1380,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
-        m_MethodName: SetMasterVolumeLevel
-        m_Mode: 0
+      - m_Target: {fileID: 4348432794789019213}
+        m_TargetAssemblyTypeName: OptionsScript, Assembly-CSharp
+        m_MethodName: setMainVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1514,6 +1514,7 @@ GameObject:
   - component: {fileID: 35293398295453568}
   - component: {fileID: 6255744268185687734}
   - component: {fileID: 4026545057149081512}
+  - component: {fileID: 4348432794789019213}
   m_Layer: 5
   m_Name: Options Menu
   m_TagString: Untagged
@@ -1584,6 +1585,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4348432794789019213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147591007239755147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5999e70746b0144bb0ab81c74c2a868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 2343206957112665184, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
+  mainSlider: {fileID: 1858664721992152155}
+  musicSlider: {fileID: 2837439881330347216}
+  sfxSlider: {fileID: 8958657455550133417}
 --- !u!1 &6696744507215031607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,10 +1767,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
-        m_MethodName: SetSFXVolumeLevel
-        m_Mode: 0
+      - m_Target: {fileID: 4348432794789019213}
+        m_TargetAssemblyTypeName: OptionsScript, Assembly-CSharp
+        m_MethodName: setSfxVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2198,10 +2215,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
-        m_MethodName: SetMusicVolumeLevel
-        m_Mode: 0
+      - m_Target: {fileID: 4348432794789019213}
+        m_TargetAssemblyTypeName: OptionsScript, Assembly-CSharp
+        m_MethodName: setMusicVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -1,16 +1,30 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class OptionsScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private SoundMixerManager mixer;
+    [SerializeField] private Slider mainSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
+
+    public void setMusicVolume()
     {
-        
+        float volume = musicSlider.value;
+        mixer.SetMusicVolumeLevel(volume);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void setMainVolume()
     {
-        
+        float volume = mainSlider.value;
+        mixer.SetMasterVolumeLevel(volume);
     }
+
+    public void setSfxVolume()
+    {
+        float volume = sfxSlider.value;
+        mixer.SetSFXVolumeLevel(volume);
+    }
+
 }
