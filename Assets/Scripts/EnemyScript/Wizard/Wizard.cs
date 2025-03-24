@@ -10,7 +10,7 @@ public class Wizard : BaseEnemy
     [SerializeField] private GameObject blashAttackPrefab;
     [SerializeField] private float rangeAttackCooldown;
     [SerializeField] private float blastAttackCooldown;
-    [SerializeField] private float rangedAttackDamage;
+    [SerializeField] private int rangedAttackDamage;
     private float lastAttackTime;
     private float lastBlastAttackTime;
     private bool canDoRangeAttack = false;
@@ -18,8 +18,7 @@ public class Wizard : BaseEnemy
 
     protected override void Start()
     {
-        base.Start();
-        rb.gravityScale = 0;
+        base.Start(); 
     }
 
     protected override void Awake()
@@ -69,7 +68,6 @@ public class Wizard : BaseEnemy
     {
         isInactive = true;
         anim.SetTrigger("Die");
-        Invoke(nameof(ExecuteDie), 31f / 60f);
     }
 
     private void ExecuteDie()
@@ -88,9 +86,10 @@ public class Wizard : BaseEnemy
         transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0f, 0f);
     }
 
+
     private void RangeAttack()
     {
-        if (canDoRangeAttack)
+        if (canDoRangeAttack && !isInactive)
         {
             isInactive = true;
             lastAttackTime = Time.time; // Reset cooldown
@@ -98,32 +97,30 @@ public class Wizard : BaseEnemy
             anim.SetTrigger("Attack");
             isAttacking = true;
 
-            // Delay the slash spawn until frame 30 (0.5 seconds)
-            Invoke(nameof(SpawnProjectile), 45f / 60f);
+ 
 
-            // Disable isAttacking at frame 50 (0.83 seconds)
-            Invoke(nameof(ResetAttackState), 46f / 60f);
-            Invoke(nameof(StartAttackRecovery), 46f / 60f);
+            //// Disable isAttacking at frame 50 (0.83 seconds)
+            //Invoke(nameof(ResetAttackState), 46f / 60f);
+            //Invoke(nameof(StartAttackRecovery), 46f / 60f);
         }
     }
 
-
     private void BlastAttack()
     {
-        if (canDoBlastAttack)
+        if (canDoBlastAttack && !isInactive)
         {
             isInactive = true;
             lastBlastAttackTime = Time.time; // Reset cooldown
 
-            anim.SetTrigger("Attack");
+            anim.SetTrigger("BlastAttack");
             isAttacking = true;
 
-            // Delay the slash spawn until frame 30 (0.5 seconds)
-            Invoke(nameof(SpawnBlast), 45f / 60f);
+            //// Delay the slash spawn until frame 30 (0.5 seconds)
+            //Invoke(nameof(SpawnBlast), 45f / 60f);
 
-            // Disable isAttacking at frame 50 (0.83 seconds)
-            Invoke(nameof(ResetAttackState), 46f / 60f);
-            Invoke(nameof(StartAttackRecovery), 46f / 60f);
+            //// Disable isAttacking at frame 50 (0.83 seconds)
+            //Invoke(nameof(ResetAttackState), 46f / 60f);
+            //Invoke(nameof(StartAttackRecovery), 46f / 60f);
         }
     }
 
@@ -147,7 +144,6 @@ public class Wizard : BaseEnemy
             projectileScript.Initialize(player.transform.position, rangedAttackDamage);
         }
     }
-
     private void SpawnBlast()
     {
         if (blashAttackPrefab == null)
@@ -157,10 +153,11 @@ public class Wizard : BaseEnemy
         }
 
         // Lock onto the player's current position
-        Vector3 lockedPosition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        Vector3 lockedPosition = new Vector3(player.transform.position.x, player.transform.position.y + 10f, player.transform.position.z);
 
+        GameObject blast = Instantiate(blashAttackPrefab, lockedPosition, Quaternion.identity);
         // Start the coroutine to delay the blast spawn
-        StartCoroutine(SpawnBlastAfterDelay(lockedPosition, 0f)); // half-second delay
+      
     }
 
     private IEnumerator SpawnBlastAfterDelay(Vector3 targetPosition, float delay)
@@ -172,12 +169,11 @@ public class Wizard : BaseEnemy
         randomOffset *= Random.value < 0.5f ? -1 : 1; // 50% chance to go left (-) or right (+)
 
         // Apply the offset to the X position
-        Vector3 spawnPosition = new Vector3(targetPosition.x + randomOffset, targetPosition.y, targetPosition.z);
+        Vector3 spawnPosition = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
 
         // Instantiate the blast at the offset position
         GameObject blast = Instantiate(blashAttackPrefab, spawnPosition, Quaternion.identity);
     }
-
 
 
     private void StopWalking()
@@ -190,13 +186,13 @@ public class Wizard : BaseEnemy
         Invoke(nameof(EndAttackRecovery), moveCooldown); // Delay before mob can move again
     }
 
-    private void ResetAttackState()
-    {
-        isAttacking = false;
-    }
-
     private void EndAttackRecovery()
     {
         isInactive = false;
+    }
+
+    private void EndAttackState()
+    {
+        isAttacking = false;
     }
 }

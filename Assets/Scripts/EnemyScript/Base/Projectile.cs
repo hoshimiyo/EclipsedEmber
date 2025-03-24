@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    protected float damage;
+    protected int damage;
     [SerializeField] protected float maxLifetime = 3f; // Time before the projectile is destroyed
-    [SerializeField] protected float lifeTime = 0f; // Timer to track how long the projectile has been in the air
-    [SerializeField] protected float speedIncreaseDuration = 0.2f; // Time duration to reach max speed
+    protected float lifeTime = 0f; // Timer to track how long the projectile has been in the air
     [SerializeField] protected float damageDelayWindow = 20f; // Delay for player to take damage again on prolong contact
+    [SerializeField] protected bool aimAtPlayer;
     protected bool hasDamaged = false;
     protected Animator anim;
 
@@ -18,15 +18,19 @@ public class Projectile : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public virtual void Initialize(Vector3 targetPosition, float dmg)
+    public virtual void Initialize(Vector3 targetPosition, int dmg)
     {
         damage = dmg;
-        // Calculate direction towards the player
-        direction = (targetPosition - transform.position).normalized;
+        if (aimAtPlayer)
+        {
+            // Calculate direction towards the player
+            direction = (targetPosition - transform.position).normalized;
 
-        // Rotate the projectile to face the movement direction
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+            // Rotate the projectile to face the movement direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
 
         // Destroy the projectile after 'lifetime' seconds if it doesn't hit anything
         Destroy(gameObject, maxLifetime);
@@ -51,7 +55,7 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Player") && !hasDamaged)
         {
             Debug.Log("Player got hit for " + damage);
-            PlayerMovement.instance.TakeDamage(damage);
+            PlayerStat.instance.TakeDamage(damage);
             hasDamaged = true;
 
             // Optionally, disable the hitbox collider or destroy it after dealing damage

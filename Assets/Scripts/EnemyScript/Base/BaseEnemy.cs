@@ -5,7 +5,7 @@ public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] protected float health = 1;
     [SerializeField] protected float speed = 1;
-    [SerializeField] protected float meleeDamage = 1;
+    [SerializeField] protected int meleeDamage = 1;
     [SerializeField] protected float meleeAttackRange = 1;
     [SerializeField] protected float meleeAttackHeightRange = 1;
     [SerializeField] protected float rangedAttackRange = 1;
@@ -31,7 +31,7 @@ public class BaseEnemy : MonoBehaviour
         mobRenderer = GetComponent<Renderer>();  // Assumes the object has a Renderer component
         originalColor = mobRenderer.material.color;  // Store the original color
         rb.gravityScale = 12f;
-        rb.mass = 20f;
+        rb.mass = 3f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         anim = GetComponent<Animator>(); // Get Animator component
     }
@@ -60,12 +60,13 @@ public class BaseEnemy : MonoBehaviour
 
     public virtual void TakeDamage(float damageTaken)
     {
-        health -= damageTaken;
-        StartCoroutine(BlinkRedEffect());
-        if (health <= 0)
+        if (health > 0)
         {
-            Die();
+            health -= damageTaken;
+            StartCoroutine(BlinkRedEffect());
         }
+
+        else Die();
     }
 
     protected virtual void Die()
@@ -131,7 +132,7 @@ public class BaseEnemy : MonoBehaviour
 
     protected virtual void Attack()
     {
-        player.TakeDamage(meleeDamage);
+        PlayerStat.instance.TakeDamage(meleeDamage);
 
     }
 

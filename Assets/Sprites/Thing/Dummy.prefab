@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 784638645819978135}
   m_Layer: 8
   m_Name: Dummy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000
   speed: 1
-  damage: 1
+  meleeDamage: 1
   meleeAttackRange: 1
   meleeAttackHeightRange: 1
   rangedAttackRange: 1

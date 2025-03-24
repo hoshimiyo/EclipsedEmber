@@ -9,6 +9,7 @@ public class MossKnight : BaseEnemy
     [SerializeField] private GameObject slashHitbox;
     [SerializeField] private float lastAttackTime;
     [SerializeField] private float slashAttackCooldown; // Cooldown between slashes
+    private bool canSlash = false;
     protected override void Start()
     {
         base.Start();
@@ -22,7 +23,7 @@ public class MossKnight : BaseEnemy
     protected override void Update()
     {
         base.Update();
-
+        canSlash = Time.time >= lastAttackTime + slashAttackCooldown;
         if (isInactive) return;
 
         if (isPlayerInAggroRange && !isPlayerInMeleeAttackRange)
@@ -44,10 +45,14 @@ public class MossKnight : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        base.TakeDamage(damageTaken);
-        if(health <= 0)
+        if (health > 0)
         {
-            Die();
+            health -= damageTaken;
+            StartCoroutine(BlinkRedEffect());
+            if (health <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -55,7 +60,6 @@ public class MossKnight : BaseEnemy
     {
         isInactive = true;
         anim.SetTrigger("Die");
-        Invoke(nameof(ExecuteDie), 53f / 60f);
     }
 
     private void ExecuteDie()
@@ -75,21 +79,12 @@ public class MossKnight : BaseEnemy
 
     private void SlashAttack()
     {
-        if (Time.time >= lastAttackTime + slashAttackCooldown)
+        if (canSlash && !isInactive)
         {
             isInactive = true;
             lastAttackTime = Time.time; // Reset cooldown
             anim.SetTrigger("Slash");
             isAttacking = true;
-            // Delay effect and hitbox activation to sync with attack frame 30 (assuming 60 FPS)
-            Invoke(nameof(EnableSlashHitbox), 30f / 60f); // 30 frames delay (assuming 60 FPS)
-
-            // Disable hitbox after attack finishes at frame 45
-            Invoke(nameof(DisableSlashHitbox), 45f / 60f); // 10 frames delay
-
-            // Reset animation & attack state after the attack animation ends
-            Invoke(nameof(ResetAttackState), 45f / 60f);
-            Invoke(nameof(StartAttackRecovery), 45f / 60f);
         }
     }
 
@@ -114,13 +109,13 @@ public class MossKnight : BaseEnemy
         Invoke(nameof(EndAttackRecovery), moveCooldown); // Delay before mob can move again
     }
 
-    private void ResetAttackState()
-    {
-        isAttacking = false;
-    }
-
     private void EndAttackRecovery()
     {
         isInactive = false;
+    }
+
+    private void EndAttackState()
+    {
+        isAttacking = false;
     }
 }

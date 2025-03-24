@@ -5,24 +5,58 @@ using UnityEngine;
 public class AttackHitbox : MonoBehaviour
 {
     [SerializeField] private bool useDelayAttack;  // Flag to control if delay is used
-    [SerializeField] private float delayTime;        // Time before damage is applied
-    [SerializeField] private bool useLifetime;      // Flag to control if lifetime is used
-    [SerializeField] private float lifeTime;        // Time before hitbox is destroyed
-    [SerializeField] private float damage;          // Damage to apply
-    [SerializeField] private float damageDuration;   // Duration to disable hitbox after damage
+    [SerializeField] private float damageStart;    // Start time for when damage can be applied
+    [SerializeField] private float damageEnd;      // End time for when damage can be applied
+    [SerializeField] private bool useLifetime;     // Flag to control if lifetime is used
+    [SerializeField] private float lifeTime;       // Time before hitbox is destroyed
+    [SerializeField] private int damage;           // Damage to apply
+    [SerializeField] private float damageDelayTick; // Duration to disable hitbox after damage
     private bool hasDamaged = false;
+    private Rigidbody2D rb;
 
     private HashSet<Collider2D> collidingPlayers = new HashSet<Collider2D>(); // Track players in the hitbox
+    private float currentTime = 0f; // To track the time for damage window
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        if (useLifetime)
+        {
+            Invoke(nameof(DestroyHitbox), lifeTime); // Start countdown for self-destruction
+        }
+    }
+
+    protected virtual void Update()
+    {
+        // Update current time, but only if the hitbox is active and a delay attack is used
+        if (useDelayAttack)
+        {
+            currentTime += Time.deltaTime;
+        }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            if (rb != null)
+            {
+                rb.gravityScale = 0;
+                rb.linearVelocity = Vector2.zero;  // Stop any existing movement
+            }
+        }
+
         if (other.CompareTag("Player"))
         {
             collidingPlayers.Add(other); // Track player inside the hitbox
 
+            // Check if the player enters the hitbox within the valid damage window
             if (useDelayAttack)
             {
-                StartCoroutine(DelayedDamage(other)); // Start delay before damage if useDelayAttack is true
+                if (currentTime >= damageStart && currentTime <= damageEnd && !hasDamaged)
+                {
+                    ApplyDamage(other);
+                }
             }
             else
             {
@@ -32,7 +66,7 @@ public class AttackHitbox : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected virtual void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -42,40 +76,34 @@ public class AttackHitbox : MonoBehaviour
 
     private IEnumerator DelayedDamage(Collider2D player)
     {
-        yield return new WaitForSeconds(delayTime); // Wait before applying damage
+        yield return new WaitForSeconds(damageStart); // Wait before applying damage
 
-        // Check if player is still in the hitbox and damage hasn’t been applied yet
+        // Check if player is still in the hitbox and damage hasnï¿½t been applied yet
         if (collidingPlayers.Contains(player) && !hasDamaged)
         {
             ApplyDamage(player);
         }
     }
 
-    private void ApplyDamage(Collider2D player)
+    protected virtual void ApplyDamage(Collider2D player)
     {
         if (hasDamaged) return;
 
         Debug.Log("Player got hit for " + damage);
-        PlayerMovement.instance.TakeDamage(damage);
+        PlayerStat.instance.TakeDamage(damage);
         hasDamaged = true;
 
-        GetComponent<Collider2D>().enabled = false; // Disable hitbox
-        Invoke(nameof(ResetHitbox), damageDuration);
-
-        if (useLifetime)
-        {
-            Invoke(nameof(DestroyHitbox), lifeTime);
-        }
+        Invoke(nameof(ResetHitbox), damageDelayTick);
     }
 
-    private void DestroyHitbox()
+    protected virtual void DestroyHitbox()
     {
         Destroy(gameObject);
     }
 
-    private void ResetHitbox()
+    protected virtual void ResetHitbox()
     {
-        GetComponent<Collider2D>().enabled = true;
         hasDamaged = false;
+        currentTime = 0f;  // Reset time for the next attack cycle
     }
 }

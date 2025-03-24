@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   speed: 10
-  damage: 1
+  meleeDamage: 1
   meleeAttackRange: 4.5
   meleeAttackHeightRange: 2
   rangedAttackRange: 1
@@ -319,8 +319,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585f8f1ffbf907247a1b9e8544fb6aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useDelayAttack: 0
+  damageStart: 0
+  damageEnd: 0
+  useLifetime: 0
+  lifeTime: 0
   damage: 1
-  damageDuration: 1
+  damageDelayTick: 0
 --- !u!61 &5024775657312677459
 BoxCollider2D:
   m_ObjectHideFlags: 0

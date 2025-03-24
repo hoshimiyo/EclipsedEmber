@@ -30,15 +30,18 @@ public class PlayerStat : MonoBehaviour
     }
     private void Update()
     {
-        AttackInput();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
         Heal();
         if (healing) return;
     }
 
-    private void FixedUpdate()
-    {
-        Attack();
-    }
+    //private void FixedUpdate()
+    //{
+    //    Attack();
+    //}
     #endregion
 
     #region Attack
@@ -51,6 +54,8 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private Vector2 sideAttackSize, upAttackSize, downAttackSize;
     [SerializeField] private LayerMask attackLayer;
     [SerializeField] private GameObject slashEffect;
+    [SerializeField] private float attackRate;
+    float nextAttackTime = 0f;
     private PlayerAnimation _playerAnim;
     private GameObject _slashEffectInstance;
 
@@ -63,6 +68,8 @@ public class PlayerStat : MonoBehaviour
         Gizmos.DrawWireCube(downAttackTransform.position, downAttackSize);
     }
 
+
+
     void Hit(Transform _attackTransform, Vector2 _attackArea)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
@@ -70,7 +77,16 @@ public class PlayerStat : MonoBehaviour
         {
             // _recoilDir = true;
             Mana += manaGain;
-            Debug.Log("Hit");
+            Debug.Log("Hit " + objectsToHit[0].name);
+        }
+
+        for (int i = 0; i < objectsToHit.Length; i++)
+        {
+            BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
         }
         // for (int i = 0; i < objectsToHit.Length; i++)
         // {
@@ -89,12 +105,9 @@ public class PlayerStat : MonoBehaviour
     }
     private void Attack()
     {
-        timeSinceAttack += Time.deltaTime;
-        if (isAttacking && timeSinceAttack >= timeBetweenAttack)
+        if (Time.time >= nextAttackTime)
         {
-            // Attack logic
-            timeSinceAttack = 0;
-
+            nextAttackTime = Time.time + 1f / attackRate;
             if (PlayerMovement.instance.yRaw == 0 || PlayerMovement.instance.yRaw < 0 && PlayerMovement.instance.IsGrounded())
             {
                 Hit(sideAttackTransform, sideAttackSize);
@@ -120,6 +133,7 @@ public class PlayerStat : MonoBehaviour
                 CreateSlashEffect(slashEffect, -90, downAttackTransform);
             }
         }
+
     }
 
     private GameObject CreateSlashEffect(GameObject slashEffectPrefab, int effectAngle, Transform attackTransform)
@@ -135,13 +149,13 @@ public class PlayerStat : MonoBehaviour
     {
         isAttacking = Input.GetMouseButtonDown(0);
     }
-    #endregion
+    #endregion  
     #endregion
 
     #region Health
     [Header("Health Settings")]
-    public static int currentHealth = 3;
-    public static int healthCap = 3;
+    [SerializeField] public static int currentHealth = 100;
+    public static int healthCap = 100;
     public static bool healing = false;
     float healTimer;
     [SerializeField] float timeToHeal;

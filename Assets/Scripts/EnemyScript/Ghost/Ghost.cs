@@ -9,7 +9,7 @@ public class Ghost : BaseEnemy
     [SerializeField] private GameObject rangedAttackPrefab;
     [SerializeField] private float rangeAttackCooldown;
     [SerializeField] private float blastAttackCooldown;
-    [SerializeField] private float rangedAttackDamage;
+    [SerializeField] private int rangedAttackDamage;
     private float lastAttackTime;
     private float lastBlastAttackTime;
     private bool canDoRangeAttack;
@@ -89,15 +89,9 @@ public class Ghost : BaseEnemy
             isInactive = true;
             lastAttackTime = Time.time; // Reset cooldown
 
-            anim.SetTrigger("shootFireball");
+            anim.SetTrigger("Attack");
             isAttacking = true;
 
-            // Delay the slash spawn until frame 30 (0.5 seconds)
-            Invoke(nameof(SpawnProjectile), 30f / 60f);
-
-            // Disable isAttacking at frame 50 (0.83 seconds)
-            Invoke(nameof(ResetAttackState), 50f / 60f);
-            Invoke(nameof(StartAttackRecovery), 50f / 60f);
         }
     }
 
@@ -132,13 +126,13 @@ public class Ghost : BaseEnemy
         Invoke(nameof(EndAttackRecovery), moveCooldown); // Delay before mob can move again
     }
 
-    private void ResetAttackState()
-    {
-        isAttacking = false;
-    }
-
     private void EndAttackRecovery()
     {
         isInactive = false;
+    }
+
+    private void EndAttackState()
+    {
+        isAttacking = false;
     }
 }

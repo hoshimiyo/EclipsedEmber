@@ -778,6 +778,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   slashEffect: {fileID: 3183993007291020588, guid: 65eee736c675a954bb35401e7cc92c39, type: 3}
+  attackRate: 2
   timeToHeal: 0.5
   mana: 0.5
   manaDrainSpeed: 0.3

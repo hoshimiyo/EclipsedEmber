@@ -8,10 +8,11 @@ public class TestEnemy : BaseEnemy
     [SerializeField] private GameObject slashHitbox;
     [SerializeField] private GameObject slashHitbox2;
     [SerializeField] private GameObject rangedSlashPrefab;
-    [SerializeField] private float rangedDamage;
+    [SerializeField] private int rangedDamage;
     // Cooldowns for moves
     [SerializeField] private float slashAttackCooldown; // Cooldown between slashes
-    [SerializeField] private float moveCooldown; // Cooldown after each move
+    [SerializeField] private float attackRecoveryTime; // Recovery time after each attack
+    [SerializeField] private float dodgeRecoveryTime; // Recovery time after each dodge
     [SerializeField] private float teleportCooldown;
     [SerializeField] private float rangedAttackCooldown;
     [SerializeField] private LayerMask _obstacleLayer;
@@ -25,7 +26,6 @@ public class TestEnemy : BaseEnemy
     [SerializeField] private bool isInactive = false;
     [SerializeField] private float teleportWindupTime; // Time before teleporting starts
     private bool isTeleporting = false; // Flag to check if the mob is dashing
-    [SerializeField] private bool canMove = true; // To track if boss can move
     [SerializeField] private bool canTeleport = true;
     [SerializeField] private bool canUseRangedAttack = false;
 
@@ -85,22 +85,12 @@ public class TestEnemy : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        float blockChance = 0.2f; // 20% chance
-        if (Random.value < blockChance) // Successful block
+        if (isTeleporting) return;
+
+        float dodgeChange = 1f; // 20% chance
+        if (Random.value < dodgeChange && !isAttacking)
         {
-            Debug.Log("Boss blocked the attack!");
-            // Play block animation
-            anim.SetTrigger("Block");
-
-            // Check if player is within knockback range
-            Vector2 distance = (Vector2)(player.transform.position - transform.position);
-            if (Mathf.Abs(distance.x) <= meleeAttackRange && Mathf.Abs(distance.y) <= meleeAttackHeightRange)
-            {
-                MoveBackward();
-            }
-
-            // Restore movement after block animation (adjust duration as needed)
-            Invoke(nameof(EndBlock), 0.5f);
+            MoveBackward();
         }
         else
         {
@@ -111,7 +101,7 @@ public class TestEnemy : BaseEnemy
 
     private void MoveBackward()
     {
-        canMove = false;
+        isInactive = true;
         anim.SetTrigger("Dodge");
         // Ensure that the boss has a Rigidbody2D component
         if (rb != null)
@@ -120,10 +110,10 @@ public class TestEnemy : BaseEnemy
             Vector2 moveDirection = (transform.localScale.x > 0) ? Vector2.left : Vector2.right; // Move left if facing right, right if facing left
 
             // Apply movement force in the opposite direction (backward)
-            rb.linearVelocity = moveDirection * 16f;  // Move at speed of 16 units per second
+            rb.linearVelocity = moveDirection * 23f;  // Move at speed of x units per second
 
             // Optional: Stop the movement after a slight delay
-            StartCoroutine(StopMovementAfterDelay(0.5f));  // Adjust time as necessary (0.5 seconds in this example)
+            StartCoroutine(StopMovementAfterDelay(1f));
         }
         else
         {
@@ -136,7 +126,7 @@ public class TestEnemy : BaseEnemy
     {
         yield return new WaitForSeconds(delay);  // Wait for the specified time
         rb.linearVelocity = Vector2.zero;  // Stop movement
-        canMove = true;
+        StartDodgeRecovery();
     }
 
 
@@ -147,7 +137,7 @@ public class TestEnemy : BaseEnemy
 
     private void SlashAttack()
     {
-        if (Time.time >= lastAttackTime + slashAttackCooldown && canMove)
+        if (Time.time >= lastAttackTime + slashAttackCooldown && !isInactive)
         {
             isInactive = true;
             lastAttackTime = Time.time; // Reset cooldown
@@ -155,38 +145,18 @@ public class TestEnemy : BaseEnemy
             anim.SetTrigger("meleeAttack");
             isAttacking = true;
 
-            // Delay effect and hitbox activation to sync with attack frame 20 (assuming 60 FPS)
-            Invoke(nameof(EnableSlashHitbox), 20f / 60f); // 20 frames delay (assuming 60 FPS)
-
-            // Disable hitbox after attack finishes at frame 35
-            Invoke(nameof(DisableSlashHitbox), 35f / 60f); // 35 frames delay
-
-            Invoke(nameof(EnableSlashHitbox2), 50f / 60f);
-
-            Invoke(nameof(DisableSlashHitbox2), 65f / 60f);
-
-            // Reset animation & attack state after the attack animation ends
-            Invoke(nameof(ResetAttackState), 66f / 60f);
-            Invoke(nameof(StartAttackRecovery), 65f / 60f);
         }
     }
 
     private void RangeAttack()
     {
-        if (Time.time >= lastAttackTime + slashAttackCooldown)
+        if (Time.time >= lastAttackTime + slashAttackCooldown && !isInactive)
         {
             isInactive = true;
             lastAttackTime = Time.time; // Reset cooldown
 
             anim.SetTrigger("doRangeSlash");
             isAttacking = true;
-
-            // Delay the slash spawn until frame 30 (0.5 seconds)
-            Invoke(nameof(SpawnRangedSlash), 30f / 60f);
-
-            // Disable isAttacking at frame 50 (0.83 seconds)
-            Invoke(nameof(ResetAttackState), 50f / 60f);
-            Invoke(nameof(StartAttackRecovery), 50f / 60f);
         }
     }
 
@@ -214,17 +184,22 @@ public class TestEnemy : BaseEnemy
 
     private void StartAttackRecovery()
     {
-        Invoke(nameof(EndAttackRecovery), moveCooldown); // Delay before boss can move again
+        Invoke(nameof(EndRecovery), attackRecoveryTime); // Delay before boss can move again
     }
 
-    private void EndAttackRecovery()
+    private void StartDodgeRecovery()
     {
-        isInactive = false;
+        Invoke(nameof(EndRecovery), dodgeRecoveryTime); // Delay before boss can move again
     }
 
-    private void ResetAttackState()
+    private void EndAttackState()
     {
         isAttacking = false;
+    }
+
+    private void EndRecovery()
+    {
+        isInactive = false;
     }
 
     private void EnableSlashHitbox()

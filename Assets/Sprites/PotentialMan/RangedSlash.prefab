@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 3
-  lifeTime: 0
-  speedIncreaseDuration: 0.2
   damageDelayWindow: 20
+  aimAtPlayer: 1
   speed: 15

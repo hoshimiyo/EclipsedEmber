@@ -45,9 +45,9 @@ GameObject:
   - component: {fileID: 8663555255940239218}
   - component: {fileID: 2168804100260072180}
   - component: {fileID: 4503423097345778960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wizard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,5 +250,5 @@ MonoBehaviour:
   rangedAttackPrefab: {fileID: 5388037074668421287, guid: 1fe6a7fd59e3a5d43966f8439c016b7b, type: 3}
   blashAttackPrefab: {fileID: 3717203973148601902, guid: f8fc28256a26e5e4ca98bdc7710f8e71, type: 3}
   rangeAttackCooldown: 3
-  blastAttackCooldown: 7
+  blastAttackCooldown: 6
   rangedAttackDamage: 1
