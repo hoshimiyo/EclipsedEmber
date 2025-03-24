@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1262151770775673490}
   - component: {fileID: 2128536324980750186}
   - component: {fileID: 2650926194940233493}
-  - component: {fileID: -3931801834111698022}
+  - component: {fileID: 8990827620686485075}
+  - component: {fileID: 7812562026222130556}
   m_Layer: 0
   m_Name: Shockwave
   m_TagString: Untagged
@@ -111,7 +112,53 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-3931801834111698022
+--- !u!61 &8990827620686485075
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094905200735740949}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.02657789, y: 0.99700487}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.48531607, y: 0.3913509}
+    oldSize: {x: 1.81, y: 3.25}
+    newSize: {x: 1.81, y: 3.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.81, y: 4.5377903}
+  m_EdgeRadius: 0
+--- !u!114 &7812562026222130556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,10 +167,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3094905200735740949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb0999e6cb823848a73daf0e986fdfe, type: 3}
+  m_Script: {fileID: 11500000, guid: d58cfa7bed185884d9d63237262ad78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 3
+  lifeTime: 0
+  speedIncreaseDuration: 0.2
   damageDelayWindow: 20
-  aimAtPlayer: 0
   speed: 10

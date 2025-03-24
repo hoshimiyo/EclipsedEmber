@@ -105,7 +105,14 @@ public class FalseKnight : BaseEnemy
 
     private void SpawnShockWave()
     {
-        Instantiate(shockwavePrefab, attackPoint.position, Quaternion.identity);
+        GameObject shockwave = Instantiate(shockwavePrefab, attackPoint.position, Quaternion.identity);
+
+        Projectile shockwaveScript = shockwave.GetComponent<Shockwave>();
+
+        if (shockwaveScript != null)
+        {
+            shockwaveScript.Initialize(attackPoint.position, meleeDamage);
+        }
     }
 
     private void StartAttackRecovery()
