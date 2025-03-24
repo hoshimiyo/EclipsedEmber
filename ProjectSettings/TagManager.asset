@@ -8,6 +8,7 @@ TagManager:
   - EnvironmentDamage
   - Damagable
   - Enemy
+  - PlayerDamage
   layers:
   - Default
   - TransparentFX

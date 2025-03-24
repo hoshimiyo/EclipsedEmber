@@ -1,16 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] private ConfirmPanelScript confirmPanel;
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private Button continueButton;
-
+    [SerializeField] private VideoPlayer vid;
     private void Start()
     {
         optionPanel.SetActive(false);
+        vid.gameObject.SetActive(false);
     }
     public void ShowOptionPanel()
     {
@@ -47,6 +49,13 @@ public class MainMenuScript : MonoBehaviour
     {
         Debug.Log("Start New");
         SaveSystem.DeleteSave();
+        vid.gameObject.SetActive(true);
+        vid.loopPointReached += OnCutsceneFinished;
+        vid.Play();
+    }
+
+    private void OnCutsceneFinished(VideoPlayer vp)
+    {
         SceneManager.LoadScene("Tutorial");
     }
 
