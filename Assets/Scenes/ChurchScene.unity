@@ -68157,6 +68157,8 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/Options Menu.prefab
   - _gameObject: {fileID: 802288092}
     _prefab: Assets/Prefabs/AudioManager.prefab
+  - _gameObject: {fileID: 1881229134}
+    _prefab: Assets/Prefabs/BGMObject.prefab
   - _gameObject: {fileID: 2132753185}
     _prefab: Assets/Prefabs/SFX Manager.prefab
   - _gameObject: {fileID: 946741655}
@@ -436031,13 +436033,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8467173670915208522, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
       propertyPath: canDoubleJump
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+--- !u!1 &1881229134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8902757852361300778, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
+  m_PrefabInstance: {fileID: 1881229133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1881229135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2843541086965884490, guid: bd708252fc185ce49890c7fb5e5d85b6, type: 3}
