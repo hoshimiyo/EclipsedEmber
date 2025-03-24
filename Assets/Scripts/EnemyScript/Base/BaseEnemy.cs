@@ -152,7 +152,6 @@ public class BaseEnemy : MonoBehaviour
         Gizmos.color = Color.blue; // Ranged range color
         Gizmos.DrawWireCube(transform.position, new Vector3(rangedAttackRange * 2, rangedAttackHeightRange * 2, 1)); // Horizontal distance
         // Height Range for Ranged Attack
-
     }
 
 }

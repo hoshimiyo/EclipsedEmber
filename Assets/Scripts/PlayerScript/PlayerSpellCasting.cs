@@ -84,4 +84,5 @@ public class PlayerSpellCasting : MonoBehaviour
         if (soundClip == null || SFXManager.instance == null) return;
         SFXManager.instance.PlaySFXClip(soundClip, transform, 1f);
     }
+
 }

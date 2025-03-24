@@ -6,6 +6,7 @@ public class SoulBall : MonoBehaviour
     [SerializeField] float hitForce;
     [SerializeField] int speed;
     [SerializeField] float lifetime = 1;
+    [SerializeField] AudioClip hitSFX;
 
     void Start()
     {
@@ -19,10 +20,11 @@ public class SoulBall : MonoBehaviour
     //detect hit
     private void OnTriggerEnter2D(Collider2D _other)
     {
-        if(_other.tag == "Enemy")
+        if(_other.gameObject.tag == "Enemy")
         {
-            // _other.GetComponent<Enemy>().EnemyHit(damage, (_other.transform.position - transform.position).normalized, -hitForce);
-            Debug.Log("Ball hit");
+            BaseEnemy enemy = _other.GetComponent<BaseEnemy>();
+            enemy.TakeDamage(damage);
+            SFXManager.instance.PlaySFXClip(hitSFX, transform, 1);
         }
     }
 }

@@ -58,8 +58,6 @@ public class PlayerStat : MonoBehaviour
 
     [SerializeField] private AudioClip attackSoundClip;
     [SerializeField] private AudioClip healSFX;
-    [SerializeField] private float attackRate;
-    float nextAttackTime = 0f;
     private PlayerAnimation _playerAnim;
     private GameObject _slashEffectInstance;
 
