@@ -9,6 +9,8 @@ public class MossKnight : BaseEnemy
     [SerializeField] private GameObject slashHitbox;
     [SerializeField] private float lastAttackTime;
     [SerializeField] private float slashAttackCooldown; // Cooldown between slashes
+    [SerializeField] private AudioClip[] attackSound;
+    [SerializeField] private AudioClip dieSound;
     private bool canSlash = false;
     protected override void Start()
     {
@@ -60,6 +62,7 @@ public class MossKnight : BaseEnemy
     {
         isInactive = true;
         anim.SetTrigger("Die");
+        SFXManager.instance.PlaySFXClip(dieSound, PlayerStat.instance.transform, 1f);
     }
 
     private void ExecuteDie()
@@ -84,6 +87,7 @@ public class MossKnight : BaseEnemy
             isInactive = true;
             lastAttackTime = Time.time; // Reset cooldown
             anim.SetTrigger("Slash");
+            SFXManager.instance.PlayRandomSFXClip(attackSound, transform, 1f);
             isAttacking = true;
         }
     }

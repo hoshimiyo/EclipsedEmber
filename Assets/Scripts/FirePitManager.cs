@@ -4,6 +4,7 @@ public class FirePitManager : MonoBehaviour
 {
     public bool interacted;
     [SerializeField] private Animator _anim;
+    [SerializeField] private AudioClip activate;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +21,8 @@ public class FirePitManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if(interacted == false)
+                SFXManager.instance.PlaySFXClip(activate, transform, 1f);
             interacted = true;
             GameManager.instance.SetRespawnPoint(this);
             _anim.SetBool("IsInteracted", interacted);

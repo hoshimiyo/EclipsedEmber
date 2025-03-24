@@ -251,3 +251,5 @@ MonoBehaviour:
   rangeAttackCooldown: 3
   blastAttackCooldown: 0
   rangedAttackDamage: 1
+  attackClip: {fileID: 8300000, guid: 34e29e16c1efea5469a82651962bc034, type: 3}
+  deathAudio: {fileID: 8300000, guid: 6d2b198b911b55a43970ac26bb4d17a4, type: 3}

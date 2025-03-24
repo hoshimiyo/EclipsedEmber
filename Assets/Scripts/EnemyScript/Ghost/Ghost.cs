@@ -10,6 +10,8 @@ public class Ghost : BaseEnemy
     [SerializeField] private float rangeAttackCooldown;
     [SerializeField] private float blastAttackCooldown;
     [SerializeField] private int rangedAttackDamage;
+    [SerializeField] private AudioClip attackClip;
+    [SerializeField] private AudioClip deathAudio;
     private float lastAttackTime;
     private float lastBlastAttackTime;
     private bool canDoRangeAttack;
@@ -63,6 +65,7 @@ public class Ghost : BaseEnemy
     {
         isInactive = true;
         anim.SetTrigger("Die");
+        SFXManager.instance.PlaySFXClip(deathAudio, transform, 1);
         Invoke(nameof(ExecuteDie), 31f / 60f);
     }
 
@@ -90,6 +93,7 @@ public class Ghost : BaseEnemy
             lastAttackTime = Time.time; // Reset cooldown
 
             anim.SetTrigger("Attack");
+            SFXManager.instance.PlaySFXClip(attackClip, transform, 1);
             isAttacking = true;
 
         }

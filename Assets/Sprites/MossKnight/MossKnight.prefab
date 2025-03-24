@@ -218,6 +218,14 @@ MonoBehaviour:
   slashHitbox: {fileID: 8210759600036089544}
   lastAttackTime: 0
   slashAttackCooldown: 2
+  attackSound:
+  - {fileID: 8300000, guid: 8072b3d806a139641bf55522f62560e1, type: 3}
+  - {fileID: 8300000, guid: 4c28fd3fd94e1fb4c9f4bd78e7049f16, type: 3}
+  - {fileID: 8300000, guid: 4d1e18985cd32b64db0f947cadebe897, type: 3}
+  - {fileID: 8300000, guid: 7af22883aff1fb946994b93cbf381869, type: 3}
+  - {fileID: 8300000, guid: 05ca6ae5fe958f84ea4881ec9a8a21eb, type: 3}
+  - {fileID: 8300000, guid: e37d747c28a78e844bd3c91702e190dc, type: 3}
+  dieSound: {fileID: 8300000, guid: 83df1133ce3900f419520ca6cbf87c25, type: 3}
 --- !u!1 &8210759600036089544
 GameObject:
   m_ObjectHideFlags: 0

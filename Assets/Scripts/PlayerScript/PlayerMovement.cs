@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     #region Jump
     [Space]
     [Header("Jump")]
-    [SerializeField] private bool canDoubleJump;
+    [SerializeField] public bool canDoubleJump;
     [SerializeField] private float _jumpSpeed = 15f;
     [SerializeField] private float _coyoteTime = 0.1f;
     [SerializeField] private float _jumpBufferTime = 0.05f;
@@ -675,7 +675,7 @@ public class PlayerMovement : MonoBehaviour
         _collider.enabled = true;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = true;
     }
-    public void SetRespawnPoint(Vector2 position)
+    public void SetRespawnPoint(Vector3 position)
     {
         _respawnPoint = position;
     }
@@ -734,7 +734,7 @@ public class PlayerMovement : MonoBehaviour
     private void PlaySFXClip(AudioClip soundClip)
     {
         if (soundClip == null || SFXManager.instance == null) return;
-        SFXManager.instance.PlaySFXClip(soundClip, transform, 1f);
+        SFXManager.instance.PlaySFXClip(soundClip, transform, 5f);
     }
 
     private void SlipperyFloor()

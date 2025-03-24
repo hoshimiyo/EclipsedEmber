@@ -245,17 +245,19 @@ public class PlayerStat : MonoBehaviour
     #region IFrame
     // Invincibility frames (iFrame)
     public static bool iFrame = false;
-    public static float iFrameDuration = 0.3f;
+    public static float iFrameDuration = 3f;
     #endregion
 
     private IEnumerator BlinkRedEffect()
     {
-        for (int i = 0; i < 3; i++) // Flash 3 times
+        float elasped = 0f;
+        while(elasped < iFrameDuration)
         {
             spriteRenderer.color = Color.red; // Change to red
             yield return new WaitForSeconds(0.1f);
             spriteRenderer.color = Color.white; // Change back to normal
             yield return new WaitForSeconds(0.1f);
+            elasped += 0.2f;
         }
     }
 

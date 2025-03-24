@@ -28,7 +28,8 @@ public class TestEnemy : BaseEnemy
     private bool isTeleporting = false; // Flag to check if the mob is dashing
     [SerializeField] private bool canTeleport = true;
     [SerializeField] private bool canUseRangedAttack = false;
-
+    [SerializeField] private UnlockDoubleJump dj;
+    [SerializeField] private Canvas canvas;
     protected override void Start()
     {
         base.Start();
@@ -97,6 +98,13 @@ public class TestEnemy : BaseEnemy
             StartCoroutine(base.BlinkRedEffect());
             base.TakeDamage(damageTaken);
         }
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        dj.gameObject.SetActive(true);
+        canvas.gameObject.SetActive(true);
     }
 
     private void MoveBackward()

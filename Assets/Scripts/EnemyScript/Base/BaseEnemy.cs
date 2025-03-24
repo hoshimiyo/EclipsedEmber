@@ -86,6 +86,13 @@ public class BaseEnemy : MonoBehaviour
         mobRenderer.material.color = originalColor;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            PlayerStat.instance.TakeDamage(1);
+        }
+    }
 
     protected void OnTriggerStay2D(Collider2D other)
     {

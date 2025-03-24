@@ -11,6 +11,8 @@ public class Wizard : BaseEnemy
     [SerializeField] private float rangeAttackCooldown;
     [SerializeField] private float blastAttackCooldown;
     [SerializeField] private int rangedAttackDamage;
+    [SerializeField] private AudioClip castSFX;
+    [SerializeField] private AudioClip deathAudio;
     private float lastAttackTime;
     private float lastBlastAttackTime;
     private bool canDoRangeAttack = false;
@@ -68,6 +70,7 @@ public class Wizard : BaseEnemy
     {
         isInactive = true;
         anim.SetTrigger("Die");
+        SFXManager.instance.PlaySFXClip(deathAudio, transform, 1);
     }
 
     private void ExecuteDie()
@@ -95,6 +98,7 @@ public class Wizard : BaseEnemy
             lastAttackTime = Time.time; // Reset cooldown
 
             anim.SetTrigger("Attack");
+            SFXManager.instance.PlaySFXClip(castSFX, transform, 1);
             isAttacking = true;
 
  
@@ -113,6 +117,7 @@ public class Wizard : BaseEnemy
             lastBlastAttackTime = Time.time; // Reset cooldown
 
             anim.SetTrigger("BlastAttack");
+            SFXManager.instance.PlaySFXClip(castSFX, transform, 1);
             isAttacking = true;
 
             //// Delay the slash spawn until frame 30 (0.5 seconds)

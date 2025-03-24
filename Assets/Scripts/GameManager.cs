@@ -127,12 +127,6 @@ public class GameManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         gameData.currentSceneName = currentScene.name;
         gameData.currentSceneBuildIndex = currentScene.buildIndex;
-
-        // If you have a player reference
-        if (player != null)
-        {
-            gameData.playerSpawnPosition = new Vector3Data(player.transform.position);
-        }
     }
 
     // Save player-specific data
@@ -141,7 +135,7 @@ public class GameManager : MonoBehaviour
         if (player != null)
         {
             // Save position
-            gameData.playerPosition = new Vector3Data(player.transform.position);
+            
 
             // Save player stats
             PlayerStat playerStat = player.GetComponent<PlayerStat>();
@@ -157,7 +151,8 @@ public class GameManager : MonoBehaviour
             if (playerMovement != null)
             {
                 gameData.isFacingRight = playerMovement._isFacingRight;
-                gameData.respawnPoint = new Vector3Data(playerMovement._respawnPoint);
+                gameData.respawnPoint = new Vector3Data(respawnPoint);
+                gameData.playerPosition = new Vector3Data(respawnPoint);
                 gameData.availableJumps = playerMovement._availableJump;
                 gameData.canDash = playerMovement._canDash;
             }
@@ -275,7 +270,7 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         // Save before quitting
-        if(SceneManager.GetActiveScene().name != "MainMenuScene")
+        if(SceneManager.GetActiveScene().name != "MainMenuScene" || SceneManager.GetActiveScene().name != "EndMenu")
             SaveGame();
     }
 

@@ -252,3 +252,5 @@ MonoBehaviour:
   rangeAttackCooldown: 3
   blastAttackCooldown: 6
   rangedAttackDamage: 1
+  castSFX: {fileID: 8300000, guid: 64f674aeb5e2f9541af83d953fba05a3, type: 3}
+  deathAudio: {fileID: 8300000, guid: 8d22f17ae822ef446aa3ab1a5d64e73c, type: 3}
