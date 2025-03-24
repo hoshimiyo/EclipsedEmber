@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,16 +31,15 @@ public class PlayerStat : MonoBehaviour
     }
     private void Update()
     {
-        if (!PlayerMovement.instance.active) return;
-            AttackInput();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
         Heal();
         if (healing) return;
     }
 
-    //private void FixedUpdate()
-    //{
-    //    Attack();
-    //}
+
     #endregion
 
     #region Attack
@@ -53,7 +53,9 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private LayerMask attackLayer;
     [SerializeField] private GameObject slashEffect;
     [SerializeField] private AudioClip hitSFX;
-    
+    [SerializeField] private float attackRate;
+    float nextAttackTime = 0f;
+
     [SerializeField] private AudioClip attackSoundClip;
     [SerializeField] private AudioClip healSFX;
     [SerializeField] private float attackRate;
@@ -70,8 +72,6 @@ public class PlayerStat : MonoBehaviour
         Gizmos.DrawWireCube(downAttackTransform.position, downAttackSize);
     }
 
-
-
     void Hit(Transform _attackTransform, Vector2 _attackArea)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
@@ -82,7 +82,7 @@ public class PlayerStat : MonoBehaviour
             PlaySFXClip(hitSFX);
             Debug.Log("Hit " + objectsToHit[0].name);
         }
-
+        else PlaySFXClip(attackSoundClip);
         for (int i = 0; i < objectsToHit.Length; i++)
         {
             BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
@@ -152,13 +152,13 @@ public class PlayerStat : MonoBehaviour
     {
         isAttacking = Input.GetMouseButtonDown(0);
     }
-    #endregion  
+    #endregion
     #endregion
 
     #region Health
     [Header("Health Settings")]
-    [SerializeField] public static int currentHealth = 100;
-    public static int healthCap = 100;
+    public static int currentHealth = 3;
+    public static int healthCap = 3;
     public static bool healing = false;
     float healTimer;
     [SerializeField] float timeToHeal;
