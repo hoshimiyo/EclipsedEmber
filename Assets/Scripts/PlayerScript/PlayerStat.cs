@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,10 +37,10 @@ public class PlayerStat : MonoBehaviour
         if (healing) return;
     }
 
-    //private void FixedUpdate()
-    //{
-    //    Attack();
-    //}
+    private void FixedUpdate()
+    {
+        Attack();
+    }
     #endregion
 
     #region Attack
@@ -53,7 +54,7 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private LayerMask attackLayer;
     [SerializeField] private GameObject slashEffect;
     [SerializeField] private AudioClip hitSFX;
-    
+
     [SerializeField] private AudioClip attackSoundClip;
     [SerializeField] private AudioClip healSFX;
     private PlayerAnimation _playerAnim;
@@ -68,8 +69,6 @@ public class PlayerStat : MonoBehaviour
         Gizmos.DrawWireCube(downAttackTransform.position, downAttackSize);
     }
 
-
-
     void Hit(Transform _attackTransform, Vector2 _attackArea)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
@@ -78,7 +77,8 @@ public class PlayerStat : MonoBehaviour
             // _recoilDir = true;
             Mana += manaGain;
             PlaySFXClip(hitSFX);
-        } else PlaySFXClip(attackSoundClip);
+        }
+        else PlaySFXClip(attackSoundClip);
         // for (int i = 0; i < objectsToHit.Length; i++)
         // {
         //     Enemy e = objectsToHit[i].GetComponent<Enemy>();
@@ -127,7 +127,6 @@ public class PlayerStat : MonoBehaviour
                 CreateSlashEffect(slashEffect, -90, downAttackTransform);
             }
         }
-
     }
 
     private GameObject CreateSlashEffect(GameObject slashEffectPrefab, int effectAngle, Transform attackTransform)
@@ -143,7 +142,7 @@ public class PlayerStat : MonoBehaviour
     {
         isAttacking = Input.GetMouseButtonDown(0);
     }
-    #endregion  
+    #endregion
     #endregion
 
     #region Health
