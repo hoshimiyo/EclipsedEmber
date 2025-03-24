@@ -4,9 +4,9 @@ public class Projectile : MonoBehaviour
 {
     protected int damage;
     [SerializeField] protected float maxLifetime = 3f; // Time before the projectile is destroyed
-    protected float lifeTime = 0f; // Timer to track how long the projectile has been in the air
+    [SerializeField] protected float lifeTime = 0f; // Timer to track how long the projectile has been in the air
+    [SerializeField] protected float speedIncreaseDuration = 0.2f; // Time duration to reach max speed
     [SerializeField] protected float damageDelayWindow = 20f; // Delay for player to take damage again on prolong contact
-    [SerializeField] protected bool aimAtPlayer;
     protected bool hasDamaged = false;
     protected Animator anim;
 
@@ -21,19 +21,12 @@ public class Projectile : MonoBehaviour
     public virtual void Initialize(Vector3 targetPosition, int dmg)
     {
         damage = dmg;
-        if (aimAtPlayer)
-        {
-            // Calculate direction towards the player
-            direction = (targetPosition - transform.position).normalized;
+        // Calculate direction towards the player
+        direction = (targetPosition - transform.position).normalized;
 
-            // Rotate the projectile to face the movement direction
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
-
-
-        // Destroy the projectile after 'lifetime' seconds if it doesn't hit anything
-        Destroy(gameObject, maxLifetime);
+        // Rotate the projectile to face the movement direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     protected virtual void Update()
