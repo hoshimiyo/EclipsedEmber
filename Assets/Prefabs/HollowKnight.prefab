@@ -767,6 +767,7 @@ MonoBehaviour:
   hitSFX: {fileID: 8300000, guid: b8ec2b9c2147e314884fc93d7b86f7c3, type: 3}
   attackSoundClip: {fileID: 8300000, guid: c3d71b13fd871d4458239d74c76bdf80, type: 3}
   healSFX: {fileID: 8300000, guid: c64200874f37ccb4ebc6b85cd6021062, type: 3}
+  attackRate: 2
   timeToHeal: 0.5
   mana: 0.5
   manaDrainSpeed: 0.3

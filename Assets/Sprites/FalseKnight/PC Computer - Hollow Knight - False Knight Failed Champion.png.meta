@@ -1,0 +1,4807 @@
+fileFormatVersion: 2
+guid: 6c37d4ac3fc072c4699f859ffb79286c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6490425014962470607
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_0
+  - first:
+      213: 8171538610145293752
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_1
+  - first:
+      213: -264192054524454934
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_2
+  - first:
+      213: -3478431051111239293
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_3
+  - first:
+      213: -1132341959310366385
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_4
+  - first:
+      213: -5714004726650809744
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_5
+  - first:
+      213: -2079529078731824957
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_6
+  - first:
+      213: -4647224672670099004
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_7
+  - first:
+      213: 6208504840311306599
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_8
+  - first:
+      213: -4009656683929767442
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_9
+  - first:
+      213: 6327740291774572466
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_10
+  - first:
+      213: 6951393819510666088
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_11
+  - first:
+      213: -3561835156491330202
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_12
+  - first:
+      213: -8517231199687307265
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_13
+  - first:
+      213: -4044194426612829050
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_14
+  - first:
+      213: -7340497471994609352
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_15
+  - first:
+      213: -109567784447800553
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_16
+  - first:
+      213: 6458021619987525030
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_17
+  - first:
+      213: 6584254502946222180
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_18
+  - first:
+      213: -3267903783874874787
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_19
+  - first:
+      213: -1919174986275671226
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_20
+  - first:
+      213: 5983712795509159625
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_21
+  - first:
+      213: -5434582964465021251
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_22
+  - first:
+      213: 4418432041616532693
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_23
+  - first:
+      213: -1033374877995051473
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_24
+  - first:
+      213: -4667370677485246373
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_25
+  - first:
+      213: -2874751450451348723
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_26
+  - first:
+      213: 6846423328339527670
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_27
+  - first:
+      213: 9211675938474621499
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_28
+  - first:
+      213: 4029028171284907405
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_29
+  - first:
+      213: -2985997238313114649
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_30
+  - first:
+      213: -3282986857363657370
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_31
+  - first:
+      213: 2306699557894636920
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_32
+  - first:
+      213: 3728171808856293645
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_33
+  - first:
+      213: 7070724917952557258
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_34
+  - first:
+      213: -6629364721542730305
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_35
+  - first:
+      213: 3666856790478343247
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_36
+  - first:
+      213: -7786919664322808215
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_37
+  - first:
+      213: -8906253881216275057
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_38
+  - first:
+      213: -6748123656375602295
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_39
+  - first:
+      213: 3863662786831226329
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_40
+  - first:
+      213: 4461848387380881117
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_41
+  - first:
+      213: -7449769137804861409
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_42
+  - first:
+      213: -9012603148159323429
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_43
+  - first:
+      213: -4976134071571786605
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_44
+  - first:
+      213: 6682637372410357121
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_45
+  - first:
+      213: -1028296123095452314
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_46
+  - first:
+      213: -4370692292080465222
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_47
+  - first:
+      213: 2319955217101924780
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_48
+  - first:
+      213: 3055965548933763136
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_49
+  - first:
+      213: -864210757441571411
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_50
+  - first:
+      213: 2445389343746917978
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_51
+  - first:
+      213: 2452477117898985343
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_52
+  - first:
+      213: -4409689867037278283
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_53
+  - first:
+      213: -6340365051618172058
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_54
+  - first:
+      213: 7055499235203256020
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_55
+  - first:
+      213: -5133387128283876171
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_56
+  - first:
+      213: 2097580940130352732
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_57
+  - first:
+      213: -8940318249884259771
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_58
+  - first:
+      213: 8137263970764506528
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_59
+  - first:
+      213: 1784907248172484084
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_60
+  - first:
+      213: -6121202833729416782
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_61
+  - first:
+      213: 4988273783000114086
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_62
+  - first:
+      213: 5602925490850380319
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_63
+  - first:
+      213: -2651625713891229386
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_64
+  - first:
+      213: 2913120357539748834
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_65
+  - first:
+      213: -1942972082194964826
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_66
+  - first:
+      213: -6102023730106198114
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_67
+  - first:
+      213: 9098828365500125771
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_68
+  - first:
+      213: 1601436027885357743
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_69
+  - first:
+      213: 97297483569663731
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_70
+  - first:
+      213: -3074996243762621284
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_71
+  - first:
+      213: -6312212393161238346
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_72
+  - first:
+      213: -5097144108606090163
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_73
+  - first:
+      213: -4919864295305517551
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_74
+  - first:
+      213: -684090915662481190
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_75
+  - first:
+      213: -6510175474878630178
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_76
+  - first:
+      213: 3108655703169935748
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_77
+  - first:
+      213: 3647021819248047459
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_78
+  - first:
+      213: 2409905675578845429
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_79
+  - first:
+      213: -3888864150259561332
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_80
+  - first:
+      213: -7989119098383363037
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_81
+  - first:
+      213: -1367787642851898240
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_82
+  - first:
+      213: 8365923656066185682
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_83
+  - first:
+      213: 6124719368724397262
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_84
+  - first:
+      213: -9024743490505375914
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_85
+  - first:
+      213: -3739947788031929190
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_86
+  - first:
+      213: 8451968297466706546
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_87
+  - first:
+      213: 3973801196011977934
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_88
+  - first:
+      213: 1322211468378138159
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_89
+  - first:
+      213: 1059582060999091699
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_90
+  - first:
+      213: 7040936412340840225
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_91
+  - first:
+      213: 7628029876352206834
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_92
+  - first:
+      213: 8021442812361049556
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_93
+  - first:
+      213: -555862897250784922
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_94
+  - first:
+      213: 1413661895952003961
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_95
+  - first:
+      213: 411922595054343358
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_96
+  - first:
+      213: 6661451866012901386
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_97
+  - first:
+      213: -3927495579565353972
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_98
+  - first:
+      213: 1104465943166775481
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_99
+  - first:
+      213: -5244035504304172095
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_100
+  - first:
+      213: 7983632994425180699
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_101
+  - first:
+      213: 8291852127169774534
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_102
+  - first:
+      213: -973076865742303604
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_103
+  - first:
+      213: -7219699981155480145
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_104
+  - first:
+      213: -5826703695304209739
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_105
+  - first:
+      213: 9068211427641938306
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_106
+  - first:
+      213: -6711515785430993940
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_107
+  - first:
+      213: -2429069513193064665
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_108
+  - first:
+      213: 5052864153972168228
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_109
+  - first:
+      213: 3973970824351016357
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_110
+  - first:
+      213: -7122065737354153534
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_111
+  - first:
+      213: 5402631184224246604
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_112
+  - first:
+      213: -3207709617909397568
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_113
+  - first:
+      213: -5919445716242345051
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_114
+  - first:
+      213: -6571439445015039927
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_115
+  - first:
+      213: -2491637692952459394
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_116
+  - first:
+      213: -7315795443756047162
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_117
+  - first:
+      213: -369519500493803341
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_118
+  - first:
+      213: -4684885648659265531
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_119
+  - first:
+      213: 570152502849606282
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_120
+  - first:
+      213: 876416431448718747
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_121
+  - first:
+      213: -7444636268473858725
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_122
+  - first:
+      213: -5635319800950187385
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_123
+  - first:
+      213: -7235128658423802560
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_124
+  - first:
+      213: 2149169581108406850
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_125
+  - first:
+      213: -398390919353303377
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_126
+  - first:
+      213: 7984464249964009512
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_127
+  - first:
+      213: -7278183080494116629
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_128
+  - first:
+      213: 8343101758494392025
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_129
+  - first:
+      213: 9024486685236650981
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_130
+  - first:
+      213: -647946602678017816
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_131
+  - first:
+      213: -4292841309630243931
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_132
+  - first:
+      213: -3078062475769751422
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_133
+  - first:
+      213: -3181095091575186602
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_134
+  - first:
+      213: 6418792706252279076
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_135
+  - first:
+      213: 4997956572564014154
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_136
+  - first:
+      213: 6193227587008660697
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_137
+  - first:
+      213: 8102345433345791359
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_138
+  - first:
+      213: -6054443926370700293
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_139
+  - first:
+      213: -8615773910842384718
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_140
+  - first:
+      213: -5980555855241871242
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_141
+  - first:
+      213: -7132534796562244992
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_142
+  - first:
+      213: 5704525145154846498
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_143
+  - first:
+      213: -6692137400487451257
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_144
+  - first:
+      213: 6923148983839923105
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_145
+  - first:
+      213: 3601280315673266478
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_146
+  - first:
+      213: 5376750769645980676
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_147
+  - first:
+      213: -9206368863250079039
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_148
+  - first:
+      213: 6542768398175137589
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_149
+  - first:
+      213: 7660765700612338894
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_150
+  - first:
+      213: -653584298360400312
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_151
+  - first:
+      213: -8687626599477980450
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_152
+  - first:
+      213: 8388207917608974531
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_153
+  - first:
+      213: 8489389668135642424
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_154
+  - first:
+      213: -4506095046661547902
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_155
+  - first:
+      213: -3195982975164011701
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_156
+  - first:
+      213: -1675475643120528088
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_157
+  - first:
+      213: -8871840065427002701
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_158
+  - first:
+      213: -7769119876154033102
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_159
+  - first:
+      213: 3691850401261028175
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_160
+  - first:
+      213: 2965050271747439844
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_161
+  - first:
+      213: -4901917140818727708
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_162
+  - first:
+      213: -6954097650167024618
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_163
+  - first:
+      213: -9220029557517932202
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_164
+  - first:
+      213: -1510802050320140708
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_165
+  - first:
+      213: 1155074793677186818
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_166
+  - first:
+      213: -4796237728817639726
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_167
+  - first:
+      213: -8312595485463664240
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_168
+  - first:
+      213: -6022357954219843974
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_169
+  - first:
+      213: 3374176551397992853
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_170
+  - first:
+      213: 5425863436800741519
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_171
+  - first:
+      213: 8733602540098250607
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_172
+  - first:
+      213: 2805229441812529186
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_173
+  - first:
+      213: 2884113001101660250
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_174
+  - first:
+      213: -6369527915947731917
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_175
+  - first:
+      213: 6105552762574383298
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_176
+  - first:
+      213: 4454612834762973290
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_177
+  - first:
+      213: -1714289248347808551
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_178
+  - first:
+      213: 5936027263996707568
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_179
+  - first:
+      213: -5504625092299269181
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_180
+  - first:
+      213: 7801444746874492801
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_181
+  - first:
+      213: -7412540057311001845
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_182
+  - first:
+      213: 6164765919773448965
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_183
+  - first:
+      213: 2234987604800708365
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_184
+  - first:
+      213: -1137894529119599903
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_185
+  - first:
+      213: 8455438081248517667
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_186
+  - first:
+      213: 368436021265325605
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_187
+  - first:
+      213: -4959096955593109708
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_188
+  - first:
+      213: -5797045275936967976
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_189
+  - first:
+      213: -585711818888857264
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_190
+  - first:
+      213: 1724013923271052006
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_191
+  - first:
+      213: 1301348139234547289
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_192
+  - first:
+      213: -3780811236012962097
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_193
+  - first:
+      213: -6121985997310441739
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_194
+  - first:
+      213: 5310064240796966560
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_195
+  - first:
+      213: -3199682884647493596
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_196
+  - first:
+      213: 7693922241488159275
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_197
+  - first:
+      213: 5859538707715296562
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_198
+  - first:
+      213: 5493508713582732132
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_199
+  - first:
+      213: -6501820912072429655
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_200
+  - first:
+      213: -7202195518262832929
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_201
+  - first:
+      213: 3269421366495757220
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_202
+  - first:
+      213: -3860820965229161857
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_203
+  - first:
+      213: 6595306519474189494
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_204
+  - first:
+      213: -1988961026848779399
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_205
+  - first:
+      213: 3760352023301918464
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_206
+  - first:
+      213: 8331231013529035814
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_207
+  - first:
+      213: -502360017610391276
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_208
+  - first:
+      213: -5214262174764630822
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_209
+  - first:
+      213: -7638725980993108944
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_210
+  - first:
+      213: -4461280438537774790
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_211
+  - first:
+      213: -8978083162068549705
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_212
+  - first:
+      213: 8703964910034772005
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_213
+  - first:
+      213: 3589195164642775651
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_214
+  - first:
+      213: 1666029183249441309
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_215
+  - first:
+      213: 4590471997070324839
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_216
+  - first:
+      213: -4217218029068138664
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_217
+  - first:
+      213: 4916276812326451417
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_218
+  - first:
+      213: 5885235032817390444
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_219
+  - first:
+      213: 8154491966223166104
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_220
+  - first:
+      213: -1379011012950037515
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_221
+  - first:
+      213: -3211642281664803923
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_222
+  - first:
+      213: 8325812281109388795
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_223
+  - first:
+      213: 5400491450141364034
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_224
+  - first:
+      213: 1621523362253976942
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_225
+  - first:
+      213: 3531043259154662928
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_226
+  - first:
+      213: -8875405344039306812
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_227
+  - first:
+      213: 7461466366469550759
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_228
+  - first:
+      213: -4016113576322005790
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_229
+  - first:
+      213: -2515581532227236440
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_230
+  - first:
+      213: -6148405752915006142
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_231
+  - first:
+      213: -179956602991818005
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_232
+  - first:
+      213: -972760306172058449
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_233
+  - first:
+      213: -6772024404070157076
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_234
+  - first:
+      213: -2106916901279165718
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_235
+  - first:
+      213: 5104840006433699958
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_236
+  - first:
+      213: -9179999969704859625
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_237
+  - first:
+      213: 6051720257427168336
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_238
+  - first:
+      213: -6426467675373536080
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_239
+  - first:
+      213: 6869208153279974742
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_240
+  - first:
+      213: -4557711566221970343
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_241
+  - first:
+      213: 2437190972560659026
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_242
+  - first:
+      213: -816437317447567522
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_243
+  - first:
+      213: -1279852621494467379
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_244
+  - first:
+      213: -5099339814934434627
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_245
+  - first:
+      213: 3150752383228261828
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_246
+  - first:
+      213: 3273680355478366481
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_247
+  - first:
+      213: 4823646596545111068
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_248
+  - first:
+      213: -207493628228209447
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_249
+  - first:
+      213: 2032711896134296981
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_250
+  - first:
+      213: 1011988294032621711
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_251
+  - first:
+      213: -5386500644171550843
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_252
+  - first:
+      213: -4999538270159068085
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_253
+  - first:
+      213: 5952496229088964798
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_254
+  - first:
+      213: -8198256936093690392
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_255
+  - first:
+      213: -2385645133132530658
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_256
+  - first:
+      213: 347056097665589987
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_257
+  - first:
+      213: 8560727310297158826
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_258
+  - first:
+      213: 8152821042789094553
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_259
+  - first:
+      213: 7622659826716159278
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_260
+  - first:
+      213: 2563933780744207730
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_261
+  - first:
+      213: -610699082124380696
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_262
+  - first:
+      213: 2879446950137371528
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_263
+  - first:
+      213: -2529151846790896452
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_264
+  - first:
+      213: 1526418735136432411
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_265
+  - first:
+      213: -6889973687042815672
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_266
+  - first:
+      213: 8672601560367429886
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_267
+  - first:
+      213: 8642151853724842898
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_268
+  - first:
+      213: -5245437630341828507
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_269
+  - first:
+      213: -4987766224943180804
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_270
+  - first:
+      213: -8769369424993517162
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_271
+  - first:
+      213: -344223913710264769
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_272
+  - first:
+      213: 3661110597275177705
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_273
+  - first:
+      213: -5247516876506020400
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_274
+  - first:
+      213: 8258720369367392573
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_275
+  - first:
+      213: 8362782534345307908
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_276
+  - first:
+      213: 1679882668366290933
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_277
+  - first:
+      213: 1750613636060889791
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_278
+  - first:
+      213: -5503658780695430972
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_279
+  - first:
+      213: 7848239672477067025
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_280
+  - first:
+      213: 5126816975783732900
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_281
+  - first:
+      213: 3316260871808656688
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_282
+  - first:
+      213: -3179262236949781497
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_283
+  - first:
+      213: 3476703333826166001
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_284
+  - first:
+      213: -8224621698337383848
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_285
+  - first:
+      213: 2355296974017904799
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_286
+  - first:
+      213: 8027073569040567024
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_287
+  - first:
+      213: -7953916253104326339
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_288
+  - first:
+      213: -124282028981520230
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_289
+  - first:
+      213: -7235337654271971512
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_290
+  - first:
+      213: 7073009290812902635
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_291
+  - first:
+      213: -990518464856966356
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_292
+  - first:
+      213: 3766418383860315617
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_293
+  - first:
+      213: -7002695778686245148
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_294
+  - first:
+      213: -5379796889390199209
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_295
+  - first:
+      213: -3052711152839784952
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_296
+  - first:
+      213: -8990658140459231490
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_297
+  - first:
+      213: 3800758365253598409
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_298
+  - first:
+      213: -7269819381468694696
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_299
+  - first:
+      213: -2435914508342160002
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_300
+  - first:
+      213: -2109144923524991871
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_301
+  - first:
+      213: 4239626797837006818
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_302
+  - first:
+      213: 7778934582555867349
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_303
+  - first:
+      213: -2516779631119669994
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_304
+  - first:
+      213: 8498626310884740280
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_305
+  - first:
+      213: 1822396464786683975
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_306
+  - first:
+      213: 7663584154817084193
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_307
+  - first:
+      213: 519157482122297872
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_308
+  - first:
+      213: -3796700961450395463
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_309
+  - first:
+      213: 7890641885109376062
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_310
+  - first:
+      213: -3472192982071868989
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_311
+  - first:
+      213: 5927503959544851
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_312
+  - first:
+      213: -7383366522948829947
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_313
+  - first:
+      213: -5945163770622437738
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_314
+  - first:
+      213: 3125619091321840457
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_315
+  - first:
+      213: -227376955582648067
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_316
+  - first:
+      213: -291571944765626077
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_317
+  - first:
+      213: 3451143649040643704
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_318
+  - first:
+      213: -4164210297602811788
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_319
+  - first:
+      213: -4666384214652327861
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_320
+  - first:
+      213: -1396668403787874055
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_321
+  - first:
+      213: -1461597695049166685
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_322
+  - first:
+      213: -7915037514221649188
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_323
+  - first:
+      213: -6969560781408749693
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_324
+  - first:
+      213: -4451302053270384446
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_325
+  - first:
+      213: -8133187622936239807
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_326
+  - first:
+      213: -4271034651526315319
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_327
+  - first:
+      213: -4425885622121136386
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_328
+  - first:
+      213: -7754984281434913500
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_329
+  - first:
+      213: 836702159031379581
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_330
+  - first:
+      213: 4522198531544859890
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_331
+  - first:
+      213: 9201746423230215748
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_332
+  - first:
+      213: -5500923020941737816
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_333
+  - first:
+      213: 3387041812635115045
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_334
+  - first:
+      213: 6831340753226769844
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_335
+  - first:
+      213: 1679107890913052573
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_336
+  - first:
+      213: 3333385604111989656
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_337
+  - first:
+      213: -2391655584909253062
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_338
+  - first:
+      213: -9171966547987800595
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_339
+  - first:
+      213: 4144743918832080696
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_340
+  - first:
+      213: 5458865865285412636
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_341
+  - first:
+      213: 9203154937391910836
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_342
+  - first:
+      213: 7505590563245173378
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_343
+  - first:
+      213: -1045037604219505759
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_344
+  - first:
+      213: 9056472938857953603
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_345
+  - first:
+      213: 319780146890325728
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_346
+  - first:
+      213: 2322056508281722791
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_347
+  - first:
+      213: 1115831004206802192
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_348
+  - first:
+      213: -858045335201048154
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_349
+  - first:
+      213: 8545676400461426291
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_350
+  - first:
+      213: 4393379805921472543
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_351
+  - first:
+      213: 4168787550686088478
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_352
+  - first:
+      213: 767845891568766119
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_353
+  - first:
+      213: 937752904201688171
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_354
+  - first:
+      213: -7262363383060688064
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_355
+  - first:
+      213: 76006007130584130
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_356
+  - first:
+      213: 2110207158520548927
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_357
+  - first:
+      213: 6971375700834338214
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_358
+  - first:
+      213: 8039718787007965516
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_359
+  - first:
+      213: -7436164805917628584
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_360
+  - first:
+      213: 2934703493829011367
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_361
+  - first:
+      213: 3875295926152870102
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_362
+  - first:
+      213: -7822481071308276059
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_363
+  - first:
+      213: 4094343720639651666
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_364
+  - first:
+      213: 573353124512417804
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_365
+  - first:
+      213: -22460593140167325
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_366
+  - first:
+      213: -5066930939257920805
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_367
+  - first:
+      213: 856462743588809058
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_368
+  - first:
+      213: -6127949876642272374
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_369
+  - first:
+      213: 6621591664341821669
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_370
+  - first:
+      213: 3236607895191468322
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_371
+  - first:
+      213: 8308218508101519933
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_372
+  - first:
+      213: 3534823479319498616
+    second: PC Computer - Hollow Knight - False Knight Failed Champion_373
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 13286
+        width: 615
+        height: 393
+      alignment: 9
+      pivot: {x: 0.6437738, y: 0.3643895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7d695e9b6655cf0800000000000000
+      internalID: -264192054524454934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_3
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 13287
+        width: 614
+        height: 395
+      alignment: 9
+      pivot: {x: 0.64203537, y: 0.362008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38173d673612abfc0800000000000000
+      internalID: -3478431051111239293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_4
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 13286
+        width: 614
+        height: 393
+      alignment: 9
+      pivot: {x: 0.63019913, y: 0.3736358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f492907ccfc1940f0800000000000000
+      internalID: -1132341959310366385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_5
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 13285
+        width: 615
+        height: 388
+      alignment: 9
+      pivot: {x: 0.6260484, y: 0.35639748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0725317a9f6c3b0b0800000000000000
+      internalID: -5714004726650809744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_6
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 13285
+        width: 615
+        height: 389
+      alignment: 9
+      pivot: {x: 0.6437738, y: 0.36922097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0281a12570423e0800000000000000
+      internalID: -2079529078731824957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_11
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 12871
+        width: 487
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86377c949df487060800000000000000
+      internalID: 6951393819510666088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_12
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 12875
+        width: 550
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d16dcebc1d19ec0800000000000000
+      internalID: -3561835156491330202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 12469
+        width: 574
+        height: 346
+      alignment: 9
+      pivot: {x: 0.75259084, y: 0.36767295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f26da450607b8a1f0800000000000000
+      internalID: -1033374877995051473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_25
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 12470
+        width: 563
+        height: 381
+      alignment: 9
+      pivot: {x: 0.74848986, y: 0.31974092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58ea6df81b2a3fb0800000000000000
+      internalID: -4667370677485246373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_29
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11957
+        width: 596
+        height: 345
+      alignment: 9
+      pivot: {x: 0.72619563, y: 0.3930933}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d858a7b66cbf9e730800000000000000
+      internalID: 4029028171284907405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_30
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 11956
+        width: 539
+        height: 492
+      alignment: 9
+      pivot: {x: 0.6604518, y: 0.334558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e3ac0e055b9f86d0800000000000000
+      internalID: -2985997238313114649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_31
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 11955
+        width: 516
+        height: 466
+      alignment: 9
+      pivot: {x: 0.6552803, y: 0.33897617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d2094e8dc7072d0800000000000000
+      internalID: -3282986857363657370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_32
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 11958
+        width: 503
+        height: 440
+      alignment: 9
+      pivot: {x: 0.63400847, y: 0.35258567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8754cd7c60b030020800000000000000
+      internalID: 2306699557894636920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_33
+      rect:
+        serializedVersion: 2
+        x: 2622
+        y: 11956
+        width: 502
+        height: 472
+      alignment: 9
+      pivot: {x: 0.65961105, y: 0.33832717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d014188e1802db330800000000000000
+      internalID: 3728171808856293645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_46
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11550
+        width: 610
+        height: 384
+      alignment: 9
+      pivot: {x: 0.6250967, y: 0.35427094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665fbfacf12cab1f0800000000000000
+      internalID: -1028296123095452314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_47
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 11551
+        width: 581
+        height: 333
+      alignment: 9
+      pivot: {x: 0.6269628, y: 0.35868582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba810c648e2853c0800000000000000
+      internalID: -4370692292080465222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_48
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 11552
+        width: 562
+        height: 313
+      alignment: 9
+      pivot: {x: 0.5882579, y: 0.36997056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9ac227af2223020800000000000000
+      internalID: 2319955217101924780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_53
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 11188
+        width: 598
+        height: 341
+      alignment: 9
+      pivot: {x: 0.72331226, y: 0.3918364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf7a91fd62adc2c0800000000000000
+      internalID: -4409689867037278283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_54
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 11190
+        width: 600
+        height: 329
+      alignment: 9
+      pivot: {x: 0.7374058, y: 0.414953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6636ff7049f7208a0800000000000000
+      internalID: -6340365051618172058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_55
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 11189
+        width: 601
+        height: 324
+      alignment: 9
+      pivot: {x: 0.74335927, y: 0.41364053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de845b3c2b2ae160800000000000000
+      internalID: 7055499235203256020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_56
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 11190
+        width: 600
+        height: 329
+      alignment: 9
+      pivot: {x: 0.74800456, y: 0.41881767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4b31cca9b82c8b0800000000000000
+      internalID: -5133387128283876171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_61
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 10783
+        width: 610
+        height: 384
+      alignment: 9
+      pivot: {x: 0.650116, y: 0.3476461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b19179447e1d0ba0800000000000000
+      internalID: -6121202833729416782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_62
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 10784
+        width: 581
+        height: 333
+      alignment: 9
+      pivot: {x: 0.6138286, y: 0.35868582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3ad1e9398e93540800000000000000
+      internalID: 4988273783000114086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_63
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 10785
+        width: 562
+        height: 313
+      alignment: 9
+      pivot: {x: 0.61315095, y: 0.3374663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a3e116c0791cd40800000000000000
+      internalID: 5602925490850380319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_77
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 10374
+        width: 549
+        height: 388
+      alignment: 9
+      pivot: {x: 0.7402245, y: 0.4334201}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489af6444e9242b20800000000000000
+      internalID: 3108655703169935748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_78
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 10365
+        width: 565
+        height: 374
+      alignment: 9
+      pivot: {x: 0.75507945, y: 0.45274118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 365f0689503dc9230800000000000000
+      internalID: 3647021819248047459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_79
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 10367
+        width: 542
+        height: 370
+      alignment: 9
+      pivot: {x: 0.75587, y: 0.45223024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f823179174b17120800000000000000
+      internalID: 2409905675578845429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_80
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 10359
+        width: 526
+        height: 366
+      alignment: 9
+      pivot: {x: 0.72488046, y: 0.48142663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c0700d8aaf70ac0800000000000000
+      internalID: -3888864150259561332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_81
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 10365
+        width: 565
+        height: 374
+      alignment: 9
+      pivot: {x: 0.75989264, y: 0.47091722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32412981282f02190800000000000000
+      internalID: -7989119098383363037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_82
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 9962
+        width: 542
+        height: 370
+      alignment: 9
+      pivot: {x: 0.73329306, y: 0.44487965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08cc4abb264a40de0800000000000000
+      internalID: -1367787642851898240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_88
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 9361
+        width: 541
+        height: 572
+      alignment: 9
+      pivot: {x: 0.5628291, y: 0.28132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eccf0583227c52730800000000000000
+      internalID: 3973801196011977934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_99
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 9347
+        width: 606
+        height: 467
+      alignment: 9
+      pivot: {x: 0.31602472, y: 0.32240573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b0f8f07ce9d35f00800000000000000
+      internalID: 1104465943166775481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_100
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 9346
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c3d9603e717937b0800000000000000
+      internalID: -5244035504304172095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_101
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 9337
+        width: 533
+        height: 343
+      alignment: 9
+      pivot: {x: 0.2729712, y: 0.46828878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b121dc9c8ef8bce60800000000000000
+      internalID: 7983632994425180699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_112
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 8738
+        width: 395
+        height: 578
+      alignment: 9
+      pivot: {x: 0.413948, y: 0.30476016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b522c00700afa40800000000000000
+      internalID: 5402631184224246604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_113
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 8737
+        width: 407
+        height: 560
+      alignment: 9
+      pivot: {x: 0.6169209, y: 0.32761928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c708e1091deb73d0800000000000000
+      internalID: -3207709617909397568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_114
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 8737
+        width: 506
+        height: 493
+      alignment: 9
+      pivot: {x: 0.58867127, y: 0.34831786}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3da20db77e9dda0800000000000000
+      internalID: -5919445716242345051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_115
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 8736
+        width: 563
+        height: 386
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.32036057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94073e844ae8dc4a0800000000000000
+      internalID: -6571439445015039927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_116
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 8737
+        width: 605
+        height: 389
+      alignment: 9
+      pivot: {x: 0.58090293, y: 0.34970728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77489238bceb6dd0800000000000000
+      internalID: -2491637692952459394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_128
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 8298
+        width: 599
+        height: 341
+      alignment: 9
+      pivot: {x: 0.7286602, y: 0.40152755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0d3ecbc03befa90800000000000000
+      internalID: -7278183080494116629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_129
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 8303
+        width: 602
+        height: 348
+      alignment: 9
+      pivot: {x: 0.77075684, y: 0.39891174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9debeff78d6a8c370800000000000000
+      internalID: 8343101758494392025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_130
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 8290
+        width: 619
+        height: 402
+      alignment: 9
+      pivot: {x: 0.7955257, y: 0.3920704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e3e5c193da6d3d70800000000000000
+      internalID: 9024486685236650981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_131
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 8304
+        width: 643
+        height: 411
+      alignment: 9
+      pivot: {x: 0.8027321, y: 0.35734347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0a4f17ff70207f0800000000000000
+      internalID: -647946602678017816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_132
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 7874
+        width: 654
+        height: 409
+      alignment: 9
+      pivot: {x: 0.8030193, y: 0.3623811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5abdd56c293cc64c0800000000000000
+      internalID: -4292841309630243931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_146
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 7291
+        width: 671
+        height: 521
+      alignment: 9
+      pivot: {x: 0.7586429, y: 0.23441343}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29cf40ed515af130800000000000000
+      internalID: 3601280315673266478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_147
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 7217
+        width: 522
+        height: 625
+      alignment: 9
+      pivot: {x: 0.28434363, y: 0.30862656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c8e86765e0e9a40800000000000000
+      internalID: 5376750769645980676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_161
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 6654
+        width: 395
+        height: 542
+      alignment: 9
+      pivot: {x: 0.6365594, y: 0.27715728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec7eac3389f52920800000000000000
+      internalID: 2965050271747439844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_163
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 6603
+        width: 467
+        height: 480
+      alignment: 9
+      pivot: {x: 0.670747, y: 0.33876342}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6147a6418051e7f90800000000000000
+      internalID: -6954097650167024618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_177
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 6183
+        width: 562
+        height: 400
+      alignment: 9
+      pivot: {x: 0.5918074, y: 0.30944702}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6061fb85c6f1dd30800000000000000
+      internalID: 4454612834762973290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_178
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 6183
+        width: 605
+        height: 389
+      alignment: 9
+      pivot: {x: 0.6414908, y: 0.331189}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc15f5e20f9538e0800000000000000
+      internalID: -1714289248347808551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_185
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5678
+        width: 582
+        height: 377
+      alignment: 9
+      pivot: {x: 0.6289491, y: 0.5311037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e247ff54f26530f0800000000000000
+      internalID: -1137894529119599903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_186
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 5648
+        width: 468
+        height: 515
+      alignment: 9
+      pivot: {x: 0.6127528, y: 0.47722998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ed025d220c75570800000000000000
+      internalID: 8455438081248517667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_187
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 5672
+        width: 484
+        height: 339
+      alignment: 9
+      pivot: {x: 0.76650697, y: 0.396228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e5af9fb92fc1500800000000000000
+      internalID: 368436021265325605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_188
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 5674
+        width: 458
+        height: 348
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3146706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43fc623e79fbd2bb0800000000000000
+      internalID: -4959096955593109708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_189
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 5122
+        width: 402
+        height: 366
+      alignment: 9
+      pivot: {x: 0.40957308, y: 0.38145438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2bbec1902cc8fa0800000000000000
+      internalID: -5797045275936967976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_199
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4630
+        width: 398
+        height: 334
+      alignment: 9
+      pivot: {x: 0.61688536, y: 0.31594867}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 463ac93b11ddc3c40800000000000000
+      internalID: 5493508713582732132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_200
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 4636
+        width: 344
+        height: 452
+      alignment: 9
+      pivot: {x: 0.52656376, y: 0.20777664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af67be1454e4c5a0800000000000000
+      internalID: -6501820912072429655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_201
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 4639
+        width: 351
+        height: 452
+      alignment: 9
+      pivot: {x: 0.5733688, y: 0.21880402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd09803c559ac0c90800000000000000
+      internalID: -7202195518262832929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_202
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 4642
+        width: 371
+        height: 460
+      alignment: 9
+      pivot: {x: 0.52015215, y: 0.20382982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a34d0329615f5d20800000000000000
+      internalID: 3269421366495757220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_211
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 4154
+        width: 351
+        height: 458
+      alignment: 9
+      pivot: {x: 0.5388023, y: 0.18775907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a399e89f3195612c0800000000000000
+      internalID: -4461280438537774790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_212
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 4154
+        width: 350
+        height: 458
+      alignment: 9
+      pivot: {x: 0.51945645, y: 0.18181227}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bffcf89ee0776380800000000000000
+      internalID: -8978083162068549705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_213
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 4153
+        width: 398
+        height: 458
+      alignment: 9
+      pivot: {x: 0.4794675, y: 0.1788378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520661858f1bac870800000000000000
+      internalID: 8703964910034772005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_214
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 4154
+        width: 390
+        height: 458
+      alignment: 9
+      pivot: {x: 0.5209526, y: 0.18775907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36215126cf16fc130800000000000000
+      internalID: 3589195164642775651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_225
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3672
+        width: 386
+        height: 461
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.18683696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e65352228eec08610800000000000000
+      internalID: 1621523362253976942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_232
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 3188
+        width: 346
+        height: 463
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beacfab4c6aa08df0800000000000000
+      internalID: -179956602991818005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_233
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 3189
+        width: 358
+        height: 461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4a30bc7af0082f0800000000000000
+      internalID: -972760306172058449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_234
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 3189
+        width: 354
+        height: 463
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce43f192fafe402a0800000000000000
+      internalID: -6772024404070157076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_235
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2989
+        width: 223
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae21dffbd3ab2c2e0800000000000000
+      internalID: -2106916901279165718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_236
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 2994
+        width: 200
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 678fea270f808d640800000000000000
+      internalID: 5104840006433699958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_237
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 2995
+        width: 253
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71825af4aa61a9080800000000000000
+      internalID: -9179999969704859625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_238
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 2995
+        width: 240
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c5bffb2870cf350800000000000000
+      internalID: 6051720257427168336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_245
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2847
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbca3dda4718b39b0800000000000000
+      internalID: -5099339814934434627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_246
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 2847
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c539816998b9bb20800000000000000
+      internalID: 3150752383228261828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_247
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2847
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 119667840f27e6d20800000000000000
+      internalID: 3273680355478366481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_248
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 2847
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14e715d50901f240800000000000000
+      internalID: 4823646596545111068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_249
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 2847
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4fc4cf4a5de1df0800000000000000
+      internalID: -207493628228209447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_256
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2686
+        width: 111
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1cfe7f146c74eed0800000000000000
+      internalID: -2385645133132530658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_257
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 2688
+        width: 121
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2ad7a9eadf0d400800000000000000
+      internalID: 347056097665589987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_258
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 2685
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa45f3dc120ddc670800000000000000
+      internalID: 8560727310297158826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_266
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 2078
+        width: 513
+        height: 580
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8494600bf65e160a0800000000000000
+      internalID: -6889973687042815672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_267
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 2096
+        width: 448
+        height: 561
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8f2347b254b5870800000000000000
+      internalID: 8672601560367429886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_268
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 2113
+        width: 437
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29bb048a2571fe770800000000000000
+      internalID: 8642151853724842898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_278
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1589
+        width: 293
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb24d5ca3dd6b4810800000000000000
+      internalID: 1750613636060889791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_279
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1588
+        width: 398
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c870b3af731f93b0800000000000000
+      internalID: -5503658780695430972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_280
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 1592
+        width: 344
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117af1e766c8aec60800000000000000
+      internalID: 7848239672477067025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_281
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 1595
+        width: 351
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6280e50ec162740800000000000000
+      internalID: 5126816975783732900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_282
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 1598
+        width: 371
+        height: 460
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 035aeae41b9b50e20800000000000000
+      internalID: 3316260871808656688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_287
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1307
+        width: 348
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa079cb1e4e56f60800000000000000
+      internalID: 8027073569040567024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_298
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1087
+        width: 197
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ccf80e88910fb430800000000000000
+      internalID: 3800758365253598409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_299
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1086
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857fe4a2ac96c1b90800000000000000
+      internalID: -7269819381468694696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_300
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1102
+        width: 213
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e759b0329a4e13ed0800000000000000
+      internalID: -2435914508342160002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_301
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1111
+        width: 242
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1847975eddfcab2e0800000000000000
+      internalID: -2109144923524991871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_302
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 1096
+        width: 261
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e73d413c1e26da30800000000000000
+      internalID: 4239626797837006818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_303
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 1083
+        width: 256
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d87e3cc9c354fb60800000000000000
+      internalID: 7778934582555867349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_304
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1080
+        width: 259
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6156c2d824a921dd0800000000000000
+      internalID: -2516779631119669994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_305
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 1068
+        width: 251
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcc2132a9f21f570800000000000000
+      internalID: 8498626310884740280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_306
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 1059
+        width: 238
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748b983ede37a4910800000000000000
+      internalID: 1822396464786683975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_307
+      rect:
+        serializedVersion: 2
+        x: 2493
+        y: 1051
+        width: 234
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b3f267f258a5a60800000000000000
+      internalID: 7663584154817084193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_318
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 833
+        width: 223
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876b9e52ddce4ef20800000000000000
+      internalID: 3451143649040643704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_319
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 838
+        width: 200
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4785c591cc0c536c0800000000000000
+      internalID: -4164210297602811788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_320
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 839
+        width: 253
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b486824c74cad3fb0800000000000000
+      internalID: -4666384214652327861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_321
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 839
+        width: 240
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f046339c790e9ce0800000000000000
+      internalID: -1396668403787874055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_326
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 552
+        width: 172
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141284bc2fc112f80800000000000000
+      internalID: -8133187622936239807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_327
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 551
+        width: 172
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2c3640d9c3ab4c0800000000000000
+      internalID: -4271034651526315319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_328
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 552
+        width: 173
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efef5fcd9781492c0800000000000000
+      internalID: -4425885622121136386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_329
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 550
+        width: 172
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425855a32e2c06490800000000000000
+      internalID: -7754984281434913500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_330
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 552
+        width: 171
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d762edb3e209c9b00800000000000000
+      internalID: 836702159031379581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_337
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 382
+        width: 149
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89bfe70cb80924e20800000000000000
+      internalID: 3333385604111989656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_338
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 382
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36a764cae12fced0800000000000000
+      internalID: -2391655584909253062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_339
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 382
+        width: 150
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deddb6f0501a6b080800000000000000
+      internalID: -9171966547987800595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_340
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 382
+        width: 149
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83752f662a6158930800000000000000
+      internalID: 4144743918832080696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_341
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 382
+        width: 158
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c17a7d80599c1cb40800000000000000
+      internalID: 5458865865285412636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_342
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 382
+        width: 158
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf8028b7ac28bf70800000000000000
+      internalID: 9203154937391910836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_343
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 382
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28aa0c7d9d6392860800000000000000
+      internalID: 7505590563245173378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_354
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 203
+        width: 158
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6458064c41930d00800000000000000
+      internalID: 937752904201688171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_355
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 204
+        width: 156
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0431dd21bf6e63b90800000000000000
+      internalID: -7262363383060688064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_356
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 212
+        width: 157
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24470df8f070e0100800000000000000
+      internalID: 76006007130584130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_357
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 205
+        width: 157
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e8a16fa36f84d10800000000000000
+      internalID: 2110207158520548927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_358
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 183
+        width: 158
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a54504934d4fb060800000000000000
+      internalID: 6971375700834338214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_359
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 185
+        width: 160
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49e4a9f3a1d29f60800000000000000
+      internalID: 8039718787007965516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_360
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 184
+        width: 160
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857a40ce18f6dc890800000000000000
+      internalID: -7436164805917628584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_361
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 184
+        width: 160
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7a6c667492ab820800000000000000
+      internalID: 2934703493829011367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_362
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 185
+        width: 164
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d83cd5dc11d7c530800000000000000
+      internalID: 3875295926152870102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_370
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3
+        width: 154
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e828c8398e94eb50800000000000000
+      internalID: 6621591664341821669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_371
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 3
+        width: 153
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229bc1e7bbdbaec20800000000000000
+      internalID: 3236607895191468322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_372
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 5
+        width: 154
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a87bbd6b8bc4370800000000000000
+      internalID: 8308218508101519933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_373
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 2
+        width: 153
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f8c84e9373e0130800000000000000
+      internalID: 3534823479319498616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_0
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 5255
+        width: 120
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f55e5bb64830ec4997b20ced2779361
+      internalID: -259704948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_7
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 12648
+        width: 208
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810e9c8329e5d1942ac6524720f8cd4b
+      internalID: 443403522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_8
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 13374
+        width: 102
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43f90c3fada8644a919c0e647a4c79b
+      internalID: -2098473597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_1
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 12977
+        width: 170
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac09cb3f1c4656544a8f3d508713efea
+      internalID: 1122850999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_9
+      rect:
+        serializedVersion: 2
+        x: 3195
+        y: 12114
+        width: 113
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cdf485fb5feb6447becbcc657a4080c
+      internalID: 415750235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_10
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 11624
+        width: 230
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a3e255203298041812ea36bace8f20
+      internalID: -976984329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_13
+      rect:
+        serializedVersion: 2
+        x: 2517
+        y: 11316
+        width: 156
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b092ee28e7a57b4ca30e6b439cdd868
+      internalID: -376269316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_14
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 10869
+        width: 323
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334ccfb09149ac549bf8d633f8a4aaf2
+      internalID: -17887028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_15
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 10419
+        width: 205
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44e4c5a05568a04b90fe9250055cbaa
+      internalID: 1663685352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_16
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 10129
+        width: 161
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7b79af88bc9fcd498caafed0c8c15fe
+      internalID: 1468749546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_17
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 9446
+        width: 164
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725932ea30194904bb54087850f24718
+      internalID: 426568898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_18
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 8878
+        width: 14
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5317bcbe2b3279f44bc6f7ee5f485e71
+      internalID: -983181822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_19
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 8020
+        width: 102
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac328212ffa40f4190e6836054e720d
+      internalID: 916039166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_20
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 7476
+        width: 151
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2cba5024b765474192b85218e1b7aa4
+      internalID: 1355180352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_21
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 6776
+        width: 140
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe115c7b425a9141a073b1c7a138a90
+      internalID: -412897617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_22
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 6401
+        width: 123
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d660d24121177224f8bda6ae41445610
+      internalID: 1971584004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_23
+      rect:
+        serializedVersion: 2
+        x: 3030
+        y: 5806
+        width: 175
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ed2aa7819f1d749b29b09cfe446674
+      internalID: -1145497049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_26
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 4798
+        width: 136
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da82ef8fb0968404cb193f077952a354
+      internalID: -874700999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_27
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 4248
+        width: 182
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a586d1070fa17b346a57321ab910b5e8
+      internalID: -1085672905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_28
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 3825
+        width: 93
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb9c32fdb2638b42978a16521a27048
+      internalID: -1353725021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_34
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 3323
+        width: 110
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70338e225beeb4a479c39de00fde5cf8
+      internalID: 1497445245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_35
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 3011
+        width: 134
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcc58c6c02e8e84585c388d06d9d727
+      internalID: -599547252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_36
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 2881
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478aae4d9be5c9a45bda94c6bc337455
+      internalID: -389744937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_37
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 2725
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0b0c2c00af403419142c16c24cd861
+      internalID: 1243390691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_38
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 2295
+        width: 122
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878f4203e18cee2458481a8e4e378386
+      internalID: 1934163499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_39
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 1708
+        width: 299
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ea9e80f9c928f4bab7c690b53703ed
+      internalID: -1742512951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_40
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1387
+        width: 97
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f107f05daef3c4cb78bc1709223f8d
+      internalID: 1121433123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_41
+      rect:
+        serializedVersion: 2
+        x: 2781
+        y: 1071
+        width: 102
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0835c106841e143ba1fa118d29d533
+      internalID: 1670978817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_42
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 865
+        width: 180
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f80d91884430074190babc15003bf91
+      internalID: 631485727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_43
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 612
+        width: 122
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50cbf461fceed8342b0fe5f7180a32d8
+      internalID: -458806091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_44
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 432
+        width: 106
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53697b43ca70ed047b2e3935e87cc2a3
+      internalID: -181965576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_45
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 211
+        width: 125
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759e540e3568beb4b951b2bfa2a24e3d
+      internalID: -1023525043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Hollow Knight - False Knight Failed Champion_49
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 29
+        width: 143
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a376cf6824d1d49a612fb6c03b39c4
+      internalID: -581850668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 65c92ec41921af742a9fb09ad28f5e58
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PC Computer - Hollow Knight - False Knight Failed Champion_0: -259704948
+      PC Computer - Hollow Knight - False Knight Failed Champion_1: 1122850999
+      PC Computer - Hollow Knight - False Knight Failed Champion_10: -976984329
+      PC Computer - Hollow Knight - False Knight Failed Champion_13: -376269316
+      PC Computer - Hollow Knight - False Knight Failed Champion_14: -17887028
+      PC Computer - Hollow Knight - False Knight Failed Champion_15: 1663685352
+      PC Computer - Hollow Knight - False Knight Failed Champion_16: 1468749546
+      PC Computer - Hollow Knight - False Knight Failed Champion_17: 426568898
+      PC Computer - Hollow Knight - False Knight Failed Champion_18: -983181822
+      PC Computer - Hollow Knight - False Knight Failed Champion_19: 916039166
+      PC Computer - Hollow Knight - False Knight Failed Champion_20: 1355180352
+      PC Computer - Hollow Knight - False Knight Failed Champion_21: -412897617
+      PC Computer - Hollow Knight - False Knight Failed Champion_22: 1971584004
+      PC Computer - Hollow Knight - False Knight Failed Champion_23: -1145497049
+      PC Computer - Hollow Knight - False Knight Failed Champion_26: -874700999
+      PC Computer - Hollow Knight - False Knight Failed Champion_27: -1085672905
+      PC Computer - Hollow Knight - False Knight Failed Champion_28: -1353725021
+      PC Computer - Hollow Knight - False Knight Failed Champion_34: 1497445245
+      PC Computer - Hollow Knight - False Knight Failed Champion_35: -599547252
+      PC Computer - Hollow Knight - False Knight Failed Champion_36: -389744937
+      PC Computer - Hollow Knight - False Knight Failed Champion_37: 1243390691
+      PC Computer - Hollow Knight - False Knight Failed Champion_374: 117268273
+      PC Computer - Hollow Knight - False Knight Failed Champion_38: 1934163499
+      PC Computer - Hollow Knight - False Knight Failed Champion_39: -1742512951
+      PC Computer - Hollow Knight - False Knight Failed Champion_40: 1121433123
+      PC Computer - Hollow Knight - False Knight Failed Champion_41: 1670978817
+      PC Computer - Hollow Knight - False Knight Failed Champion_42: 631485727
+      PC Computer - Hollow Knight - False Knight Failed Champion_43: -458806091
+      PC Computer - Hollow Knight - False Knight Failed Champion_44: -181965576
+      PC Computer - Hollow Knight - False Knight Failed Champion_45: -1023525043
+      PC Computer - Hollow Knight - False Knight Failed Champion_49: -581850668
+      PC Computer - Hollow Knight - False Knight Failed Champion_64: -936966249
+      PC Computer - Hollow Knight - False Knight Failed Champion_7: 443403522
+      PC Computer - Hollow Knight - False Knight Failed Champion_8: -2098473597
+      PC Computer - Hollow Knight - False Knight Failed Champion_9: 415750235
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
