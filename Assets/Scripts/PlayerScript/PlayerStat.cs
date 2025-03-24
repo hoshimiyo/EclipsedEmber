@@ -36,10 +36,10 @@ public class PlayerStat : MonoBehaviour
         if (healing) return;
     }
 
-    private void FixedUpdate()
-    {
-        Attack();
-    }
+    //private void FixedUpdate()
+    //{
+    //    Attack();
+    //}
     #endregion
 
     #region Attack
@@ -67,6 +67,8 @@ public class PlayerStat : MonoBehaviour
         Gizmos.DrawWireCube(upAttackTransform.position, upAttackSize);
         Gizmos.DrawWireCube(downAttackTransform.position, downAttackSize);
     }
+
+
 
     void Hit(Transform _attackTransform, Vector2 _attackArea)
     {
@@ -125,6 +127,7 @@ public class PlayerStat : MonoBehaviour
                 CreateSlashEffect(slashEffect, -90, downAttackTransform);
             }
         }
+
     }
 
     private GameObject CreateSlashEffect(GameObject slashEffectPrefab, int effectAngle, Transform attackTransform)
@@ -140,7 +143,7 @@ public class PlayerStat : MonoBehaviour
     {
         isAttacking = Input.GetMouseButtonDown(0);
     }
-    #endregion
+    #endregion  
     #endregion
 
     #region Health
