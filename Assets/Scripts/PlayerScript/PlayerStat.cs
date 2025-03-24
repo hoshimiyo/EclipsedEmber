@@ -31,16 +31,15 @@ public class PlayerStat : MonoBehaviour
     }
     private void Update()
     {
-        if (!PlayerMovement.instance.active) return;
-        AttackInput();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
         Heal();
         if (healing) return;
     }
 
-    private void FixedUpdate()
-    {
-        Attack();
-    }
+
     #endregion
 
     #region Attack
@@ -54,6 +53,8 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private LayerMask attackLayer;
     [SerializeField] private GameObject slashEffect;
     [SerializeField] private AudioClip hitSFX;
+    [SerializeField] private float attackRate;
+    float nextAttackTime = 0f;
 
     [SerializeField] private AudioClip attackSoundClip;
     [SerializeField] private AudioClip healSFX;
@@ -79,6 +80,14 @@ public class PlayerStat : MonoBehaviour
             PlaySFXClip(hitSFX);
         }
         else PlaySFXClip(attackSoundClip);
+        for (int i = 0; i < objectsToHit.Length; i++)
+        {
+            BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
         // for (int i = 0; i < objectsToHit.Length; i++)
         // {
         //     Enemy e = objectsToHit[i].GetComponent<Enemy>();
@@ -96,12 +105,9 @@ public class PlayerStat : MonoBehaviour
     }
     private void Attack()
     {
-        timeSinceAttack += Time.deltaTime;
-        if (isAttacking && timeSinceAttack >= timeBetweenAttack)
+        if (Time.time >= nextAttackTime)
         {
-            // Attack logic
-            timeSinceAttack = 0;
-
+            nextAttackTime = Time.time + 1f / attackRate;
             if (PlayerMovement.instance.yRaw == 0 || PlayerMovement.instance.yRaw < 0 && PlayerMovement.instance.IsGrounded())
             {
                 Hit(sideAttackTransform, sideAttackSize);
@@ -127,6 +133,7 @@ public class PlayerStat : MonoBehaviour
                 CreateSlashEffect(slashEffect, -90, downAttackTransform);
             }
         }
+
     }
 
     private GameObject CreateSlashEffect(GameObject slashEffectPrefab, int effectAngle, Transform attackTransform)
