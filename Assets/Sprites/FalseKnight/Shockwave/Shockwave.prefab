@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2128536324980750186}
   - component: {fileID: 2650926194940233493}
   - component: {fileID: 8990827620686485075}
-  - component: {fileID: 7812562026222130556}
+  - component: {fileID: -2507237333041447138}
   m_Layer: 0
   m_Name: Shockwave
   m_TagString: Untagged
@@ -158,7 +158,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.81, y: 4.5377903}
   m_EdgeRadius: 0
---- !u!114 &7812562026222130556
+--- !u!114 &-2507237333041447138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,5 +173,5 @@ MonoBehaviour:
   maxLifetime: 3
   lifeTime: 0
   speedIncreaseDuration: 0.2
-  damageDelayWindow: 20
+  damageDelayWindow: 50
   speed: 10
