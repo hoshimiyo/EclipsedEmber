@@ -27,6 +27,7 @@ public class FalseKnight : BaseEnemy
     [SerializeField] private bool isInactive = false;
     [SerializeField] private bool canNormalAttack = false;
     [SerializeField] private bool canJump = false;
+    private bool isDead = false;
     private bool isRunning = false;
     private bool isJumping = false;
     private Vector3 lockedPlayerPosition; // To store the locked player position during the attack
@@ -47,7 +48,7 @@ public class FalseKnight : BaseEnemy
         canNormalAttack = Time.time >= lastNormalAttackTime + normalAttackCooldown && !isInactive;
         canJump = Time.time >= lastJumpTime + jumpCooldown && !isInactive;
         base.Update();
-        if (isInactive || isJumping) return;
+        if (isInactive || isJumping || isDead) return;
 
         if (isPlayerInAggroRange && !isPlayerInMeleeAttackRange && canJump)
         {
@@ -75,18 +76,28 @@ public class FalseKnight : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        base.TakeDamage(damageTaken);
-        poise -= damageTaken;
-        if(poise <= 0)
+        if (isDead == true) return;
+        if (health > 0)
         {
-            isInactive = true;
-            anim.SetTrigger("StartStun");
+            health -= damageTaken;
+            StartCoroutine(BlinkRedEffect());
+            if (health <= 0)
+            {
+                Die();
+            }
         }
     }
 
     protected override void Die()
     {
-        base.Die();
+        isDead = true;
+        isInactive = true;
+        anim.SetTrigger("Die");
+    }
+
+    private void ExecudeDie()
+    {
+        Destroy(gameObject);
     }
 
     private void Run()

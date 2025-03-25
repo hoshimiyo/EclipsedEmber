@@ -12,6 +12,7 @@ public class MossKnight : BaseEnemy
     [SerializeField] private AudioClip[] attackSound;
     [SerializeField] private AudioClip dieSound;
     private bool canSlash = false;
+    private bool isDead = false;
     protected override void Start()
     {
         base.Start();
@@ -47,6 +48,7 @@ public class MossKnight : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
+        if (isDead == true) return;
         if (health > 0)
         {
             health -= damageTaken;
@@ -60,6 +62,7 @@ public class MossKnight : BaseEnemy
 
     protected override void Die()
     {
+        isDead = false;
         isInactive = true;
         anim.SetTrigger("Die");
         SFXManager.instance.PlaySFXClip(dieSound, PlayerStat.instance.transform, 1f);
