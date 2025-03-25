@@ -7,22 +7,34 @@ public class FalseKnight : BaseEnemy
     // Game Objects
     [SerializeField] private Transform attackPoint;
     [SerializeField] private Transform reverseAttackPoint;
+    [SerializeField] private Transform landingPoint;
     [SerializeField] private GameObject groundCrackPrefab;
     [SerializeField] private GameObject shockwavePrefab;
 
+
     // Stats
     [SerializeField] private float normalAttackCooldown;
+    [SerializeField] private float jumpCooldown;
     [SerializeField] private float lastNormalAttackTime;
-    [SerializeField] private float recoveryTime = 3f;
+    [SerializeField] private float lastJumpTime;
+    [SerializeField] private float poise;
+    [SerializeField] private float maxPoise;
+    //[SerializeField] private float recoveryTime = 3f;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpSpeed;
 
     // Condition Checks
     [SerializeField] private bool isInactive = false;
     [SerializeField] private bool canNormalAttack = false;
+    [SerializeField] private bool canJump = false;
     private bool isRunning = false;
+    private bool isJumping = false;
+    private Vector3 lockedPlayerPosition; // To store the locked player position during the attack
 
     protected override void Start()
     {
-        base.Start();   
+        base.Start();
+        poise = maxPoise;
     }
 
     protected override void Awake()
@@ -33,8 +45,15 @@ public class FalseKnight : BaseEnemy
     protected override void Update()
     {
         canNormalAttack = Time.time >= lastNormalAttackTime + normalAttackCooldown && !isInactive;
+        canJump = Time.time >= lastJumpTime + jumpCooldown && !isInactive;
         base.Update();
-        if (isInactive) return;
+        if (isInactive || isJumping) return;
+
+        if (isPlayerInAggroRange && !isPlayerInMeleeAttackRange && canJump)
+        {
+            StopRun();
+            StartJump();
+        }
 
         if (isPlayerInAggroRange && !isPlayerInMeleeAttackRange)
         {
@@ -56,7 +75,13 @@ public class FalseKnight : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        base.TakeDamage(damageTaken);   
+        base.TakeDamage(damageTaken);
+        poise -= damageTaken;
+        if(poise <= 0)
+        {
+            isInactive = true;
+            anim.SetTrigger("StartStun");
+        }
     }
 
     protected override void Die()
@@ -79,29 +104,63 @@ public class FalseKnight : BaseEnemy
         isRunning = false;
     }
 
+    #region Normal Attack
     private void StartNormalAttack()
     {
         if (Time.time >= lastNormalAttackTime + normalAttackCooldown && !isInactive)
         {
             isInactive = true;
-            
-
             anim.SetTrigger("StartAttack");
             isAttacking = true;
-
+            lockedPlayerPosition = (player.transform.position - transform.position).normalized;
         }
     }
 
     private void NormalAttack()
     {
         anim.SetTrigger("Attack");
-        
+
     }
 
     private void SpawnGroundCrack()
     {
         Instantiate(groundCrackPrefab, attackPoint.position, Quaternion.identity);
     }
+
+    private void SpawnGroundCrackOnLanding()
+    {
+        // Instantiate the ground crack prefab at the landing point position
+        GameObject groundCrack = Instantiate(groundCrackPrefab, landingPoint.position, Quaternion.identity);
+
+        // Get the Transform of the instantiated prefab to modify its scale
+        Transform crackTransform = groundCrack.transform;
+
+        // Double the size of the prefab by scaling it
+        crackTransform.localScale = new Vector3(1.3f, 1f, 1f);  // Doubles the size on X
+        // Now adjust the BoxCollider2D to match the new scale
+        BoxCollider2D collider = groundCrack.GetComponent<BoxCollider2D>();
+        if (collider != null)
+        {
+            // Adjust the size of the collider based on the new scale of the prefab
+            collider.size = new Vector2(collider.size.x * 1f, collider.size.y);  // Scale the collider X 
+        }
+        ParticleSystem particleSystem = groundCrack.GetComponentInChildren<ParticleSystem>();
+        if (particleSystem != null)
+        {
+            // Optionally, we can set the simulation space to world to avoid the particle system being affected by local scale
+            var main = particleSystem.main;
+            main.scalingMode = ParticleSystemScalingMode.Hierarchy;
+
+            // Reset the scale of the particle system
+            particleSystem.transform.localScale = Vector3.one;
+
+            // If you want to ensure it doesn't inherit any scale from the parent at all
+            var shape = particleSystem.shape;
+            shape.scale = new Vector3(1f, 1f, 1f);  // Keep the shape's scale unaffected
+        }
+    }
+
+
 
     private void SpawnShockWave()
     {
@@ -111,7 +170,8 @@ public class FalseKnight : BaseEnemy
 
         if (shockwaveScript != null)
         {
-            shockwaveScript.Initialize(attackPoint.position, meleeDamage);
+            Vector3 bossDirection = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+            shockwaveScript.Initialize(bossDirection, meleeDamage);
         }
     }
 
@@ -130,4 +190,64 @@ public class FalseKnight : BaseEnemy
     {
         isAttacking = false;
     }
+    #endregion
+
+    #region Jump
+
+    private void StartJump()
+    {
+        isInactive = true;
+        isJumping = true;
+        anim.SetTrigger("StartJump");
+    }
+    private void Jump()
+    {
+        anim.SetBool("isJumping", true);
+
+        // Calculate direction towards the player
+        Vector2 directionToPlayer = (player.transform.position - transform.position).normalized;
+
+        //// Set only the horizontal direction (X) and keep the Y direction for jumping
+        //directionToPlayer.y = 0;  // Keep only the horizontal direction
+
+        // Apply a force in the direction of the player
+        rb.linearVelocity = new Vector3(directionToPlayer.x * jumpSpeed, jumpForce);
+        
+    }
+
+    private void JumpBackward()
+    {
+        anim.SetBool("isJumping", true);
+
+        // Calculate direction towards the player
+        Vector2 directionToPlayer = (transform.position - player.transform.position).normalized;
+
+        //// Set only the horizontal direction (X) and keep the Y direction for jumping
+        //directionToPlayer.y = 0;  // Keep only the horizontal direction
+
+        // Apply a force in the direction of the player
+        rb.linearVelocity = new Vector3(directionToPlayer.x * jumpSpeed, jumpForce);
+
+    }
+    #endregion
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision object is on the "Ground" layer
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            anim.SetTrigger("Land"); // Trigger landing animation (optional)
+            anim.SetBool("isJumping", false);
+        }
+    }
+
+
+    private void JumpRecovery()
+    {
+        isInactive = false;
+        isJumping = false;
+        lastJumpTime = Time.time;
+    }
 }
+
+

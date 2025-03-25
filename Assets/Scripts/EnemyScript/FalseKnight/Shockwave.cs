@@ -4,6 +4,8 @@ using UnityEngine;
 public class Shockwave : Projectile
 {
     private PlayerMovement player;
+    private FalseKnight knight;
+
     protected override void Start()
     {
         base.Start();
@@ -12,21 +14,25 @@ public class Shockwave : Projectile
     private void Awake()
     {
         player = FindAnyObjectByType<PlayerMovement>();
+        knight = FindAnyObjectByType<FalseKnight>();
     }
 
-    public override void Initialize(Vector3 spawnPosition, int dmg)
+    // Initialize method where you get the direction of the boss
+    public override void Initialize(Vector3 bossPosition, int dmg)
     {
-        FlipTowardsPlayer();
         damage = dmg;
-        // Calculate direction towards the player
-        direction = (player.transform.position - spawnPosition).normalized;
-        direction.y = 0;
 
+        // Set direction to the boss's facing direction
+        direction = bossPosition.normalized;
+        direction.y = 0; // Ensure it only moves horizontally
+
+        // Flip based on the direction
+        FlipBasedOnDirection();
     }
 
-    protected override void Update()
+    protected override void Update()    
     {
-        // Move the projectile forward
+        // Move the projectile forward in the direction the boss is facing
         transform.position += (Vector3)direction * speed * Time.deltaTime;
 
         // Count down the timer to destroy the projectile after a certain time (lifetime)
@@ -46,24 +52,15 @@ public class Shockwave : Projectile
         }
     }
 
-    protected void FlipTowardsPlayer()
+    private void FlipBasedOnDirection()
     {
-        // Flip the enemy's sprite based on the player's position relative to the enemy
-        if (player.transform.position.x > transform.position.x)
+        if (direction.x > 0 && transform.localScale.x < 0)
         {
-            // Player is to the right of the mob, face right
-            if (transform.localScale.x < 0) // Already facing left, so flip
-            {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
-        else if (player.transform.position.x < transform.position.x)
+        else if (direction.x < 0 && transform.localScale.x > 0)
         {
-            // Player is to the left of the mob, face left
-            if (transform.localScale.x > 0) // Already facing right, so flip
-            {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
     }
 }
