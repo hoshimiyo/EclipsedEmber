@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FalseKnight : BaseEnemy
 {
@@ -32,6 +33,12 @@ public class FalseKnight : BaseEnemy
     private bool isJumping = false;
     private Vector3 lockedPlayerPosition; // To store the locked player position during the attack
 
+    //Audio
+    [SerializeField] AudioClip[] attackAudio;
+    [SerializeField] AudioClip deathAudio;
+    [SerializeField] AudioClip jumpAudio;
+    [SerializeField] AudioClip landAudio;
+    [SerializeField] AudioClip hitGroundAudio;
     protected override void Start()
     {
         base.Start();
@@ -98,6 +105,7 @@ public class FalseKnight : BaseEnemy
     private void ExecudeDie()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene("EndMenu");
     }
 
     private void Run()
@@ -122,6 +130,7 @@ public class FalseKnight : BaseEnemy
         {
             isInactive = true;
             anim.SetTrigger("StartAttack");
+            SFXManager.instance.PlayRandomSFXClip(attackAudio, transform, 2f);
             isAttacking = true;
             lockedPlayerPosition = (player.transform.position - transform.position).normalized;
         }
@@ -136,6 +145,7 @@ public class FalseKnight : BaseEnemy
     private void SpawnGroundCrack()
     {
         Instantiate(groundCrackPrefab, attackPoint.position, Quaternion.identity);
+        SFXManager.instance.PlaySFXClip(hitGroundAudio, transform, 1f);
     }
 
     private void SpawnGroundCrackOnLanding()
@@ -210,6 +220,7 @@ public class FalseKnight : BaseEnemy
         isInactive = true;
         isJumping = true;
         anim.SetTrigger("StartJump");
+        SFXManager.instance.PlaySFXClip(jumpAudio, transform, 1f);
     }
     private void Jump()
     {
@@ -245,10 +256,11 @@ public class FalseKnight : BaseEnemy
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the collision object is on the "Ground" layer
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground2"))
         {
             anim.SetTrigger("Land"); // Trigger landing animation (optional)
             anim.SetBool("isJumping", false);
+            SFXManager.instance.PlaySFXClip(landAudio, transform, 1f);
         }
     }
 

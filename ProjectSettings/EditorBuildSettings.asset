@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChurchScene.unity
     guid: 3ffe109b21efb8d4bb08c38d7808bc80
+  - enabled: 1
+    path: Assets/Scenes/EndMenu.unity
+    guid: 903f94ba9c60cd34bb0751ffc17d16b6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -245,9 +245,28 @@ MonoBehaviour:
   isPlayerInMeleeAttackRange: 0
   isPlayerInRangedAttackRange: 0
   attackPoint: {fileID: 7872357277901601042}
+  reverseAttackPoint: {fileID: 0}
+  landingPoint: {fileID: 0}
   groundCrackPrefab: {fileID: 911563737768081723, guid: 3f4cec269059c10439f5920b9578bcb6, type: 3}
+  shockwavePrefab: {fileID: 0}
   normalAttackCooldown: 3
+  jumpCooldown: 0
   lastNormalAttackTime: 0
-  recoveryTime: 3
+  lastJumpTime: 0
+  poise: 0
+  maxPoise: 0
+  jumpForce: 0
+  jumpSpeed: 0
   isInactive: 0
   canNormalAttack: 0
+  canJump: 0
+  attackAudio:
+  - {fileID: 8300000, guid: dfc614eea61334549bcbbd67dce84e78, type: 3}
+  - {fileID: 8300000, guid: eced8c2924c0d7448b56619fe2a8a2b4, type: 3}
+  - {fileID: 8300000, guid: 1fc560b75afe9254587c13aa185d1d22, type: 3}
+  - {fileID: 8300000, guid: 971cb302b8c8d9146be2c54b8d4295ec, type: 3}
+  - {fileID: 8300000, guid: 42fc8ad5e5c39fc4d9d870e10add5159, type: 3}
+  deathAudio: {fileID: 0}
+  jumpAudio: {fileID: 8300000, guid: 472e38e8e088f954c870bb94bc26cf0a, type: 3}
+  landAudio: {fileID: 8300000, guid: 1dd7498f3e2042a4cb0ea0a89d3a2b35, type: 3}
+  hitGroundAudio: {fileID: 8300000, guid: 7e241b2b1cb70094faaf05182cc2f75f, type: 3}
