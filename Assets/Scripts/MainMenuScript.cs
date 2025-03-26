@@ -84,18 +84,12 @@ public class MainMenuScript : MonoBehaviour
         );
     }
 
-    /// <summary>
-    /// Called when the player confirms they want to quit.
-    /// </summary>
     private void OnQuitConfirmed()
     {
         Debug.Log("Quit confirmed. Exiting application...");
         Application.Quit();
     }
 
-    /// <summary>
-    /// Called when the player cancels the quit action.
-    /// </summary>
     private void OnQuitCancelled()
     {
         Debug.Log("Quit cancelled.");

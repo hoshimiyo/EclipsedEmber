@@ -47,7 +47,6 @@ public class TheThing : BaseEnemy
 
     private void Walk()
     {
-        anim.SetBool("isWalking", true);
         // Determine direction towards player (not needed for patrolling, this will be done in Patrol())
         Vector2 direction = (player.transform.position - transform.position).normalized;
 
@@ -55,18 +54,11 @@ public class TheThing : BaseEnemy
         transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0f, 0f);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            PlayerStat.instance.TakeDamage(1);
-        }
-    }
-
     protected override void Die()
     {
         isInactive = true;
         anim.SetTrigger("Die");
+        DisableCollisionsWithPlayer();
         SFXManager.instance.PlaySFXClip(DieSFX, PlayerStat.instance.transform, 1);
         Invoke(nameof(ExecuteDie), 31f / 60f);
     }
@@ -76,8 +68,6 @@ public class TheThing : BaseEnemy
         Destroy(gameObject);
         SFXManager.instance.StopSFXClipRepeat(); // Stop sound when the object is destroyed
     }
-
-
 
     private void ClampPosition()
     {

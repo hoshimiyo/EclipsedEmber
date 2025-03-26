@@ -13,7 +13,7 @@ public class GameUI2 : MonoBehaviour
     [SerializeField] Image manaStorage;
     void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -27,15 +27,13 @@ public class GameUI2 : MonoBehaviour
     {
         heartContainers = new GameObject[PlayerStat.healthCap];
         heartFills = new Image[PlayerStat.currentHealth];
-        PlayerStat.instance.onHealthChangedCallback += UpdateHeartsHUD;
         manaStorage.fillAmount = PlayerStat.instance.Mana;
-
         InstantiateHeartContainers();
-        UpdateHeartsHUD();
     }
 
     void Update()
     {
+        PlayerStat.instance.onHealthChangedCallback += UpdateHeartsHUD;
         manaStorage.fillAmount = PlayerStat.instance.mana;
     }
 

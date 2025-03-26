@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PausePanelScript : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel; // Reference to the PausePanel GameObject
     [SerializeField] private GameObject optionPanel;
-    [SerializeField] private GameObject _backgroundMusic;
+    [SerializeField] private AudioMixer mixer;
     [SerializeField] private Button resumeButton; // Reference to the Resume button
     [SerializeField] private Button optionButton; // Reference to the Restart button
-    [SerializeField] private Button quitButton; // Reference to the Quit button
-    private AudioLowPassFilter _lowPass;
+    [SerializeField] private Button quitButton; // Reference to the Restart button
+    public PlayerMovement player;
     private bool isPaused = false; // Track whether the game is paused
 
     private void Start()
@@ -18,7 +19,6 @@ public class PausePanelScript : MonoBehaviour
         // Hide the pause panel initially
         pausePanel.SetActive(false);
         optionPanel.SetActive(false);
-        if (_backgroundMusic != null) _lowPass = _backgroundMusic.GetComponent<AudioLowPassFilter>();
         // Add listeners to the buttons
         resumeButton.onClick.AddListener(ResumeGame);
         optionButton.onClick.AddListener(OptionPanel);
@@ -30,7 +30,22 @@ public class PausePanelScript : MonoBehaviour
         // Toggle pause when the Escape key is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
+
+            if (isPaused)
+            {
+                if (optionPanel.activeInHierarchy)
+                {
+                    optionPanel.SetActive(false);
+                    pausePanel.SetActive(true);
+                }else ResumeGame();
+            }
+            else
+            {
+                if (mixer != null) mixer.SetFloat("Lowpass", 300f);
+                player.active = false;
+                TogglePause();
+            }
+
         }
     }
 
@@ -40,7 +55,6 @@ public class PausePanelScript : MonoBehaviour
     private void TogglePause()
     {
         isPaused = !isPaused;
-
         // Show/hide the pause panel
         pausePanel.SetActive(isPaused);
         // Pause/unpause the game
@@ -52,10 +66,12 @@ public class PausePanelScript : MonoBehaviour
     /// </summary>
     private void ResumeGame()
     {
+        mixer.SetFloat("Lowpass", 22000f);
+        player.active = true;
         TogglePause();
     }
 
-    
+
     private void OptionPanel()
     {
         optionPanel.SetActive(true);

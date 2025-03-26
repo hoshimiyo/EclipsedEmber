@@ -1718,10 +1718,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 6734239695683130431}
   optionPanel: {fileID: 2843541086965884490}
-  _backgroundMusic: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 468c725b47428a4488deae306f113705, type: 2}
   resumeButton: {fileID: 6503351305003055628}
   optionButton: {fileID: 6904903113984894967}
   quitButton: {fileID: 8468388245840112618}
+  player: {fileID: 8467173670915208522}
   confirmPanel: {fileID: 4219125779904222054}
 --- !u!1 &9153044425882704062
 GameObject:
@@ -1945,6 +1946,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3184304720572779521, guid: 3f558fe75678e904c992b33368ef7e5b, type: 3}
   m_PrefabInstance: {fileID: 3665652398775315548}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8467173670915208522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5142674237495925014, guid: 3f558fe75678e904c992b33368ef7e5b, type: 3}
+  m_PrefabInstance: {fileID: 3665652398775315548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9afd3942ec5e24ebfde728dfb990b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4329516483744706111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2000,13 +2012,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5159290451280114965, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5034979994998474631}
   m_SourcePrefab: {fileID: 100100000, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
 --- !u!4 &922612730460766202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3519650169900552645, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
   m_PrefabInstance: {fileID: 4329516483744706111}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8902757852361300778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5159290451280114965, guid: 8dd10a007b4563941ba0862a73a7dddf, type: 3}
+  m_PrefabInstance: {fileID: 4329516483744706111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!169 &5034979994998474631
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8902757852361300778}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &8225517949914264513
 PrefabInstance:
   m_ObjectHideFlags: 0

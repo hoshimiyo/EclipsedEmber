@@ -128,7 +128,6 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Audio")]
     [SerializeField] private AudioClip deathSoundClip;
-    [SerializeField] private AudioClip damageSoundClip;
     [SerializeField] private AudioClip jumpSoundClip;
     [SerializeField] private AudioClip[] landSoundClips;
     [SerializeField] private AudioClip[] runSoundClips;
@@ -597,7 +596,6 @@ public class PlayerMovement : MonoBehaviour
     #region Damage
     public void Damage()
     {
-        PlaySFXClip(damageSoundClip);
         active = false;
         _collider.enabled = false;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
@@ -610,7 +608,6 @@ public class PlayerMovement : MonoBehaviour
     public void TakingDamage()
     {
         PlayerStat.instance.TakeDamage(1);
-        PlaySFXClip(damageSoundClip);
         active = false;
         _collider.enabled = false;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;

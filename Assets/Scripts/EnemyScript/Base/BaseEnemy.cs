@@ -74,6 +74,13 @@ public class BaseEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    protected void DisableCollisionsWithPlayer()
+    {
+        int enemyLayer = gameObject.layer;
+        int playerLayer = LayerMask.NameToLayer("Player");
+        Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer, true);
+    }
+
     protected virtual IEnumerator BlinkRedEffect()
     {
         // Change color to red
@@ -86,11 +93,12 @@ public class BaseEnemy : MonoBehaviour
         mobRenderer.material.color = originalColor;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Player")
         {
             PlayerStat.instance.TakeDamage(1);
+            PlayerStat.instance.ApplyRecoil(transform.position);
         }
     }
 

@@ -65,7 +65,9 @@ public class MossKnight : BaseEnemy
         isDead = false;
         isInactive = true;
         anim.SetTrigger("Die");
+        DisableCollisionsWithPlayer();
         SFXManager.instance.PlaySFXClip(dieSound, PlayerStat.instance.transform, 1f);
+        Invoke(nameof(ExecuteDie), 31f / 60f);
     }
 
     private void ExecuteDie()

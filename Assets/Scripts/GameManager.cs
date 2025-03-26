@@ -134,9 +134,6 @@ public class GameManager : MonoBehaviour
     {
         if (player != null)
         {
-            // Save position
-            
-
             // Save player stats
             PlayerStat playerStat = player.GetComponent<PlayerStat>();
             if (playerStat != null)
@@ -207,9 +204,6 @@ public class GameManager : MonoBehaviour
 
         if (player != null)
         {
-            // Apply position if not already set in PositionPlayerAfterSceneLoad
-            player.transform.position = gameData.playerPosition.ToVector3();
-
             // Apply player stats
             PlayerStat playerStat = player.GetComponent<PlayerStat>();
             if (playerStat != null)
@@ -240,7 +234,7 @@ public class GameManager : MonoBehaviour
                 playerMovement._canDash = gameData.canDash;
             }
         }
-        else Debug.Log("ApllyStatFix");
+        else Debug.Log("ApplyStatFix");
     }
     // Apply saved player position after scene loads
     private IEnumerator PositionPlayerAfterSceneLoad()
@@ -255,7 +249,7 @@ public class GameManager : MonoBehaviour
         if (player != null)
         {
             // Apply position
-            player.transform.position = gameData.playerSpawnPosition.ToVector3();
+            player.transform.position = gameData.respawnPoint.ToVector3();
 
             // Now apply all other player data
             LoadPlayerData();
@@ -266,12 +260,6 @@ public class GameManager : MonoBehaviour
     {
         SaveGame();
         // Application.Quit(); // Uncomment when ready
-    }
-    private void OnApplicationQuit()
-    {
-        // Save before quitting
-        if(SceneManager.GetActiveScene().name != "MainMenuScene" || SceneManager.GetActiveScene().name != "EndMenu")
-            SaveGame();
     }
 
     public void ChangeScene(string sceneName)

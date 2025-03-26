@@ -71,7 +71,9 @@ public class Wizard : BaseEnemy
         isInactive = true;
         anim.SetTrigger("Die");
         SFXManager.instance.PlaySFXClip(deathAudio, transform, 1);
+        Invoke(nameof(ExecuteDie), 20f / 60f);
     }
+
 
     private void ExecuteDie()
     {

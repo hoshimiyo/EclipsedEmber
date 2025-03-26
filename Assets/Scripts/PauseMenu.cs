@@ -15,7 +15,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         if (_backgroundMusic != null) _lowPass = _backgroundMusic.GetComponent<AudioLowPassFilter>();
-        
+        Debug.Log(optionsMenu.activeInHierarchy);
+        Debug.Log(pauseMenu.activeInHierarchy);
     }
 
     // Update is called once per frame
@@ -23,13 +24,20 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (optionsMenu.activeInHierarchy)
             {
-                ResumeGame();
+                optionsMenu.SetActive(false);
             }
             else
             {
-                PauseGame();
+                if (isPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }
@@ -78,7 +86,7 @@ public class PauseMenu : MonoBehaviour
         optionsMenu.SetActive(false);
         pauseMenu.SetActive(true);
     }
-    
+
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenuScene");
@@ -86,6 +94,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        GameManager.instance.SaveGame();
         Application.Quit();
     }
 }

@@ -31,11 +31,14 @@ public class PlayerStat : MonoBehaviour
     }
     private void Update()
     {
+        if (PlayerMovement.instance.active == false)
+            return;
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
         }
         Heal();
+        HandleRecoil();
         if (healing) return;
     }
 
@@ -73,14 +76,24 @@ public class PlayerStat : MonoBehaviour
     void Hit(Transform _attackTransform, Vector2 _attackArea)
     {
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackLayer);
+        bool hitEnemy = false;
+
         if (objectsToHit.Length > 0)
         {
             // _recoilDir = true;
             Mana += manaGain;
             PlaySFXClip(hitSFX);
-            Debug.Log("Hit " + objectsToHit[0].name);
+            hitEnemy = true;
+            Debug.Log(hitEnemy);
         }
         else PlaySFXClip(attackSoundClip);
+
+        // Apply recoil if an enemy was hit
+        if (hitEnemy)
+        {
+            ApplyRecoil(objectsToHit[0].transform.position);
+        }
+
         for (int i = 0; i < objectsToHit.Length; i++)
         {
             BaseEnemy enemy = objectsToHit[i].GetComponent<BaseEnemy>();
@@ -89,21 +102,9 @@ public class PlayerStat : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
         }
-        // for (int i = 0; i < objectsToHit.Length; i++)
-        // {
-        //     Enemy e = objectsToHit[i].GetComponent<Enemy>();
-        //     if (e && !hitEnemies.Contains(e))
-        //     {
-        //         e.EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
-        //         hitEnemies.Add(e);
-
-        //         if (objectsToHit[i].CompareTag("Enemy"))
-        //         {
-        //             Mana += manaGain;
-        //         }
-        //     }
-        // }
     }
+
+
     private void Attack()
     {
         if (Time.time >= nextAttackTime)
@@ -134,7 +135,6 @@ public class PlayerStat : MonoBehaviour
                 CreateSlashEffect(slashEffect, -90, downAttackTransform);
             }
         }
-
     }
 
     private GameObject CreateSlashEffect(GameObject slashEffectPrefab, int effectAngle, Transform attackTransform)
@@ -158,6 +158,8 @@ public class PlayerStat : MonoBehaviour
     public static int currentHealth = 3;
     public static int healthCap = 3;
     public static bool healing = false;
+
+    [SerializeField] private AudioClip _takeDamageSound;
     float healTimer;
     [SerializeField] float timeToHeal;
     public delegate void OnHealthChangedDelegate();
@@ -184,7 +186,7 @@ public class PlayerStat : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (iFrame) return;
-
+        SFXManager.instance.PlaySFXClip(_takeDamageSound, GameManager.instance.transform, 1f);
         Health -= damage;
         Debug.Log("Player took " + damage + " damage. Current health: " + currentHealth);
 
@@ -251,7 +253,7 @@ public class PlayerStat : MonoBehaviour
     private IEnumerator BlinkRedEffect()
     {
         float elasped = 0f;
-        while(elasped < iFrameDuration)
+        while (elasped < iFrameDuration)
         {
             spriteRenderer.color = Color.red; // Change to red
             yield return new WaitForSeconds(0.1f);
@@ -268,9 +270,58 @@ public class PlayerStat : MonoBehaviour
         iFrame = false;
     }
 
+    #region Misc
     private void PlaySFXClip(AudioClip soundClip)
     {
         if (soundClip == null || SFXManager.instance == null) return;
         SFXManager.instance.PlaySFXClip(soundClip, transform, 1f);
     }
+    #endregion
+
+    #region Recoil
+    [Header("Recoil Settings")]
+    public float recoilForce;       // How strong the pushback is
+    public float verticalRecoilForce = 15f;
+    public float horizontalRecoilForce = 5f;
+    public float recoilDuration;  // How long recoil lasts
+    public float verticalRecoilDuration = 0.3f;
+    public float horizontalRecoilDuration = 0.2f;
+    bool isVerticalRecoil;
+    private bool isRecoiling = false;
+    private float recoilTimer = 0f;
+    private Vector2 recoilDirection;
+
+    public void ApplyRecoil(Vector2 enemyPosition)
+    {
+        // Calculate direction (player -> enemy) and reverse it for pushback
+        recoilDirection = (transform.position - (Vector3)enemyPosition).normalized;
+
+        
+
+        isVerticalRecoil = Mathf.Abs(recoilDirection.y) > 0.7f; // 0.7 = ~45-degree angle
+        if(transform.position.y <= enemyPosition.y) isVerticalRecoil = false;
+
+        recoilForce = isVerticalRecoil ? verticalRecoilForce : horizontalRecoilForce;
+
+        isRecoiling = true;
+        recoilTimer = 0.2f;
+    }
+
+    private void HandleRecoil()
+    {
+        if (isRecoiling)
+        {
+            recoilTimer -= Time.deltaTime;
+            if (recoilTimer > 0)
+            {
+                // Apply continuous force (alternatively use Rigidbody.AddForce)
+                transform.Translate(recoilDirection * recoilForce * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                isRecoiling = false;
+            }
+        }
+    }
+    #endregion
 }

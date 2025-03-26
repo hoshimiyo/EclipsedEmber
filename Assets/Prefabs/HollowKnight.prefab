@@ -505,7 +505,6 @@ MonoBehaviour:
   _doubleJumpColor: {r: 0, g: 0, b: 0, a: 0}
   _deathColor: {r: 0, g: 0, b: 0, a: 0}
   deathSoundClip: {fileID: 8300000, guid: 52dfa9b197def7143a68211af9d6564b, type: 3}
-  damageSoundClip: {fileID: 8300000, guid: 3b5b275e0c6801246909e3bd33dda130, type: 3}
   jumpSoundClip: {fileID: 8300000, guid: 3e414ef33bab1464c9ef7172a4b5e054, type: 3}
   landSoundClips:
   - {fileID: 8300000, guid: b00d916912e6aff42b4d7158ebe89dd4, type: 3}
@@ -651,6 +650,7 @@ MonoBehaviour:
   attackRate: 2
   attackSoundClip: {fileID: 8300000, guid: c3d71b13fd871d4458239d74c76bdf80, type: 3}
   healSFX: {fileID: 8300000, guid: c64200874f37ccb4ebc6b85cd6021062, type: 3}
+  _takeDamageSound: {fileID: 8300000, guid: 3b5b275e0c6801246909e3bd33dda130, type: 3}
   timeToHeal: 0.5
   mana: 0.5
   manaDrainSpeed: 0.3
