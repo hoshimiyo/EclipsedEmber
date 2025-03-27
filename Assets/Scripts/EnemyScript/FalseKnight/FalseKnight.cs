@@ -293,7 +293,7 @@ public class FalseKnight : BaseEnemy
     {
         if (collision.collider.tag == "Player")
         {
-            PlayerStat.instance.TakeDamage(1);
+            PlayerStat.instance.TakeDamage(1, gameObject);
         }
 
         // Check if the collision object is on the "Ground" layer

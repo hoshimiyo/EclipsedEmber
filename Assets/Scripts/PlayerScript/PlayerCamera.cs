@@ -51,6 +51,15 @@ public class PlayerCamera : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
             transform.position = Vector3.Lerp(transform.position, player.transform.position + offset + shakeOffset, followSpeed);
         }
+        else
+        {
+            // Countdown and switch back
+            switchTimer -= Time.deltaTime;
+            if (switchTimer <= 0f)
+            {
+                isSwitched = false;
+            }
+        }
         // Handle camera shake (if needed)
         if (shakeDuration > 0)
         {
@@ -62,6 +71,7 @@ public class PlayerCamera : MonoBehaviour
             shakeDuration = 0f;
             shakeOffset = Vector3.zero;
         }
+    }
 
 
     // Method to trigger camera shake
@@ -70,42 +80,33 @@ public class PlayerCamera : MonoBehaviour
         shakeMagnitude = magnitude;
         shakeDuration = duration;
     }
-        else
-        {
-            // Countdown and switch back
-            switchTimer -= Time.deltaTime;
-            if (switchTimer <= 0f)
-            {
-                isSwitched = false;
-            }
-        }
-    }
+
 
     public void SnapToPlayer()
-{
-    if (player != null)
     {
-        transform.position = player.position + offset;
+        if (player != null)
+        {
+            transform.position = player.position + offset;
+        }
     }
-}
-#endregion
+    #endregion
 
-#region Switch
-private bool isSwitched = false;
-private float switchTimer = 0f;
-public Transform alternateTarget; // The object to switch to on collision
-public float switchDuration = 3f; // How long (seconds) to stay on alternate target
+    #region Switch
+    private bool isSwitched = false;
+    private float switchTimer = 0f;
+    public Transform alternateTarget; // The object to switch to on collision
+    public float switchDuration = 3f; // How long (seconds) to stay on alternate target
 
-// Call this when collision happens
-public void SwitchToAlternateTarget()
-{
-    if (alternateTarget != null)
+    // Call this when collision happens
+    public void SwitchToAlternateTarget()
     {
-        isSwitched = true;
-        switchTimer = switchDuration;
-        transform.position = alternateTarget.position + offset;
-        transform.LookAt(alternateTarget);
+        if (alternateTarget != null)
+        {
+            isSwitched = true;
+            switchTimer = switchDuration;
+            transform.position = alternateTarget.position + offset;
+            transform.LookAt(alternateTarget);
+        }
     }
-}
     #endregion
 }
