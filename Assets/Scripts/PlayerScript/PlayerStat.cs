@@ -162,6 +162,7 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private AudioClip _takeDamageSound;
     float healTimer;
     [SerializeField] float timeToHeal;
+    [SerializeField] GameObject hitEffectPrefab;
     public delegate void OnHealthChangedDelegate();
     [HideInInspector] public OnHealthChangedDelegate onHealthChangedCallback;
 
@@ -189,15 +190,27 @@ public class PlayerStat : MonoBehaviour
         SFXManager.instance.PlaySFXClip(_takeDamageSound, GameManager.instance.transform, 1f);
         Health -= damage;
         ApplyRecoil(damageSource.transform.position);
-        Debug.Log("Player took " + damage + " damage. Current health: " + currentHealth);
+        Debug.Log("Player took " + damage + " damage. Current health: " + Health);
+        Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
 
-        if (currentHealth <= 0)
+        StartCoroutine(BriefTimeFreeze()); // Freeze time momentarily
+
+        if (Health <= 0)
         {
             PlayerMovement.instance.Die();
         }
+
         StartCoroutine(BlinkRedEffect()); // Flash sprite on damage
         StartCoroutine(InvincibilityFrame(iFrameDuration));
     }
+
+    private IEnumerator BriefTimeFreeze()
+    {
+        Time.timeScale = 0f; // Slow down time significantly
+        yield return new WaitForSecondsRealtime(0.3f); // Wait in real-time (ignores timeScale)
+        Time.timeScale = 1f; // Restore normal time
+    }
+
 
     void Heal()
     {

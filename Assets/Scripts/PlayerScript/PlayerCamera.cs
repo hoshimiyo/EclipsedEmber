@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private Vector3 offset;
     [SerializeField] private Transform player;
     #endregion 
+
+    private Vector3 originalPosition;  // Store original camera position for shaking
+    private float shakeDuration = 0f;  // How long the camera will shake
+    private float shakeMagnitude = 0f;  // How intense the shake will be
+    private Vector3 shakeOffset;
 
     #region Awake, Start
     void Awake()
@@ -24,8 +30,6 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SnapToPlayer(); // Try snapping first
@@ -40,14 +44,32 @@ public class PlayerCamera : MonoBehaviour
         SnapToPlayer(); // Final correction after everything initializes
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!isSwitched)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            transform.position = Vector3.Lerp(transform.position, player.transform.position + offset, followSpeed);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position + offset + shakeOffset, followSpeed);
         }
+        // Handle camera shake (if needed)
+        if (shakeDuration > 0)
+        {
+            shakeDuration -= Time.deltaTime;
+            shakeOffset = new Vector3(Random.Range(-shakeMagnitude, shakeMagnitude), Random.Range(-shakeMagnitude, shakeMagnitude), 0f);
+        }
+        else
+        {
+            shakeDuration = 0f;
+            shakeOffset = Vector3.zero;
+        }
+
+
+    // Method to trigger camera shake
+    public void ShakeCamera(float magnitude, float duration)
+    {
+        shakeMagnitude = magnitude;
+        shakeDuration = duration;
+    }
         else
         {
             // Countdown and switch back
@@ -60,30 +82,30 @@ public class PlayerCamera : MonoBehaviour
     }
 
     public void SnapToPlayer()
+{
+    if (player != null)
     {
-        if (player != null)
-        {
-            transform.position = player.position + offset;
-        }
+        transform.position = player.position + offset;
     }
-    #endregion
+}
+#endregion
 
-    #region Switch
-    private bool isSwitched = false;
-    private float switchTimer = 0f;
-    public Transform alternateTarget; // The object to switch to on collision
-    public float switchDuration = 3f; // How long (seconds) to stay on alternate target
+#region Switch
+private bool isSwitched = false;
+private float switchTimer = 0f;
+public Transform alternateTarget; // The object to switch to on collision
+public float switchDuration = 3f; // How long (seconds) to stay on alternate target
 
-    // Call this when collision happens
-    public void SwitchToAlternateTarget()
+// Call this when collision happens
+public void SwitchToAlternateTarget()
+{
+    if (alternateTarget != null)
     {
-        if (alternateTarget != null)
-        {
-            isSwitched = true;
-            switchTimer = switchDuration;
-            transform.position = alternateTarget.position + offset;
-            transform.LookAt(alternateTarget);
-        }
+        isSwitched = true;
+        switchTimer = switchDuration;
+        transform.position = alternateTarget.position + offset;
+        transform.LookAt(alternateTarget);
     }
+}
     #endregion
 }
