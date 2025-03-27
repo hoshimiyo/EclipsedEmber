@@ -55,10 +55,6 @@ public class Ghost : BaseEnemy
     public override void TakeDamage(float damageTaken)
     {
         base.TakeDamage(damageTaken);
-        if (health <= 0)
-        {
-            Die();
-        }
     }
 
     protected override void Die()

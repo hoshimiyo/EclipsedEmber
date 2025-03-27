@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ebe883a9d38d7064ebaf46dad3588c91
+guid: 649d49098ebe61a48b9452f8167aa29c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7776323709462021558
-    second: Idle(NoArmor)_0
+      213: 2462544962496212308
+    second: king_heath_idle_3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle(NoArmor)_0
+      name: king_heath_idle_3_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 33
-        height: 33
+        x: 1
+        y: 1
+        width: 1022
+        height: 1022
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4a711779c2f41490800000000000000
-      internalID: -7776323709462021558
+      spriteID: 45da305a897bc2220800000000000000
+      internalID: 2462544962496212308
       vertices: []
       indices: 
       edges: []

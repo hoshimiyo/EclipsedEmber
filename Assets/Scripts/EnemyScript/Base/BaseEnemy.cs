@@ -24,6 +24,8 @@ public class BaseEnemy : MonoBehaviour
     protected Color originalColor;  // To store the original color of the mob
     protected Collider2D mobCollider;
     protected Animator anim;
+    protected bool isDead = false;
+    protected bool hasIFrame = false;
 
 
     protected virtual void Start()
@@ -31,7 +33,7 @@ public class BaseEnemy : MonoBehaviour
         mobRenderer = GetComponent<Renderer>();  // Assumes the object has a Renderer component
         originalColor = mobRenderer.material.color;  // Store the original color
         rb.gravityScale = 12f;
-        rb.mass = 3f;
+        rb.mass = 10f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         anim = GetComponent<Animator>(); // Get Animator component
     }
@@ -60,9 +62,10 @@ public class BaseEnemy : MonoBehaviour
 
     public virtual void TakeDamage(float damageTaken)
     {
+        if(isDead || hasIFrame) return;
+        health -= damageTaken;
         if (health > 0)
         {
-            health -= damageTaken;
             StartCoroutine(BlinkRedEffect());
         }
 
@@ -71,6 +74,7 @@ public class BaseEnemy : MonoBehaviour
 
     protected virtual void Die()
     {
+        isDead = true;
         Destroy(gameObject);
     }
 
@@ -88,7 +92,7 @@ public class BaseEnemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Player" && !isDead)
         {
             PlayerStat.instance.TakeDamage(1);
         }

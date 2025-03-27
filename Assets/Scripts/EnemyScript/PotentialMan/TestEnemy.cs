@@ -8,6 +8,7 @@ public class TestEnemy : BaseEnemy
     [SerializeField] private GameObject slashHitbox;
     [SerializeField] private GameObject slashHitbox2;
     [SerializeField] private GameObject rangedSlashPrefab;
+    [SerializeField] private GameObject deathParticlePrefab;
     [SerializeField] private int rangedDamage;
     // Cooldowns for moves
     [SerializeField] private float slashAttackCooldown; // Cooldown between slashes
@@ -18,8 +19,9 @@ public class TestEnemy : BaseEnemy
     [SerializeField] private LayerMask _obstacleLayer;
     [SerializeField] private float teleportOffset; // The offset distance of player and boss after tp to player
     [SerializeField] private float knockbackPower;
+    [SerializeField] private float dodgeChance;
 
-    // Track cooldowns
+    // Track checks
     [SerializeField] private float lastAttackTime;
     private float lastTeleportTime;
     private float lastRangedAttackTime;
@@ -30,6 +32,14 @@ public class TestEnemy : BaseEnemy
     [SerializeField] private bool canUseRangedAttack = false;
     [SerializeField] private UnlockDoubleJump dj;
     [SerializeField] private Canvas canvas;
+
+    // SFXs
+    [SerializeField] AudioClip attackAudio;
+    [SerializeField] AudioClip[] attackVoiceAudio;
+    [SerializeField] AudioClip attackAudio2;
+    [SerializeField] AudioClip rangeAttackAudio;
+    [SerializeField] AudioClip deathAudio;
+
     protected override void Start()
     {
         base.Start();
@@ -43,11 +53,11 @@ public class TestEnemy : BaseEnemy
 
     protected override void Update()
     {
-        canTeleport = Time.time >= lastTeleportTime + teleportCooldown;
+        canTeleport = Time.time >= lastTeleportTime + teleportCooldown && !isTeleporting;
         base.Update();
 
         // If the boss is recovering from an attack, do nothing
-        if (isInactive || isTeleporting) return;
+        if (isInactive || isTeleporting || isDead) return;
 
         // If player is within aggro range and on ground, tp towards them
         if (isPlayerInAggroRange && !isPlayerInMeleeAttackRange && canTeleport)
@@ -86,41 +96,39 @@ public class TestEnemy : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        if (isTeleporting) return;
 
-        float dodgeChange = 1f; // 20% chance
-        if (Random.value < dodgeChange && !isAttacking)
+        if (Random.value < dodgeChance && !isAttacking)
         {
             MoveBackward();
         }
         else
         {
-            StartCoroutine(base.BlinkRedEffect());
             base.TakeDamage(damageTaken);
         }
     }
 
-    protected override void Die()
-    {
-        base.Die();
-        dj.gameObject.SetActive(true);
-        canvas.gameObject.SetActive(true);
-    }
+    //protected override void Die()
+    //{
+    //    base.Die();
+    //    dj.gameObject.SetActive(true);
+    //    canvas.gameObject.SetActive(true);
+    //}
 
     private void MoveBackward()
     {
         isInactive = true;
+        hasIFrame = true;
         anim.SetTrigger("Dodge");
-        // Ensure that the boss has a Rigidbody2D component
+
         if (rb != null)
         {
             // Get the direction the boss is facing
-            Vector2 moveDirection = (transform.localScale.x > 0) ? Vector2.left : Vector2.right; // Move left if facing right, right if facing left
+            Vector2 moveDirection = (transform.localScale.x > 0) ? Vector2.left : Vector2.right;
 
             // Apply movement force in the opposite direction (backward)
-            rb.linearVelocity = moveDirection * 23f;  // Move at speed of x units per second
+            rb.linearVelocity = moveDirection * 20f;
 
-            // Optional: Stop the movement after a slight delay
+            // Stop movement after a delay
             StartCoroutine(StopMovementAfterDelay(1f));
         }
         else
@@ -129,14 +137,68 @@ public class TestEnemy : BaseEnemy
         }
     }
 
-    // Coroutine to stop the boss's movement after a slight delay
-    private IEnumerator StopMovementAfterDelay(float delay)
+    protected override void Die()
     {
-        yield return new WaitForSeconds(delay);  // Wait for the specified time
-        rb.linearVelocity = Vector2.zero;  // Stop movement
-        StartDodgeRecovery();
+        isInactive = true;
+        isDead = true;
+        anim.SetTrigger("Death");
+
+        if (rb != null)
+        {
+            // Get the direction the boss is facing
+            Vector2 moveDirection = (transform.localScale.x > 0) ? Vector2.left : Vector2.right;
+
+            // Apply movement force in the opposite direction (backward)
+            rb.linearVelocity = moveDirection * 40f;
+
+            // Stop movement after a delay
+            StartCoroutine(StopMovementAfterDelay(1f));
+        }
+        else
+        {
+            Debug.LogError("Rigidbody2D not found on the boss!");
+        }
+        StartCoroutine(BlinkBlackEffect());
     }
 
+    private IEnumerator BlinkBlackEffect()
+    {
+        if (mobRenderer == null) yield break;
+
+
+        while (isDead) // Keep blinking while the boss is in the dying state
+        {
+            mobRenderer.material.color = Color.black;
+            yield return new WaitForSeconds(0.1f);
+            mobRenderer.material.color = originalColor;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    // Coroutine to stop the boss's movement after a delay
+    private IEnumerator StopMovementAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Ensure we only stop movement if it's still in dodge state
+        rb.linearVelocity = Vector2.zero;
+        if(!isDead) StartDodgeRecovery();
+    }
+
+    private void ExecuteDie()
+    {
+        // Spawn death particle effect at the boss's position
+        if (deathParticlePrefab != null)
+        {
+            Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+        }
+
+        // Trigger screen shake
+        PlayerCamera.instance.ShakeCamera(1f, 0.3f); // Adjust intensity & duration as needed
+        dj.gameObject.SetActive(true);
+        canvas.gameObject.SetActive(true);
+        Destroy(gameObject);
+    }
 
     private void EndBlock()
     {
@@ -176,7 +238,8 @@ public class TestEnemy : BaseEnemy
             Debug.LogError("Ranged slash prefab is not assigned!");
             return;
         }
-
+        SFXManager.instance.PlaySFXClip(rangeAttackAudio, transform, 1f);
+        SFXManager.instance.PlayRandomSFXClip(attackVoiceAudio, transform, 1f);
         // Instantiate the ranged slash at the attack point
         GameObject slash = Instantiate(rangedSlashPrefab, attackPoint.position, Quaternion.identity);
 
@@ -197,6 +260,7 @@ public class TestEnemy : BaseEnemy
 
     private void StartDodgeRecovery()
     {
+        hasIFrame = false;
         Invoke(nameof(EndRecovery), dodgeRecoveryTime); // Delay before boss can move again
     }
 
@@ -212,6 +276,8 @@ public class TestEnemy : BaseEnemy
 
     private void EnableSlashHitbox()
     {
+        SFXManager.instance.PlaySFXClip(attackAudio, transform, 1f);
+        SFXManager.instance.PlayRandomSFXClip(attackVoiceAudio, transform, 1f);
         slashHitbox.SetActive(true);
     }
 
@@ -222,6 +288,8 @@ public class TestEnemy : BaseEnemy
 
     private void EnableSlashHitbox2()
     {
+        SFXManager.instance.PlaySFXClip(attackAudio2, transform, 1f);
+        SFXManager.instance.PlayRandomSFXClip(attackVoiceAudio, transform, 1f);
         slashHitbox2.SetActive(true);
     }
 
@@ -247,7 +315,7 @@ public class TestEnemy : BaseEnemy
             if (groundHit.collider != null)
             {
                 // Use the ground position as reference instead of player's air position
-                referencePosition = new Vector3(player.transform.position.x, groundHit.point.y + 0.5f, 0);
+                referencePosition = new Vector3(player.transform.position.x, groundHit.point.y, 0);
                 Debug.Log("Player is in air, using ground position as reference: " + referencePosition);
             }
             else
@@ -330,8 +398,16 @@ public class TestEnemy : BaseEnemy
             }
         }
 
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        if (collider != null)
+        {
+            float bottomOffset = collider.bounds.extents.y; // Get half of the collider height
+            targetPosition.y += bottomOffset; // Adjust so the bottom touches the ground
+        }
+
         // Perform the teleportation
         transform.position = targetPosition;
+        Debug.Log("Final target teleport position: " + targetPosition);
 
         // Reset flags after teleporting
         Invoke(nameof(StopTeleporting), 0.1f);
@@ -342,6 +418,7 @@ public class TestEnemy : BaseEnemy
         if (!isTeleporting)
         {
             isTeleporting = true;
+            hasIFrame = true;
             anim.SetTrigger("StartTeleportWindup"); // Trigger windup animation if necessary
             StartCoroutine(TeleportationWindup());
         }
@@ -362,6 +439,7 @@ public class TestEnemy : BaseEnemy
     private void StopTeleporting()
     {
         isTeleporting = false;
+        hasIFrame = false;
         anim.SetBool("isTeleporting", false); // Stop dash animation
 
         lastTeleportTime = Time.time;
