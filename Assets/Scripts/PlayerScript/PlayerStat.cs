@@ -155,8 +155,8 @@ public class PlayerStat : MonoBehaviour
 
     #region Health
     [Header("Health Settings")]
-    public static int currentHealth = 3;
-    public static int healthCap = 3;
+    public int currentHealth = 3;
+    public int healthCap = 3;
     public static bool healing = false;
 
     [SerializeField] private AudioClip _takeDamageSound;
@@ -246,8 +246,8 @@ public class PlayerStat : MonoBehaviour
 
     #region IFrame
     // Invincibility frames (iFrame)
-    public static bool iFrame = false;
-    public static float iFrameDuration = 3f;
+    public bool iFrame = false;
+    public float iFrameDuration = 3f;
     #endregion
 
     private IEnumerator BlinkRedEffect()
@@ -265,9 +265,9 @@ public class PlayerStat : MonoBehaviour
 
     public static IEnumerator InvincibilityFrame(float iFrameDuration)
     {
-        iFrame = true;
+        instance.iFrame = true;
         yield return new WaitForSeconds(iFrameDuration);
-        iFrame = false;
+        instance.iFrame = false;
     }
 
     #region Misc
@@ -296,9 +296,8 @@ public class PlayerStat : MonoBehaviour
         // Calculate direction (player -> enemy) and reverse it for pushback
         recoilDirection = (transform.position - (Vector3)enemyPosition).normalized;
 
-        
-
         isVerticalRecoil = Mathf.Abs(recoilDirection.y) > 0.7f; // 0.7 = ~45-degree angle
+        
         if(transform.position.y <= enemyPosition.y) isVerticalRecoil = false;
 
         recoilForce = isVerticalRecoil ? verticalRecoilForce : horizontalRecoilForce;

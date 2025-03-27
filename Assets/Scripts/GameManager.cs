@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
             {
                 gameData.playerHealth = playerStat.Health;
                 gameData.playerMana = playerStat.Mana;
-                gameData.healthCap = PlayerStat.healthCap;
+                gameData.healthCap = PlayerStat.instance.healthCap;
             }
 
             // Save player movement data
@@ -210,9 +210,13 @@ public class GameManager : MonoBehaviour
             {
                 playerStat.Health = (int)gameData.playerHealth;
                 playerStat.Mana = gameData.playerMana;
-                PlayerStat.healthCap = gameData.healthCap;
+                PlayerStat.instance.healthCap = gameData.healthCap;
             }
-
+            
+            Debug.Log(PlayerStat.instance.healthCap);
+            Debug.Log(playerStat.Mana);
+            Debug.Log(playerStat.Health);
+        
             // Apply player movement data
             PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
             if (playerMovement != null)

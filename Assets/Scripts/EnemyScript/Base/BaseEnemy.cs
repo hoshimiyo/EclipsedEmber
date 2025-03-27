@@ -98,7 +98,6 @@ public class BaseEnemy : MonoBehaviour
         if (collision.collider.tag == "Player")
         {
             PlayerStat.instance.TakeDamage(1);
-            PlayerStat.instance.ApplyRecoil(transform.position);
         }
     }
 

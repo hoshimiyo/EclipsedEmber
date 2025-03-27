@@ -25,15 +25,18 @@ public class GameUI2 : MonoBehaviour
 
     void Start()
     {
-        heartContainers = new GameObject[PlayerStat.healthCap];
-        heartFills = new Image[PlayerStat.currentHealth];
+        heartContainers = new GameObject[PlayerStat.instance.healthCap];
+        heartFills = new Image[PlayerStat.instance.Health];
+        PlayerStat.instance.onHealthChangedCallback += UpdateHeartsHUD;
+
         manaStorage.fillAmount = PlayerStat.instance.Mana;
+
         InstantiateHeartContainers();
+        UpdateHeartsHUD();
     }
 
     void Update()
     {
-        PlayerStat.instance.onHealthChangedCallback += UpdateHeartsHUD;
         manaStorage.fillAmount = PlayerStat.instance.mana;
     }
 
@@ -41,7 +44,7 @@ public class GameUI2 : MonoBehaviour
     {
         for (int i = 0; i < heartContainers.Length; i++)
         {
-            if (i < PlayerStat.healthCap)
+            if (i < PlayerStat.instance.healthCap)
             {
                 heartContainers[i].SetActive(true);
             }
@@ -51,11 +54,12 @@ public class GameUI2 : MonoBehaviour
             }
         }
     }
+
     void SetFilledHearts()
     {
         for (int i = 0; i < heartFills.Length; i++)
         {
-            if (i < PlayerStat.currentHealth)
+            if (i < PlayerStat.instance.Health)
             {
                 heartFills[i].fillAmount = 1;
             }
@@ -65,9 +69,10 @@ public class GameUI2 : MonoBehaviour
             }
         }
     }
+
     void InstantiateHeartContainers()
     {
-        for (int i = 0; i < PlayerStat.healthCap; i++)
+        for (int i = 0; i < PlayerStat.instance.healthCap; i++)
         {
             GameObject temp = Instantiate(heartContainerPrefab);
             temp.transform.SetParent(heartsParent, false);

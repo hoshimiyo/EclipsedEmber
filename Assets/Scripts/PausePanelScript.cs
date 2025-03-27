@@ -10,9 +10,8 @@ public class PausePanelScript : MonoBehaviour
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private Button resumeButton; // Reference to the Resume button
     [SerializeField] private Button optionButton; // Reference to the Restart button
-    [SerializeField] private Button quitButton; // Reference to the Restart button
     public PlayerMovement player;
-    private bool isPaused = false; // Track whether the game is paused
+    private bool isPaused = false; // Track whether the game is pauseds
 
     private void Start()
     {
@@ -22,7 +21,6 @@ public class PausePanelScript : MonoBehaviour
         // Add listeners to the buttons
         resumeButton.onClick.AddListener(ResumeGame);
         optionButton.onClick.AddListener(OptionPanel);
-        quitButton.onClick.AddListener(QuitGame);
     }
 
     private void Update()
@@ -37,7 +35,8 @@ public class PausePanelScript : MonoBehaviour
                 {
                     optionPanel.SetActive(false);
                     pausePanel.SetActive(true);
-                }else ResumeGame();
+                }
+                else ResumeGame();
             }
             else
             {
@@ -88,26 +87,45 @@ public class PausePanelScript : MonoBehaviour
     {
         confirmPanel.ShowConfirmPanel(
             "Are you sure you want to quit?",
-            OnQuitConfirmed,
-            OnQuitCancelled
+            OnQuitFromPauseConfirmed,
+            OnQuitFromPauseCancelled
         );
     }
 
-    /// <summary>
-    /// Called when the player confirms they want to quit.
-    /// </summary>
-    private void OnQuitConfirmed()
+    private void OnQuitFromPauseConfirmed()
     {
         Debug.Log("Quit confirmed. Exiting application...");
+        GameManager.instance.SaveGame();
         Application.Quit();
     }
 
-    /// <summary>
-    /// Called when the player cancels the quit action.
-    /// </summary>
-    private void OnQuitCancelled()
+    private void OnQuitFromPauseCancelled()
     {
         Debug.Log("Quit cancelled.");
     }
+    #endregion
+
+    #region ToMenu
+    public void QuitToMenu()
+    {
+        confirmPanel.ShowConfirmPanel(
+            "Save and Quit to Menu?",
+            OnMenuConfirmed,
+            OnMenuCancelled
+        );
+    }
+
+    private void OnMenuConfirmed()
+    {
+        Debug.Log("Quit confirmed. Exiting application...");
+        GameManager.instance.SaveGame();
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
+    private void OnMenuCancelled()
+    {
+        Debug.Log("Quit cancelled.");
+    }
+
     #endregion
 }

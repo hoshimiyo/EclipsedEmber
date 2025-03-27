@@ -657,7 +657,7 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         _playerAnim.TriggerDeathAnim(false);
-        PlayerStat.instance.Health = PlayerStat.healthCap;
+        PlayerStat.instance.Health = PlayerStat.instance.healthCap;
         transform.position = GameManager.instance.respawnPoint;
         active = true;
         _collider.enabled = true;

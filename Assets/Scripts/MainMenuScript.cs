@@ -13,6 +13,8 @@ public class MainMenuScript : MonoBehaviour
     {
         optionPanel.SetActive(false);
         vid.gameObject.SetActive(false);
+        if (!SaveSystem.SaveExists())
+            continueButton.interactable = false;
     }
     public void ShowOptionPanel()
     {
@@ -27,7 +29,7 @@ public class MainMenuScript : MonoBehaviour
         optionPanel.SetActive(false);
     }
 
-    
+
     #region StartNewGame
     public void StartNewGame()
     {
@@ -68,8 +70,6 @@ public class MainMenuScript : MonoBehaviour
     #region Continue
     public void Continue()
     {
-        if(!SaveSystem.SaveExists())
-            continueButton.interactable = false;
         GameManager.instance.LoadGame();
     }
     #endregion
