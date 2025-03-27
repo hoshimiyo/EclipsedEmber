@@ -300,7 +300,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1fc560b75afe9254587c13aa185d1d22, type: 3}
   - {fileID: 8300000, guid: 971cb302b8c8d9146be2c54b8d4295ec, type: 3}
   - {fileID: 8300000, guid: 42fc8ad5e5c39fc4d9d870e10add5159, type: 3}
-  deathAudio: {fileID: 8300000, guid: b7b4e82f2a44c27459a53fbe51582fd6, type: 3}
+  deathAudio: {fileID: 8300000, guid: 02ea5b0ea43abcf449959e45d1a8ad8a, type: 3}
   jumpAudio: {fileID: 8300000, guid: 472e38e8e088f954c870bb94bc26cf0a, type: 3}
   landAudio: {fileID: 8300000, guid: 1dd7498f3e2042a4cb0ea0a89d3a2b35, type: 3}
   hitGroundAudio: {fileID: 8300000, guid: 7e241b2b1cb70094faaf05182cc2f75f, type: 3}

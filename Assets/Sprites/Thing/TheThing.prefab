@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  speed: 5
+  speed: 3
   meleeDamage: 1
   meleeAttackRange: 1
   meleeAttackHeightRange: 1

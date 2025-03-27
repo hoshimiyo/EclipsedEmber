@@ -25,7 +25,7 @@ public class ScreenFader : MonoBehaviour
         }
     }
 
-    public IEnumerator Fade(FadeDirection fadeDirection)
+    public IEnumerator Fade(FadeDirection fadeDirection, Color color)
     {
         // Check if fadeOutUIImage is assigned
         if (fadeOutUIImage == null)
@@ -41,7 +41,7 @@ public class ScreenFader : MonoBehaviour
         {
             while (alpha >= fadeEndValue)
             {
-                SetColorImage(ref alpha, fadeDirection);
+                SetColorImage(ref alpha, fadeDirection, color);
                 yield return null;
             }
 
@@ -52,13 +52,13 @@ public class ScreenFader : MonoBehaviour
             fadeOutUIImage.enabled = true; // Enable the Image before fading in
             while (alpha <= fadeEndValue)
             {
-                SetColorImage(ref alpha, fadeDirection);
+                SetColorImage(ref alpha, fadeDirection, color);
                 yield return null;
             }
         }
     }
 
-    private void SetColorImage(ref float _alpha, FadeDirection _fadeDirection)
+    private void SetColorImage(ref float _alpha, FadeDirection _fadeDirection, Color color)
     {
         // Check if fadeOutUIImage is assigned
         if (fadeOutUIImage == null)
@@ -68,16 +68,16 @@ public class ScreenFader : MonoBehaviour
         }
 
         // Update the alpha value of the Image
-        fadeOutUIImage.color = new Color(fadeOutUIImage.color.r, fadeOutUIImage.color.g, fadeOutUIImage.color.b, _alpha);
+        fadeOutUIImage.color = new Color(color.r, color.g, color.b, _alpha);
 
         // Calculate the new alpha value
         _alpha += Time.deltaTime * (1 / fadeTime) * (_fadeDirection == FadeDirection.Out ? -1 : 1);
     }
 
-    public IEnumerator FadeSeconds(float seconds)
+    public IEnumerator FadeSeconds(float seconds, Color color)
     {
-        StartCoroutine(GameUI2.instance.sceneFader.Fade(FadeDirection.In));
+        StartCoroutine(GameUI2.instance.sceneFader.Fade(FadeDirection.In, color));
         yield return new WaitForSeconds(seconds);
-        StartCoroutine(GameUI2.instance.sceneFader.Fade(FadeDirection.Out));
+        StartCoroutine(GameUI2.instance.sceneFader.Fade(FadeDirection.Out, color));
     }
 }

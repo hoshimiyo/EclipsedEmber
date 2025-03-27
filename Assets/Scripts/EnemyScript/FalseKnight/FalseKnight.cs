@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -73,7 +72,7 @@ public class FalseKnight : BaseEnemy
         if (isPlayerInAggroRange && isPlayerInMeleeAttackRange)
         {
             StopRun();
-            if(canSpecialAttack) StartSpecialAttack();
+            if (canSpecialAttack) StartSpecialAttack();
             else StartNormalAttack();
         }
 
@@ -93,15 +92,24 @@ public class FalseKnight : BaseEnemy
     {
         isDead = true;
         isInactive = true;
+        DisableCollision();
         anim.SetTrigger("Die");
         SFXManager.instance.PlaySFXClip(deathAudio, transform, 2f);
         Instantiate(finalHitPrefab, transform.position, Quaternion.identity);
+        StartCoroutine(WaitForSec());
+    }
+
+    public IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(3f);
+        GameUI2.instance.sceneFader.Fade(ScreenFader.FadeDirection.In, Color.white);
+        Destroy(gameObject);
+        SceneManager.LoadScene("EndMenu");
     }
 
     private void ExecuteDie()
     {
-        Destroy(gameObject);
-        SceneManager.LoadScene("EndMenu");
+        StartCoroutine(WaitForSec());
     }
 
     private void Run()
@@ -227,13 +235,13 @@ public class FalseKnight : BaseEnemy
     private void EndAttackRecovery()
     {
         isInactive = false;
-        if(isNormalAttacking)
+        if (isNormalAttacking)
         {
             isNormalAttacking = false;
             lastNormalAttackTime = Time.time;
         }
 
-        if(isSpecialAttacking)
+        if (isSpecialAttacking)
         {
             isSpecialAttacking = false;
             lastSpecialAttackTime = Time.time;
@@ -271,7 +279,7 @@ public class FalseKnight : BaseEnemy
 
         // Apply a force in the direction of the player
         rb.linearVelocity = new Vector3(directionToPlayer.x * jumpSpeed, jumpForce);
-        
+
     }
 
     private void JumpBackward()

@@ -28,5 +28,11 @@ public class SoulBall : MonoBehaviour
             Instantiate(hitVFX, transform.position, Quaternion.identity);
             SFXManager.instance.PlaySFXClip(hitSFX, transform, 1);
         }
+
+        if (_other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            GetComponent<Collider2D>().enabled = false;
+            Destroy(gameObject);
+        }
     }
 }

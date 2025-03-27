@@ -646,16 +646,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   slashEffect: {fileID: 3183993007291020588, guid: 65eee736c675a954bb35401e7cc92c39, type: 3}
-  hitSFX: {fileID: 8300000, guid: b8ec2b9c2147e314884fc93d7b86f7c3, type: 3}
+  hitSFX: {fileID: 8300000, guid: cfdc3bb0d0ee3704c85547408c2c4300, type: 3}
   attackRate: 2
   attackSoundClip: {fileID: 8300000, guid: c3d71b13fd871d4458239d74c76bdf80, type: 3}
   healSFX: {fileID: 8300000, guid: c64200874f37ccb4ebc6b85cd6021062, type: 3}
+  currentHealth: 3
+  healthCap: 3
   _takeDamageSound: {fileID: 8300000, guid: 3b5b275e0c6801246909e3bd33dda130, type: 3}
   timeToHeal: 0.5
   hitEffectPrefab: {fileID: 9058518034603244554, guid: ae771f7cd36a66847aca0e4eedd3b9f3, type: 3}
   mana: 0.5
   manaDrainSpeed: 0.3
   manaGain: 0.3
+  iFrame: 0
+  iFrameDuration: 3
+  recoilForce: 0
+  verticalRecoilForce: 15
+  horizontalRecoilForce: 5
+  recoilDuration: 0
+  verticalRecoilDuration: 0.3
+  horizontalRecoilDuration: 0.2
 --- !u!114 &467639657020397527
 MonoBehaviour:
   m_ObjectHideFlags: 0

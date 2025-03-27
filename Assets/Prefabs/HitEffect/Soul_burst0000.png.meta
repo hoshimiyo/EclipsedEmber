@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Soul_burst0000_0: -4573623802981934926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

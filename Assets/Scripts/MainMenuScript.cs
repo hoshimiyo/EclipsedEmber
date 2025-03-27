@@ -35,7 +35,10 @@ public class MainMenuScript : MonoBehaviour
     {
         if (!SaveSystem.SaveExists())
         {
-            SceneManager.LoadScene("Tutorial");
+            vid.gameObject.SetActive(true);
+            Destroy(GameObject.FindAnyObjectByType<AudioSource>());
+            vid.loopPointReached += OnCutsceneFinished;
+            vid.Play();
         }
         else
         {
@@ -52,6 +55,7 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Start New");
         SaveSystem.DeleteSave();
         vid.gameObject.SetActive(true);
+        Destroy(GameObject.FindAnyObjectByType<AudioSource>());
         vid.loopPointReached += OnCutsceneFinished;
         vid.Play();
     }

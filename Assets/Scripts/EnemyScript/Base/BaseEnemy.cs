@@ -62,7 +62,7 @@ public class BaseEnemy : MonoBehaviour
 
     public virtual void TakeDamage(float damageTaken)
     {
-        if(isDead || hasIFrame) return;
+        if (isDead || hasIFrame) return;
         health -= damageTaken;
         if (health > 0)
         {
@@ -72,17 +72,15 @@ public class BaseEnemy : MonoBehaviour
         else Die();
     }
 
+    public void DisableCollision()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+    }
     protected virtual void Die()
     {
         isDead = true;
         Destroy(gameObject);
-    }
-
-    protected void DisableCollisionsWithPlayer()
-    {
-        int enemyLayer = gameObject.layer;
-        int playerLayer = LayerMask.NameToLayer("Player");
-        Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer, true);
     }
 
     protected virtual IEnumerator BlinkRedEffect()

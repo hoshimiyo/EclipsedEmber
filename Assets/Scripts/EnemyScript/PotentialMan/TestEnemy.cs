@@ -146,6 +146,7 @@ public class TestEnemy : BaseEnemy
         Instantiate(finalHitPrefab, transform.position, Quaternion.identity);
         isInactive = true;
         isDead = true;
+        DisableCollision();
         anim.SetTrigger("Death");
         DisableSlashHitbox();
         DisableSlashHitbox2();

@@ -65,6 +65,7 @@ public class Wizard : BaseEnemy
     protected override void Die()
     {
         isInactive = true;
+        DisableCollision();
         anim.SetTrigger("Die");
         SFXManager.instance.PlaySFXClip(deathAudio, transform, 1);
         Invoke(nameof(ExecuteDie), 20f / 60f);

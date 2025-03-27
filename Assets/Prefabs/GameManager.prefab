@@ -363,9 +363,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8277277367844245062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -596, y: 308}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 87, y: -76}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5416057786790848225
@@ -2005,7 +2005,6 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 468c725b47428a4488deae306f113705, type: 2}
   resumeButton: {fileID: 6503351305003055628}
   optionButton: {fileID: 6904903113984894967}
-  quitButton: {fileID: 8468388245840112618}
   player: {fileID: 8467173670915208522}
   confirmPanel: {fileID: 4219125779904222054}
 --- !u!1 &9153044425882704062

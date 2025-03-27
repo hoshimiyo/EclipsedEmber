@@ -11,11 +11,6 @@ public class TheThing : BaseEnemy
     private Vector3 minBounds;
     private Vector3 maxBounds; // Maximum position bounds
 
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-
     protected override void Start()
     {
         base.Start();
@@ -47,25 +42,17 @@ public class TheThing : BaseEnemy
 
     private void Walk()
     {
-        // Determine direction towards player (not needed for patrolling, this will be done in Patrol())
-        Vector2 direction = (player.transform.position - transform.position).normalized;
-
-        // Move the mob towards the player
-        transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0f, 0f);
-    }
-
-    public override void TakeDamage(float damageTaken)
-    {
-        base.TakeDamage(damageTaken);
+        float horizontalDirection = Mathf.Sign(player.transform.position.x - transform.position.x);
+        transform.position += new Vector3(horizontalDirection * speed * Time.deltaTime, 0f, 0f);
     }
 
     protected override void Die()
     {
         isInactive = true;
+        DisableCollision();
         anim.SetTrigger("Die");
-        Collider2D collider = GetComponent<Collider2D>();
-        collider.enabled = false; 
         SFXManager.instance.PlaySFXClip(DieSFX, PlayerStat.instance.transform, 1);
+        Invoke(nameof(ExecuteDie), 31f / 60f);
     }
 
     private void ExecuteDie()
@@ -102,5 +89,10 @@ public class TheThing : BaseEnemy
         Gizmos.DrawLine(topLeft, topRight);
         Gizmos.DrawLine(topRight, bottomRight);
         Gizmos.DrawLine(bottomRight, bottomLeft);
+
+        // Aggro Range (both horizontal and vertical)
+        Gizmos.color = Color.red; // Aggro range color
+        Gizmos.DrawWireCube(transform.position, new Vector3(aggroHorizontalRange * 2, aggroVerticalRange * 2, 1));
+
     }
 }
