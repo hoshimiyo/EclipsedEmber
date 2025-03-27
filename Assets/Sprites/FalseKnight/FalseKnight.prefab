@@ -285,7 +285,6 @@ MonoBehaviour:
   jumpCooldown: 9
   lastNormalAttackTime: 0
   lastJumpTime: 0
-  poise: 0
   maxPoise: 0
   jumpForce: 50
   jumpSpeed: 30

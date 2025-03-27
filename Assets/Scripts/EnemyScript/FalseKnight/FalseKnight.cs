@@ -18,7 +18,6 @@ public class FalseKnight : BaseEnemy
     [SerializeField] private float jumpCooldown;
     [SerializeField] private float lastNormalAttackTime;
     [SerializeField] private float lastJumpTime;
-    [SerializeField] private float maxPoise;
     //[SerializeField] private float recoveryTime = 3f;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpSpeed;
