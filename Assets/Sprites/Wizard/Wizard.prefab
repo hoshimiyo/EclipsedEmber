@@ -236,9 +236,9 @@ MonoBehaviour:
   meleeAttackRange: 1
   meleeAttackHeightRange: 1
   rangedAttackRange: 19
-  rangedAttackHeightRange: 10.8
+  rangedAttackHeightRange: 8.53
   aggroHorizontalRange: 23
-  aggroVerticalRange: 11
+  aggroVerticalRange: 8.53
   isAttacking: 0
   player: {fileID: 0}
   isPlayerInAggroRange: 0

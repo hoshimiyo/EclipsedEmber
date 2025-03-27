@@ -55,20 +55,18 @@ public class TheThing : BaseEnemy
         transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0f, 0f);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public override void TakeDamage(float damageTaken)
     {
-        if (collision.collider.tag == "Player")
-        {
-            PlayerStat.instance.TakeDamage(1);
-        }
+        base.TakeDamage(damageTaken);
     }
 
     protected override void Die()
     {
         isInactive = true;
         anim.SetTrigger("Die");
+        Collider2D collider = GetComponent<Collider2D>();
+        collider.enabled = false; 
         SFXManager.instance.PlaySFXClip(DieSFX, PlayerStat.instance.transform, 1);
-        Invoke(nameof(ExecuteDie), 31f / 60f);
     }
 
     private void ExecuteDie()

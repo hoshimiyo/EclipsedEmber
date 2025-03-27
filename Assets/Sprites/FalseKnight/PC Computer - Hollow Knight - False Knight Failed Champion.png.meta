@@ -2472,7 +2472,7 @@ TextureImporter:
         width: 344
         height: 452
       alignment: 9
-      pivot: {x: 0.5139872, y: 0.45055288}
+      pivot: {x: 0.5009118, y: 0.29482356}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2489,12 +2489,12 @@ TextureImporter:
       name: PC Computer - Hollow Knight - False Knight Failed Champion_201
       rect:
         serializedVersion: 2
-        x: 894
-        y: 4637
+        x: 890
+        y: 4639
         width: 351
         height: 452
       alignment: 9
-      pivot: {x: 0.5215821, y: 0.40152815}
+      pivot: {x: 0.5009118, y: 0.2948236}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2516,7 +2516,7 @@ TextureImporter:
         width: 371
         height: 460
       alignment: 9
-      pivot: {x: 0.53866965, y: 0.40715757}
+      pivot: {x: 0.5009118, y: 0.2948236}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2533,12 +2533,12 @@ TextureImporter:
       name: PC Computer - Hollow Knight - False Knight Failed Champion_211
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4154
+        x: 0
+        y: 4155
         width: 351
         height: 458
       alignment: 9
-      pivot: {x: 0.5594008, y: 0.3940547}
+      pivot: {x: 0.5009118, y: 0.2948236}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2560,7 +2560,7 @@ TextureImporter:
         width: 350
         height: 458
       alignment: 9
-      pivot: {x: 0.5602251, y: 0.40190452}
+      pivot: {x: 0.5009118, y: 0.2948236}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2582,7 +2582,7 @@ TextureImporter:
         width: 398
         height: 458
       alignment: 9
-      pivot: {x: 0.50115013, y: 0.3994791}
+      pivot: {x: 0.47998324, y: 0.1822622}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2604,7 +2604,7 @@ TextureImporter:
         width: 390
         height: 458
       alignment: 9
-      pivot: {x: 0.50754553, y: 0.3999791}
+      pivot: {x: 0.5009118, y: 0.2948236}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2622,11 +2622,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 3672
+        y: 3671
         width: 386
         height: 461
       alignment: 9
-      pivot: {x: 0.52031857, y: 0.4078573}
+      pivot: {x: 0.5009118, y: 0.2948236}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

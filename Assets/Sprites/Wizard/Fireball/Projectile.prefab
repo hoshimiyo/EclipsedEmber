@@ -171,9 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16155716475f384681484e94d1bef16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   maxLifetime: 3
+  lifeTime: 0
+  speedIncreaseDuration: 0.2
   damageDelayWindow: 20
-  aimAtPlayer: 1
   speed: 10
   explosionPrefab: {fileID: 8629630380312358793, guid: 7199d476083914548971d0ec06be9b45, type: 3}
 --- !u!50 &1752890827797197093

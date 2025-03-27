@@ -18,7 +18,6 @@ public class FalseKnight : BaseEnemy
     [SerializeField] private float jumpCooldown;
     [SerializeField] private float lastNormalAttackTime;
     [SerializeField] private float lastJumpTime;
-    [SerializeField] private float poise;
     [SerializeField] private float maxPoise;
     //[SerializeField] private float recoveryTime = 3f;
     [SerializeField] private float jumpForce;
@@ -28,7 +27,6 @@ public class FalseKnight : BaseEnemy
     [SerializeField] private bool isInactive = false;
     [SerializeField] private bool canNormalAttack = false;
     [SerializeField] private bool canJump = false;
-    private bool isDead = false;
     private bool isRunning = false;
     private bool isJumping = false;
     private Vector3 lockedPlayerPosition; // To store the locked player position during the attack
@@ -42,7 +40,6 @@ public class FalseKnight : BaseEnemy
     protected override void Start()
     {
         base.Start();
-        poise = maxPoise;
     }
 
     protected override void Awake()
@@ -100,6 +97,7 @@ public class FalseKnight : BaseEnemy
         isDead = true;
         isInactive = true;
         anim.SetTrigger("Die");
+        SFXManager.instance.PlaySFXClip(deathAudio, transform, 2f);
     }
 
     private void ExecudeDie()
@@ -114,7 +112,8 @@ public class FalseKnight : BaseEnemy
         Vector2 direction = (player.transform.position - transform.position).normalized;
 
         // Move the mob towards the player
-        transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0f, 0f);
+        //transform.position += new Vector3, 0f, 0f);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void StopRun()
@@ -126,7 +125,7 @@ public class FalseKnight : BaseEnemy
     #region Normal Attack
     private void StartNormalAttack()
     {
-        if (Time.time >= lastNormalAttackTime + normalAttackCooldown && !isInactive)
+        if (canNormalAttack)
         {
             isInactive = true;
             anim.SetTrigger("StartAttack");
@@ -146,13 +145,15 @@ public class FalseKnight : BaseEnemy
     {
         Instantiate(groundCrackPrefab, attackPoint.position, Quaternion.identity);
         SFXManager.instance.PlaySFXClip(hitGroundAudio, transform, 1f);
+        PlayerCamera.instance.ShakeCamera(1f, 0.3f);
     }
 
     private void SpawnGroundCrackOnLanding()
     {
+        PlayerCamera.instance.ShakeCamera(1f, 0.3f);
         // Instantiate the ground crack prefab at the landing point position
         GameObject groundCrack = Instantiate(groundCrackPrefab, landingPoint.position, Quaternion.identity);
-
+        SFXManager.instance.PlaySFXClip(landAudio, transform, 1f);
         // Get the Transform of the instantiated prefab to modify its scale
         Transform crackTransform = groundCrack.transform;
 
@@ -255,12 +256,16 @@ public class FalseKnight : BaseEnemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.tag == "Player")
+        {
+            PlayerStat.instance.TakeDamage(1);
+        }
+
         // Check if the collision object is on the "Ground" layer
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground2"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             anim.SetTrigger("Land"); // Trigger landing animation (optional)
             anim.SetBool("isJumping", false);
-            SFXManager.instance.PlaySFXClip(landAudio, transform, 1f);
         }
     }
 

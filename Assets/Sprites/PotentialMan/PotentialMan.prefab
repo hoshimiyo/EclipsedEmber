@@ -149,11 +149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useDelayAttack: 0
-  delayTime: 0
+  damageStart: 0
+  damageEnd: 0
   useLifetime: 0
   lifeTime: 0
   damage: 1
   damageDelayTick: 1
+  hasDamaged: 0
+  playerDetect: 0
+  currentTime: 0
 --- !u!50 &4820062278375852442
 Rigidbody2D:
   serializedVersion: 5
@@ -212,7 +216,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.83, y: 4.43, z: -0.076413356}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: -2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4147198904780984058}
@@ -382,15 +386,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcd385cc7fcd5e4f91719898621ec64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 20
   speed: 16
-  meleeDamage: 1
+  meleeDamage: 0
   meleeAttackRange: 6.15
   meleeAttackHeightRange: 3.1
   rangedAttackRange: 20
   rangedAttackHeightRange: 10
-  aggroHorizontalRange: 30
-  aggroVerticalRange: 30
+  aggroHorizontalRange: 20.4
+  aggroVerticalRange: 10.5
   isAttacking: 0
   player: {fileID: 0}
   isPlayerInAggroRange: 0
@@ -400,6 +404,7 @@ MonoBehaviour:
   slashHitbox: {fileID: 5939586120137201489}
   slashHitbox2: {fileID: 1896716996278418741}
   rangedSlashPrefab: {fileID: 6384257985181256754, guid: 550c241cf074f6348a531df07f511080, type: 3}
+  deathParticlePrefab: {fileID: 5036853624068391878, guid: 37920494fa705ac48ae98fd5a2c2ece4, type: 3}
   rangedDamage: 1
   slashAttackCooldown: 2
   attackRecoveryTime: 2
@@ -411,11 +416,26 @@ MonoBehaviour:
     m_Bits: 8
   teleportOffset: 3
   knockbackPower: 10
+  dodgeChance: 0.2
   lastAttackTime: 0
   isInactive: 0
   teleportWindupTime: 1
   canTeleport: 1
   canUseRangedAttack: 1
+  dj: {fileID: 0}
+  canvas: {fileID: 0}
+  attackAudio: {fileID: 8300000, guid: aa2501abc7c32054fb07ab5864529d7b, type: 3}
+  attackVoiceAudio:
+  - {fileID: 8300000, guid: e920c91ce4ad7854682ccaf7d6b3e438, type: 3}
+  - {fileID: 8300000, guid: 57fb50dcbcb88ce45a8494588268754d, type: 3}
+  - {fileID: 8300000, guid: 6f230ae594789ee4e803137d25d1c93e, type: 3}
+  - {fileID: 8300000, guid: 7d23e517fc60e364493164a57d62f9cc, type: 3}
+  - {fileID: 8300000, guid: 8c268168bad059a4c9a89963b48afb09, type: 3}
+  - {fileID: 8300000, guid: e8183bcdcb03d8040a9a9a315263c312, type: 3}
+  - {fileID: 8300000, guid: 7a7857c5cf05ce1409be1aa464678707, type: 3}
+  attackAudio2: {fileID: 8300000, guid: af05e2d87df80054b9895659d30fc50b, type: 3}
+  rangeAttackAudio: {fileID: 8300000, guid: aa2501abc7c32054fb07ab5864529d7b, type: 3}
+  deathAudio: {fileID: 0}
 --- !u!1 &5939586120137201489
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,11 +585,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useDelayAttack: 0
-  delayTime: 0
+  damageStart: 0
+  damageEnd: 0
   useLifetime: 0
   lifeTime: 0
   damage: 1
   damageDelayTick: 1
+  hasDamaged: 0
+  playerDetect: 0
+  currentTime: 0
 --- !u!50 &9179172259233496236
 Rigidbody2D:
   serializedVersion: 5
