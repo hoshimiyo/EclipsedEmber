@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: cc9564b1ccbf3cf4d8743f4586ecc07b
+guid: 9ffe93871bcf6844f83e7086ea6aae0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6014468770769419220
-    second: skill1_12_e_0
+      213: 1359894278901043909
+    second: Soul_burst0001_0
+  - first:
+      213: -4618333630774840179
+    second: Soul_burst0001_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +116,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skill1_12_e_0
+      name: Soul_burst0001_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 1232
-        height: 677
-      alignment: 9
-      pivot: {x: 0.4935999, y: 0.46855345}
+        width: 316
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4db34622b7fa77350800000000000000
-      internalID: 6014468770769419220
+      spriteID: 5c29bf144a05fd210800000000000000
+      internalID: 1359894278901043909
       vertices: []
       indices: 
       edges: []
@@ -138,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cf4e42225a2485a438782af891375638
+    spriteID: a33ae99283b7cab4bb32d46097c0cb7f
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +151,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skill1_12_e_0: 6014468770769419220
+      Soul_burst0001_0: 1359894278901043909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

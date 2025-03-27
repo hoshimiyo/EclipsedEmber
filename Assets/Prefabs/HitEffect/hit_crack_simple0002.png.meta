@@ -1,10 +1,37 @@
 fileFormatVersion: 2
-guid: cc9564b1ccbf3cf4d8743f4586ecc07b
+guid: 6667fd0099348fa49affa21d9dc2184c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6014468770769419220
-    second: skill1_12_e_0
+      213: 4558788002206181295
+    second: hit_crack_simple0002_0
+  - first:
+      213: -7322350664816373801
+    second: hit_crack_simple0002_1
+  - first:
+      213: 4293786731958723002
+    second: hit_crack_simple0002_2
+  - first:
+      213: -3490282797723438591
+    second: hit_crack_simple0002_3
+  - first:
+      213: 7874969702571400227
+    second: hit_crack_simple0002_4
+  - first:
+      213: 7042855465756373286
+    second: hit_crack_simple0002_5
+  - first:
+      213: -8228577413451690972
+    second: hit_crack_simple0002_6
+  - first:
+      213: 3083641919839997583
+    second: hit_crack_simple0002_7
+  - first:
+      213: 1885716052539292664
+    second: hit_crack_simple0002_8
+  - first:
+      213: -5364222473054303470
+    second: hit_crack_simple0002_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +140,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skill1_12_e_0
+      name: hit_crack_simple0002_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 1232
-        height: 677
-      alignment: 9
-      pivot: {x: 0.4935999, y: 0.46855345}
+        width: 698
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4db34622b7fa77350800000000000000
-      internalID: 6014468770769419220
+      spriteID: 3f73ae61758fec945b11487f109c7933
+      internalID: -404791504
       vertices: []
       indices: 
       edges: []
@@ -138,7 +165,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cf4e42225a2485a438782af891375638
+    spriteID: e2feb75f192976a45b680fc9f1c7388e
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +175,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skill1_12_e_0: 6014468770769419220
+      hit_crack_simple0002_0: -404791504
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

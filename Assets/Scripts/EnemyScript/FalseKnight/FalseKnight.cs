@@ -11,12 +11,15 @@ public class FalseKnight : BaseEnemy
     [SerializeField] private Transform landingPoint;
     [SerializeField] private GameObject groundCrackPrefab;
     [SerializeField] private GameObject shockwavePrefab;
+    [SerializeField] private GameObject finalHitPrefab;
 
 
     // Stats
     [SerializeField] private float normalAttackCooldown;
+    [SerializeField] private float specialAttackCooldown;
     [SerializeField] private float jumpCooldown;
     [SerializeField] private float lastNormalAttackTime;
+    [SerializeField] private float lastSpecialAttackTime;
     [SerializeField] private float lastJumpTime;
     //[SerializeField] private float recoveryTime = 3f;
     [SerializeField] private float jumpForce;
@@ -25,10 +28,12 @@ public class FalseKnight : BaseEnemy
     // Condition Checks
     [SerializeField] private bool isInactive = false;
     [SerializeField] private bool canNormalAttack = false;
+    [SerializeField] private bool canSpecialAttack = false;
     [SerializeField] private bool canJump = false;
     private bool isRunning = false;
     private bool isJumping = false;
-    private Vector3 lockedPlayerPosition; // To store the locked player position during the attack
+    private bool isNormalAttacking = false;
+    private bool isSpecialAttacking = false;
 
     //Audio
     [SerializeField] AudioClip[] attackAudio;
@@ -49,6 +54,7 @@ public class FalseKnight : BaseEnemy
     protected override void Update()
     {
         canNormalAttack = Time.time >= lastNormalAttackTime + normalAttackCooldown && !isInactive;
+        canSpecialAttack = Time.time >= lastSpecialAttackTime + specialAttackCooldown && !isInactive;
         canJump = Time.time >= lastJumpTime + jumpCooldown && !isInactive;
         base.Update();
         if (isInactive || isJumping || isDead) return;
@@ -67,7 +73,8 @@ public class FalseKnight : BaseEnemy
         if (isPlayerInAggroRange && isPlayerInMeleeAttackRange)
         {
             StopRun();
-            StartNormalAttack();
+            if(canSpecialAttack) StartSpecialAttack();
+            else StartNormalAttack();
         }
 
         if (!isPlayerInAggroRange)
@@ -79,16 +86,7 @@ public class FalseKnight : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        if (isDead == true) return;
-        if (health > 0)
-        {
-            health -= damageTaken;
-            StartCoroutine(BlinkRedEffect());
-            if (health <= 0)
-            {
-                Die();
-            }
-        }
+        base.TakeDamage(damageTaken);
     }
 
     protected override void Die()
@@ -97,9 +95,10 @@ public class FalseKnight : BaseEnemy
         isInactive = true;
         anim.SetTrigger("Die");
         SFXManager.instance.PlaySFXClip(deathAudio, transform, 2f);
+        Instantiate(finalHitPrefab, transform.position, Quaternion.identity);
     }
 
-    private void ExecudeDie()
+    private void ExecuteDie()
     {
         Destroy(gameObject);
         SceneManager.LoadScene("EndMenu");
@@ -121,16 +120,39 @@ public class FalseKnight : BaseEnemy
         isRunning = false;
     }
 
-    #region Normal Attack
+    private void Flip()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void StartSpecialAttack()
+    {
+        if (canSpecialAttack)
+        {
+            isSpecialAttacking = true;
+            isInactive = true;
+            anim.SetTrigger("StartSpecialAttack");
+            SFXManager.instance.PlayRandomSFXClip(attackAudio, transform, 2f);
+            isAttacking = true;
+        }
+    }
+
+    private void SpecialAttack()
+    {
+        anim.SetTrigger("SpecialAttack");
+
+    }
+
+
     private void StartNormalAttack()
     {
         if (canNormalAttack)
         {
+            isNormalAttacking = true;
             isInactive = true;
             anim.SetTrigger("StartAttack");
             SFXManager.instance.PlayRandomSFXClip(attackAudio, transform, 2f);
             isAttacking = true;
-            lockedPlayerPosition = (player.transform.position - transform.position).normalized;
         }
     }
 
@@ -142,6 +164,7 @@ public class FalseKnight : BaseEnemy
 
     private void SpawnGroundCrack()
     {
+        SpawnShockWave();
         Instantiate(groundCrackPrefab, attackPoint.position, Quaternion.identity);
         SFXManager.instance.PlaySFXClip(hitGroundAudio, transform, 1f);
         PlayerCamera.instance.ShakeCamera(1f, 0.3f);
@@ -204,16 +227,30 @@ public class FalseKnight : BaseEnemy
     private void EndAttackRecovery()
     {
         isInactive = false;
-        lastNormalAttackTime = Time.time;
+        if(isNormalAttacking)
+        {
+            isNormalAttacking = false;
+            lastNormalAttackTime = Time.time;
+        }
+
+        if(isSpecialAttacking)
+        {
+            isSpecialAttacking = false;
+            lastSpecialAttackTime = Time.time;
+        }
     }
+
+    private void StartSpecialAttackRecovery()
+    {
+        anim.SetTrigger("AttackRecover");
+    }
+
 
     private void EndAttackState()
     {
         isAttacking = false;
     }
-    #endregion
 
-    #region Jump
 
     private void StartJump()
     {
@@ -251,7 +288,6 @@ public class FalseKnight : BaseEnemy
         rb.linearVelocity = new Vector3(directionToPlayer.x * jumpSpeed, jumpForce);
 
     }
-    #endregion
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

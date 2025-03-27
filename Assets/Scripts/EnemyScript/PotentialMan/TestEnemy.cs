@@ -9,6 +9,7 @@ public class TestEnemy : BaseEnemy
     [SerializeField] private GameObject slashHitbox2;
     [SerializeField] private GameObject rangedSlashPrefab;
     [SerializeField] private GameObject deathParticlePrefab;
+    [SerializeField] private GameObject finalHitPrefab;
     [SerializeField] private int rangedDamage;
     // Cooldowns for moves
     [SerializeField] private float slashAttackCooldown; // Cooldown between slashes
@@ -39,6 +40,8 @@ public class TestEnemy : BaseEnemy
     [SerializeField] AudioClip attackAudio2;
     [SerializeField] AudioClip rangeAttackAudio;
     [SerializeField] AudioClip deathAudio;
+    [SerializeField] AudioClip deathSFX;
+    [SerializeField] AudioClip dodgeSFX;
 
     protected override void Start()
     {
@@ -117,7 +120,7 @@ public class TestEnemy : BaseEnemy
     private void MoveBackward()
     {
         isInactive = true;
-        hasIFrame = true;
+        SFXManager.instance.PlaySFXClip(dodgeSFX, transform, 1f);
         anim.SetTrigger("Dodge");
 
         if (rb != null)
@@ -126,7 +129,7 @@ public class TestEnemy : BaseEnemy
             Vector2 moveDirection = (transform.localScale.x > 0) ? Vector2.left : Vector2.right;
 
             // Apply movement force in the opposite direction (backward)
-            rb.linearVelocity = moveDirection * 20f;
+            rb.linearVelocity = moveDirection * 30f;
 
             // Stop movement after a delay
             StartCoroutine(StopMovementAfterDelay(1f));
@@ -139,9 +142,13 @@ public class TestEnemy : BaseEnemy
 
     protected override void Die()
     {
+        SFXManager.instance.PlaySFXClip(deathAudio, transform, 1f);
+        Instantiate(finalHitPrefab, transform.position, Quaternion.identity);
         isInactive = true;
         isDead = true;
         anim.SetTrigger("Death");
+        DisableSlashHitbox();
+        DisableSlashHitbox2();
 
         if (rb != null)
         {
@@ -149,10 +156,10 @@ public class TestEnemy : BaseEnemy
             Vector2 moveDirection = (transform.localScale.x > 0) ? Vector2.left : Vector2.right;
 
             // Apply movement force in the opposite direction (backward)
-            rb.linearVelocity = moveDirection * 40f;
+            rb.linearVelocity = new Vector2(moveDirection.x * 30f, 1f);
 
             // Stop movement after a delay
-            StartCoroutine(StopMovementAfterDelay(1f));
+            StartCoroutine(StopMovementAfterDelay(1.5f));
         }
         else
         {
@@ -195,6 +202,7 @@ public class TestEnemy : BaseEnemy
 
         // Trigger screen shake
         PlayerCamera.instance.ShakeCamera(1f, 0.3f); // Adjust intensity & duration as needed
+        SFXManager.instance.PlaySFXClip(deathSFX, transform, 1f);
         dj.gameObject.SetActive(true);
         canvas.gameObject.SetActive(true);
         Destroy(gameObject);
@@ -260,7 +268,6 @@ public class TestEnemy : BaseEnemy
 
     private void StartDodgeRecovery()
     {
-        hasIFrame = false;
         Invoke(nameof(EndRecovery), dodgeRecoveryTime); // Delay before boss can move again
     }
 

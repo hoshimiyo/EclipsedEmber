@@ -31,10 +31,7 @@ public class AttackHitbox : MonoBehaviour
     protected virtual void Update()
     {
         // Update current time, but only if the hitbox is active and a delay attack is used
-        if (useDelayAttack)
-        {
-            currentTime += Time.deltaTime;
-        }
+        currentTime += Time.deltaTime;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)

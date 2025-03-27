@@ -281,15 +281,18 @@ MonoBehaviour:
   landingPoint: {fileID: 2959626632822572569}
   groundCrackPrefab: {fileID: 911563737768081723, guid: 3f4cec269059c10439f5920b9578bcb6, type: 3}
   shockwavePrefab: {fileID: 3094905200735740949, guid: 8641107d1ade24240970ccc5ac23852d, type: 3}
+  finalHitPrefab: {fileID: 9058518034603244554, guid: 545cceaffd97d7e4aa546f6be0df86ac, type: 3}
   normalAttackCooldown: 3
+  specialAttackCooldown: 12
   jumpCooldown: 9
   lastNormalAttackTime: 0
+  lastSpecialAttackTime: 0
   lastJumpTime: 0
-  maxPoise: 0
   jumpForce: 50
   jumpSpeed: 30
   isInactive: 0
   canNormalAttack: 0
+  canSpecialAttack: 0
   canJump: 0
   attackAudio:
   - {fileID: 8300000, guid: dfc614eea61334549bcbbd67dce84e78, type: 3}

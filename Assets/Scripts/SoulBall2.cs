@@ -7,6 +7,7 @@ public class SoulBall : MonoBehaviour
     [SerializeField] int speed;
     [SerializeField] float lifetime = 1;
     [SerializeField] AudioClip hitSFX;
+    [SerializeField] GameObject hitVFX;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class SoulBall : MonoBehaviour
         {
             BaseEnemy enemy = _other.GetComponent<BaseEnemy>();
             enemy.TakeDamage(damage);
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
             SFXManager.instance.PlaySFXClip(hitSFX, transform, 1);
         }
     }

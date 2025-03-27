@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 649d49098ebe61a48b9452f8167aa29c
+guid: 955c03cc488491d478c34988da142e40
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2462544962496212308
-    second: king_heath_idle_3_0
+      213: -4573623802981934926
+    second: Soul_burst0000_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: king_heath_idle_3_0
+      name: Soul_burst0000_0
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 1022
-        height: 1022
+        width: 220
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45da305a897bc2220800000000000000
-      internalID: 2462544962496212308
+      spriteID: 2b89dfe12693780c0800000000000000
+      internalID: -4573623802981934926
       vertices: []
       indices: 
       edges: []
