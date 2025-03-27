@@ -48,7 +48,7 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Player") && !hasDamaged)
         {
             Debug.Log("Player got hit for " + damage);
-            PlayerStat.instance.TakeDamage(damage);
+            PlayerStat.instance.TakeDamage(damage, gameObject);
             hasDamaged = true;
 
             // Optionally, disable the hitbox collider or destroy it after dealing damage

@@ -97,7 +97,7 @@ public class BaseEnemy : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            PlayerStat.instance.TakeDamage(1);
+            PlayerStat.instance.TakeDamage(1, gameObject);
         }
     }
 
@@ -146,7 +146,7 @@ public class BaseEnemy : MonoBehaviour
 
     protected virtual void Attack()
     {
-        PlayerStat.instance.TakeDamage(meleeDamage);
+        PlayerStat.instance.TakeDamage(meleeDamage, gameObject);
 
     }
 

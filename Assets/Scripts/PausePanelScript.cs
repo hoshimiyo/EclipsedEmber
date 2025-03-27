@@ -118,6 +118,7 @@ public class PausePanelScript : MonoBehaviour
     private void OnMenuConfirmed()
     {
         Debug.Log("Quit confirmed. Exiting application...");
+        mixer.SetFloat("Lowpass", 22000f);
         GameManager.instance.SaveGame();
         SceneManager.LoadScene("MainMenuScene");
     }

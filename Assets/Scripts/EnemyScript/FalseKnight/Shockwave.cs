@@ -47,7 +47,7 @@ public class Shockwave : Projectile
     {
         if (other.CompareTag("Player"))
         {
-            PlayerStat.instance.TakeDamage(damage);
+            PlayerStat.instance.TakeDamage(damage, gameObject);
             Debug.Log("Player got hit for " + damage);
         }
     }

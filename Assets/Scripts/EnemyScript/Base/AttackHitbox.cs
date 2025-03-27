@@ -90,7 +90,7 @@ public class AttackHitbox : MonoBehaviour
         if (hasDamaged) return;
 
         Debug.Log("Player got hit for " + damage);
-        PlayerStat.instance.TakeDamage(damage);
+        PlayerStat.instance.TakeDamage(damage, gameObject);
         hasDamaged = true;
 
         Invoke(nameof(ResetHitbox), damageDelayTick);

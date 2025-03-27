@@ -22,7 +22,7 @@ public class WizardFireball : Projectile
     {
         if (other.CompareTag("Player"))
         {
-            PlayerStat.instance.TakeDamage(damage);
+            PlayerStat.instance.TakeDamage(damage, gameObject);
             GetComponent<Collider2D>().enabled = false;
             Debug.Log("Player got hit for " + damage);
             Destroy(gameObject);

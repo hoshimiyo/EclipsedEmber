@@ -183,11 +183,12 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, GameObject damageSource)
     {
         if (iFrame) return;
         SFXManager.instance.PlaySFXClip(_takeDamageSound, GameManager.instance.transform, 1f);
         Health -= damage;
+        ApplyRecoil(damageSource.transform.position);
         Debug.Log("Player took " + damage + " damage. Current health: " + currentHealth);
 
         if (currentHealth <= 0)

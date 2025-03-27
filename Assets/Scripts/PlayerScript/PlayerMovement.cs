@@ -228,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Damagable"))
         {
-            TakingDamage();
+            TakingDamage(other.gameObject);
         }
         else if (other.gameObject.CompareTag("EnvironmentDamage"))
         {
@@ -605,9 +605,9 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region TakingDamage
-    public void TakingDamage()
+    public void TakingDamage(GameObject damageSource)
     {
-        PlayerStat.instance.TakeDamage(1);
+        PlayerStat.instance.TakeDamage(1, damageSource);
         active = false;
         _collider.enabled = false;
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
@@ -616,7 +616,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakingEnvironmentalDamage(GameObject other)
     {
-        TakingDamage();
+        TakingDamage(other);
         if (PlayerStat.instance.Health > 0)
         {
             StartCoroutine(DisablePhysics(0.5f));
