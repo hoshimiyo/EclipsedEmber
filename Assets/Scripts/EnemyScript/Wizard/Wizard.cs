@@ -60,6 +60,10 @@ public class Wizard : BaseEnemy
     public override void TakeDamage(float damageTaken)
     {
         base.TakeDamage(damageTaken);
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     protected override void Die()
@@ -154,7 +158,7 @@ public class Wizard : BaseEnemy
         }
 
         // Lock onto the player's current position
-        Vector3 lockedPosition = new Vector3(player.transform.position.x, player.transform.position.y + 5f, player.transform.position.z);
+        Vector3 lockedPosition = new Vector3(player.transform.position.x, player.transform.position.y + 10f, player.transform.position.z);
 
         GameObject blast = Instantiate(blashAttackPrefab, lockedPosition, Quaternion.identity);
         // Start the coroutine to delay the blast spawn

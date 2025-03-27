@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7cf534146183654691a67b75d778eba
+guid: 11f6e036e36fd4244b7d1768ef67ec60
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1513238371065229599
-    second: skill2_11_0
+      213: 7611136579793213216
+    second: Hited(NoArmor)2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skill2_11_0
+      name: Hited(NoArmor)2_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 11
-        width: 413
-        height: 558
-      alignment: 9
-      pivot: {x: 0.55388314, y: 0.66194147}
+        x: 2
+        y: 0
+        width: 41
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ee8a2018b5effae0800000000000000
-      internalID: -1513238371065229599
+      spriteID: 0275e8fc46030a960800000000000000
+      internalID: 7611136579793213216
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a541bc38070b6c040815ca4ca2397350
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      skill2_11_0: -1513238371065229599
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

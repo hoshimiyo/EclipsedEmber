@@ -12,6 +12,7 @@ public class MossKnight : BaseEnemy
     [SerializeField] private AudioClip[] attackSound;
     [SerializeField] private AudioClip dieSound;
     private bool canSlash = false;
+    private bool isDead = false;
     protected override void Start()
     {
         base.Start();
@@ -47,7 +48,16 @@ public class MossKnight : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        base.TakeDamage(damageTaken);
+        if (isDead == true) return;
+        if (health > 0)
+        {
+            health -= damageTaken;
+            StartCoroutine(BlinkRedEffect());
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
     }
 
     protected override void Die()

@@ -20,7 +20,7 @@ public class SoulBall : MonoBehaviour
     //detect hit
     private void OnTriggerEnter2D(Collider2D _other)
     {
-        if (_other.CompareTag("Enemy"))
+        if (_other.gameObject.tag == "Enemy")
         {
             BaseEnemy enemy = _other.GetComponent<BaseEnemy>();
             enemy.TakeDamage(damage);

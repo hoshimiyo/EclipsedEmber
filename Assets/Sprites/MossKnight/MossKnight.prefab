@@ -334,9 +334,6 @@ MonoBehaviour:
   lifeTime: 0
   damage: 1
   damageDelayTick: 0
-  hasDamaged: 0
-  playerDetect: 0
-  currentTime: 0
 --- !u!61 &5024775657312677459
 BoxCollider2D:
   m_ObjectHideFlags: 0

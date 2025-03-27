@@ -11,13 +11,11 @@ public class AttackHitbox : MonoBehaviour
     [SerializeField] private float lifeTime;       // Time before hitbox is destroyed
     [SerializeField] private int damage;           // Damage to apply
     [SerializeField] private float damageDelayTick; // Duration to disable hitbox after damage
-
-    [SerializeField] private bool hasDamaged = false;
-    [SerializeField] private bool playerDetect = false;
+    private bool hasDamaged = false;
     private Rigidbody2D rb;
 
     private HashSet<Collider2D> collidingPlayers = new HashSet<Collider2D>(); // Track players in the hitbox
-    [SerializeField] private float currentTime = 0f; // To track the time for damage window
+    private float currentTime = 0f; // To track the time for damage window
 
     protected virtual void Start()
     {
@@ -55,7 +53,10 @@ public class AttackHitbox : MonoBehaviour
             // Check if the player enters the hitbox within the valid damage window
             if (useDelayAttack)
             {
-                StartCoroutine(DelayedDamage(other));
+                if (currentTime >= damageStart && currentTime <= damageEnd && !hasDamaged)
+                {
+                    ApplyDamage(other);
+                }
             }
             else
             {
@@ -70,7 +71,6 @@ public class AttackHitbox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             collidingPlayers.Remove(other); // Remove player when they leave
-            playerDetect = false;
         }
     }
 
@@ -79,7 +79,7 @@ public class AttackHitbox : MonoBehaviour
         yield return new WaitForSeconds(damageStart); // Wait before applying damage
 
         // Check if player is still in the hitbox and damage hasn�t been applied yet
-        if (collidingPlayers.Contains(player) && !hasDamaged && currentTime <= damageEnd)
+        if (collidingPlayers.Contains(player) && !hasDamaged)
         {
             ApplyDamage(player);
         }

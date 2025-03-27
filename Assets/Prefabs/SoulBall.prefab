@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5088645013780278814}
   - component: {fileID: 6023662491359840421}
   - component: {fileID: -3671687693648619386}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: SoulBall
   m_TagString: PlayerDamage
   m_Icon: {fileID: 0}
