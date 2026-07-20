@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    protected int damage;
+    [SerializeField] protected int damage;
     [SerializeField] protected float maxLifetime = 3f; // Time before the projectile is destroyed
     [SerializeField] protected float lifeTime = 0f; // Timer to track how long the projectile has been in the air
     [SerializeField] protected float speedIncreaseDuration = 0.2f; // Time duration to reach max speed

@@ -55,15 +55,12 @@ public class Ghost : BaseEnemy
     public override void TakeDamage(float damageTaken)
     {
         base.TakeDamage(damageTaken);
-        if (health <= 0)
-        {
-            Die();
-        }
     }
 
     protected override void Die()
     {
         isInactive = true;
+        DisableCollision();
         anim.SetTrigger("Die");
         SFXManager.instance.PlaySFXClip(deathAudio, transform, 1);
         Invoke(nameof(ExecuteDie), 31f / 60f);

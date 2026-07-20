@@ -55,11 +55,14 @@ public class GameManager : MonoBehaviour
         if (gameData != null && gameData.currentSceneBuildIndex == scene.buildIndex)
         {
             StartCoroutine(PositionPlayerAfterSceneLoad());
-            Debug.Log("OnSceneLoadedWhatIsGoingOn");
         }
         else
         {
-            Debug.Log("OnSceneLoadedFix");
+            if(SceneTransition.isTrigger)   
+            {
+                SceneTransition.isTrigger = false;
+                player.transform.position = SceneTransition.instance.GetSpawnPosition();
+            }
         }
     }
 

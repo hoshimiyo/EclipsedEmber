@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,15 +10,16 @@ public class FalseKnight : BaseEnemy
     [SerializeField] private Transform landingPoint;
     [SerializeField] private GameObject groundCrackPrefab;
     [SerializeField] private GameObject shockwavePrefab;
+    [SerializeField] private GameObject finalHitPrefab;
 
 
     // Stats
     [SerializeField] private float normalAttackCooldown;
+    [SerializeField] private float specialAttackCooldown;
     [SerializeField] private float jumpCooldown;
     [SerializeField] private float lastNormalAttackTime;
+    [SerializeField] private float lastSpecialAttackTime;
     [SerializeField] private float lastJumpTime;
-    [SerializeField] private float poise;
-    [SerializeField] private float maxPoise;
     //[SerializeField] private float recoveryTime = 3f;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpSpeed;
@@ -27,11 +27,12 @@ public class FalseKnight : BaseEnemy
     // Condition Checks
     [SerializeField] private bool isInactive = false;
     [SerializeField] private bool canNormalAttack = false;
+    [SerializeField] private bool canSpecialAttack = false;
     [SerializeField] private bool canJump = false;
-    private bool isDead = false;
     private bool isRunning = false;
     private bool isJumping = false;
-    private Vector3 lockedPlayerPosition; // To store the locked player position during the attack
+    private bool isNormalAttacking = false;
+    private bool isSpecialAttacking = false;
 
     //Audio
     [SerializeField] AudioClip[] attackAudio;
@@ -42,7 +43,6 @@ public class FalseKnight : BaseEnemy
     protected override void Start()
     {
         base.Start();
-        poise = maxPoise;
     }
 
     protected override void Awake()
@@ -53,6 +53,7 @@ public class FalseKnight : BaseEnemy
     protected override void Update()
     {
         canNormalAttack = Time.time >= lastNormalAttackTime + normalAttackCooldown && !isInactive;
+        canSpecialAttack = Time.time >= lastSpecialAttackTime + specialAttackCooldown && !isInactive;
         canJump = Time.time >= lastJumpTime + jumpCooldown && !isInactive;
         base.Update();
         if (isInactive || isJumping || isDead) return;
@@ -71,7 +72,8 @@ public class FalseKnight : BaseEnemy
         if (isPlayerInAggroRange && isPlayerInMeleeAttackRange)
         {
             StopRun();
-            StartNormalAttack();
+            if (canSpecialAttack) StartSpecialAttack();
+            else StartNormalAttack();
         }
 
         if (!isPlayerInAggroRange)
@@ -83,29 +85,31 @@ public class FalseKnight : BaseEnemy
 
     public override void TakeDamage(float damageTaken)
     {
-        if (isDead == true) return;
-        if (health > 0)
-        {
-            health -= damageTaken;
-            StartCoroutine(BlinkRedEffect());
-            if (health <= 0)
-            {
-                Die();
-            }
-        }
+        base.TakeDamage(damageTaken);
     }
 
     protected override void Die()
     {
         isDead = true;
         isInactive = true;
+        DisableCollision();
         anim.SetTrigger("Die");
+        SFXManager.instance.PlaySFXClip(deathAudio, transform, 2f);
+        Instantiate(finalHitPrefab, transform.position, Quaternion.identity);
+        StartCoroutine(WaitForSec());
     }
 
-    private void ExecudeDie()
+    public IEnumerator WaitForSec()
     {
+        yield return new WaitForSeconds(3f);
+        GameUI2.instance.sceneFader.Fade(ScreenFader.FadeDirection.In, Color.white);
         Destroy(gameObject);
         SceneManager.LoadScene("EndMenu");
+    }
+
+    private void ExecuteDie()
+    {
+        StartCoroutine(WaitForSec());
     }
 
     private void Run()
@@ -114,7 +118,8 @@ public class FalseKnight : BaseEnemy
         Vector2 direction = (player.transform.position - transform.position).normalized;
 
         // Move the mob towards the player
-        transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0f, 0f);
+        //transform.position += new Vector3, 0f, 0f);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void StopRun()
@@ -123,16 +128,39 @@ public class FalseKnight : BaseEnemy
         isRunning = false;
     }
 
-    #region Normal Attack
+    private void Flip()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void StartSpecialAttack()
+    {
+        if (canSpecialAttack)
+        {
+            isSpecialAttacking = true;
+            isInactive = true;
+            anim.SetTrigger("StartSpecialAttack");
+            SFXManager.instance.PlayRandomSFXClip(attackAudio, transform, 2f);
+            isAttacking = true;
+        }
+    }
+
+    private void SpecialAttack()
+    {
+        anim.SetTrigger("SpecialAttack");
+
+    }
+
+
     private void StartNormalAttack()
     {
-        if (Time.time >= lastNormalAttackTime + normalAttackCooldown && !isInactive)
+        if (canNormalAttack)
         {
+            isNormalAttacking = true;
             isInactive = true;
             anim.SetTrigger("StartAttack");
             SFXManager.instance.PlayRandomSFXClip(attackAudio, transform, 2f);
             isAttacking = true;
-            lockedPlayerPosition = (player.transform.position - transform.position).normalized;
         }
     }
 
@@ -144,15 +172,18 @@ public class FalseKnight : BaseEnemy
 
     private void SpawnGroundCrack()
     {
+        SpawnShockWave();
         Instantiate(groundCrackPrefab, attackPoint.position, Quaternion.identity);
         SFXManager.instance.PlaySFXClip(hitGroundAudio, transform, 1f);
+        PlayerCamera.instance.ShakeCamera(1f, 0.3f);
     }
 
     private void SpawnGroundCrackOnLanding()
     {
+        PlayerCamera.instance.ShakeCamera(1f, 0.3f);
         // Instantiate the ground crack prefab at the landing point position
         GameObject groundCrack = Instantiate(groundCrackPrefab, landingPoint.position, Quaternion.identity);
-
+        SFXManager.instance.PlaySFXClip(landAudio, transform, 1f);
         // Get the Transform of the instantiated prefab to modify its scale
         Transform crackTransform = groundCrack.transform;
 
@@ -204,16 +235,30 @@ public class FalseKnight : BaseEnemy
     private void EndAttackRecovery()
     {
         isInactive = false;
-        lastNormalAttackTime = Time.time;
+        if (isNormalAttacking)
+        {
+            isNormalAttacking = false;
+            lastNormalAttackTime = Time.time;
+        }
+
+        if (isSpecialAttacking)
+        {
+            isSpecialAttacking = false;
+            lastSpecialAttackTime = Time.time;
+        }
     }
+
+    private void StartSpecialAttackRecovery()
+    {
+        anim.SetTrigger("AttackRecover");
+    }
+
 
     private void EndAttackState()
     {
         isAttacking = false;
     }
-    #endregion
 
-    #region Jump
 
     private void StartJump()
     {
@@ -234,7 +279,7 @@ public class FalseKnight : BaseEnemy
 
         // Apply a force in the direction of the player
         rb.linearVelocity = new Vector3(directionToPlayer.x * jumpSpeed, jumpForce);
-        
+
     }
 
     private void JumpBackward()
@@ -251,16 +296,19 @@ public class FalseKnight : BaseEnemy
         rb.linearVelocity = new Vector3(directionToPlayer.x * jumpSpeed, jumpForce);
 
     }
-    #endregion
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.tag == "Player")
+        {
+            PlayerStat.instance.TakeDamage(1, gameObject);
+        }
+
         // Check if the collision object is on the "Ground" layer
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground2"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             anim.SetTrigger("Land"); // Trigger landing animation (optional)
             anim.SetBool("isJumping", false);
-            SFXManager.instance.PlaySFXClip(landAudio, transform, 1f);
         }
     }
 

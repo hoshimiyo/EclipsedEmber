@@ -650,7 +650,7 @@ public class PlayerMovement : MonoBehaviour
         if (_groundCollider != null) _groundCollider.GetComponent<Collider2D>().enabled = false;
         MiniJump();
         StartCoroutine(DisablePhysics(3f));
-        StartCoroutine(GameUI2.instance.sceneFader.FadeSeconds(3f));
+        StartCoroutine(GameUI2.instance.sceneFader.FadeSeconds(3f, Color.black));
         StartCoroutine(Respawn());
     }
     private IEnumerator Respawn()

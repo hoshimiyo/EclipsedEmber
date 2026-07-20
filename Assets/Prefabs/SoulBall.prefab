@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5088645013780278814}
   - component: {fileID: 6023662491359840421}
   - component: {fileID: -3671687693648619386}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SoulBall
   m_TagString: PlayerDamage
   m_Icon: {fileID: 0}
@@ -176,6 +176,7 @@ MonoBehaviour:
   speed: 1
   lifetime: 10
   hitSFX: {fileID: 8300000, guid: 70d3a68adfe46c441b2b3c578a9ab406, type: 3}
+  hitVFX: {fileID: 9191247554378703372, guid: 035a532b391f7e94e88399e7400a8407, type: 3}
 --- !u!50 &-3671687693648619386
 Rigidbody2D:
   serializedVersion: 5
